@@ -1,7 +1,7 @@
 [
   {
     "id": "q1",
-    "question": "Ile wynosi 3 248 + 1 967?",
+    "question": "Oblicz pisemnie (pod kreską) 3 248 + 1 967?",
     "options": {
       "A": "5 115",
       "B": "5 215",
@@ -12,7 +12,7 @@
   },
   {
     "id": "q2",
-    "question": "Ile to 1 728 ÷ 12?",
+    "question": "Oblicz pisemnie (pod kreską) 1 728 ÷ 12?",
     "options": {
       "A": "144",
       "B": "132",
@@ -110,4 +110,5 @@
     "correct": "B"
   }
 ]
+
  
