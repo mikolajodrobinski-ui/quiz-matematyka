@@ -148,23 +148,32 @@
     }
 
     function sendResult() {
-      const scoreText = document.getElementById('result').textContent;
-      if (!scoreText) {
-        alert("Najpierw kliknij 'Sprawdź wszystkie odpowiedzi'.");
-        return;
-      }
-
       const name = prompt("Podaj swoje imię:");
       if (!name) {
         alert("Imię jest wymagane.");
         return;
       }
 
+      let answers = [];
+      questions.forEach(q => {
+        const radios = document.getElementsByName(q.id);
+        let selected = "brak";
+        for (const radio of radios) {
+          if (radio.checked) {
+            selected = radio.value;
+            break;
+          }
+        }
+        answers.push(`${q.id}: ${selected}`);
+      });
+
+      const answerText = answers.join(", ");
+
       const formURL = "https://docs.google.com/forms/d/e/1FAIpQLScSJr1zCKu2lPTC5Tjdcp8V98cXPEQkxYbaL7jMG6qsFuqBBg/formResponse"; // ← zamień na swój
       const scoreField = "entry.1830411495"; // ← zamień na swój
       const nameField = "entry.534100336";  // ← zamień na swój
 
-      const data = `${scoreField}=${encodeURIComponent(scoreText)}&${nameField}=${encodeURIComponent(name)}`;
+      const data = `${answerField}=${encodeURIComponent(answerText)}&${nameField}=${encodeURIComponent(name)}`;
 
       fetch(formURL, {
         method: "POST",
@@ -173,7 +182,7 @@
         body: data
       });
 
-      alert("✅ Wynik został wysłany!");
+      alert("✅ Odpowiedzi zostały wysłane!");
 
       // Odblokuj przycisk sprawdzania odpowiedzi
       document.getElementById('check-button').disabled = false;
