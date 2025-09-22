@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz matematyczny</title>
+  <title>Quiz matematyczny – Klasa 4–5</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -25,8 +25,8 @@
       background-color: #f9f9f9;
     }
     label {
-      display: inline;
-      margin: 6px 0;
+      display: inline-block;
+      margin-left: 6px;
       font-size: 1em;
     }
     button {
@@ -62,7 +62,7 @@
   </style>
 </head>
 <body>
-  <h1>📱 Quiz matematyczny</h1>
+  <h1>📱 Quiz matematyczny – Klasa 4–5</h1>
   <form id="quiz-form"></form>
   <button onclick="submitQuiz()">Sprawdź wszystkie odpowiedzi</button>
   <div id="result"></div>
@@ -86,6 +86,7 @@
         div.appendChild(p);
  
         for (const [key, value] of Object.entries(q.options)) {
+          const line = document.createElement('div');
           const input = document.createElement('input');
           input.type = 'radio';
           input.name = q.id;
@@ -96,8 +97,9 @@
           label.htmlFor = input.id;
           label.textContent = `${key}) ${value}`;
  
-          div.appendChild(input);
-          div.appendChild(label);
+          line.appendChild(input);
+          line.appendChild(label);
+          div.appendChild(line);
         }
  
         const feedback = document.createElement('p');
@@ -168,7 +170,5 @@
     loadQuiz();
   </script>
 </body>
-
 </html>
-
-
+ 
