@@ -24,8 +24,11 @@
       border-radius: 8px;
       background-color: #f9f9f9;
     }
+    .option-line {
+      display: block;
+      margin-top: 6px;
+    }
     label {
-      display: inline-block;
       margin-left: 6px;
       font-size: 1em;
     }
@@ -67,50 +70,52 @@
   <button onclick="submitQuiz()">Sprawdź wszystkie odpowiedzi</button>
   <div id="result"></div>
   <button onclick="sendResult()">Wyślij wynik do nauczyciela</button>
- 
+
   <script>
     let questions = [];
- 
+
     async function loadQuiz() {
       const response = await fetch('questions.json');
       questions = await response.json();
       const form = document.getElementById('quiz-form');
- 
+
       questions.forEach(q => {
         const div = document.createElement('div');
         div.className = 'question';
         div.id = q.id;
- 
+
         const p = document.createElement('p');
         p.textContent = q.question;
         div.appendChild(p);
- 
+
         for (const [key, value] of Object.entries(q.options)) {
           const line = document.createElement('div');
+          line.className = 'option-line';
+
           const input = document.createElement('input');
           input.type = 'radio';
           input.name = q.id;
           input.value = key;
           input.id = `${q.id}_${key}`;
- 
+
           const label = document.createElement('label');
           label.htmlFor = input.id;
           label.textContent = `${key}) ${value}`;
- 
+
           line.appendChild(input);
           line.appendChild(label);
           div.appendChild(line);
         }
- 
+
         const feedback = document.createElement('p');
         feedback.className = 'feedback';
         feedback.id = 'fb_' + q.id;
         div.appendChild(feedback);
- 
+
         form.appendChild(div);
       });
     }
- 
+
     function submitQuiz() {
       let score = 0;
       questions.forEach(q => {
@@ -132,43 +137,42 @@
           feedback.className = "incorrect";
         }
       });
- 
+
       const result = document.getElementById('result');
       result.textContent = `Twój wynik: ${score} / ${questions.length}`;
       result.scrollIntoView({ behavior: 'smooth' });
     }
- 
+
     function sendResult() {
       const scoreText = document.getElementById('result').textContent;
       if (!scoreText) {
         alert("Najpierw kliknij 'Sprawdź wszystkie odpowiedzi'.");
         return;
       }
- 
+
       const name = prompt("Podaj swoje imię:");
       if (!name) {
         alert("Imię jest wymagane.");
         return;
       }
- 
+
       const formURL = "https://docs.google.com/forms/d/e/TWÓJ_ID/formResponse"; // ← zamień na swój
       const scoreField = "entry.1234567890"; // ← zamień na swój
       const nameField = "entry.0987654321";  // ← zamień na swój
- 
+
       const data = `${scoreField}=${encodeURIComponent(scoreText)}&${nameField}=${encodeURIComponent(name)}`;
- 
+
       fetch(formURL, {
         method: "POST",
         mode: "no-cors",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: data
       });
- 
+
       alert("✅ Wynik został wysłany!");
     }
- 
+
     loadQuiz();
   </script>
 </body>
 </html>
- 
