@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz matematyczny – Klasa 4–5</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 10px;
+      padding: 10px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    h1 {
+      font-size: 1.5em;
+      text-align: center;
+    }
+    .question {
+      margin-bottom: 25px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+    label {
+      display: block;
+      margin: 6px 0;
+      font-size: 1em;
+    }
+    button {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      font-size: 1em;
+      margin-top: 10px;
+      background-color: #0078D4;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005fa3;
+    }
+    .correct {
+      color: green;
+      font-weight: bold;
+      margin-top: 8px;
+    }
+    .incorrect {
+      color: red;
+      font-weight: bold;
+      margin-top: 8px;
+    }
+    #result {
+      font-size: 1.2em;
+      margin-top: 30px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>📱 Quiz matematyczny – Klasa 4–5</h1>
+  <form id="quiz-form"></form>
+  <button onclick="submitQuiz()">Sprawdź wszystkie odpowiedzi</button>
+  <div id="result"></div>
+  <button onclick="sendResult()">Wyślij wynik do nauczyciela</button>
+ 
+  <script>
+    let questions = [];
+ 
+    async function loadQuiz() {
+      const response = await fetch('questions.json');
+      questions = await response.json();
+      const form = document.getElementById('quiz-form');
+ 
+      questions.forEach(q => {
+        const div = document.createElement('div');
+        div.className = 'question';
+        div.id = q.id;
+ 
+        const p = document.createElement('p');
+        p.textContent = q.question;
+        div.appendChild(p);
+ 
+        for (const [key, value] of Object.entries(q.options)) {
+          const input = document.createElement('input');
+          input.type = 'radio';
+          input.name = q.id;
+          input.value = key;
+          input.id = `${q.id}_${key}`;
+ 
+          const label = document.createElement('label');
+          label.htmlFor = input.id;
+          label.textContent = `${key}) ${value}`;
+ 
+          div.appendChild(input);
+          div.appendChild(label);
+        }
+ 
+        const feedback = document.createElement('p');
+        feedback.className = 'feedback';
+        feedback.id = 'fb_' + q.id;
+        div.appendChild(feedback);
+ 
+        form.appendChild(div);
+      });
+    }
+ 
+    function submitQuiz() {
+      let score = 0;
+      questions.forEach(q => {
+        const radios = document.getElementsByName(q.id);
+        let selected = null;
+        for (const radio of radios) {
+          if (radio.checked) {
+            selected = radio.value;
+            break;
+          }
+        }
+        const feedback = document.getElementById('fb_' + q.id);
+        if (selected === q.correct) {
+          feedback.textContent = "✅ Dobra odpowiedź!";
+          feedback.className = "correct";
+          score++;
+        } else {
+          feedback.textContent = "❌ Zła odpowiedź.";
+          feedback.className = "incorrect";
+        }
+      });
+ 
+      const result = document.getElementById('result');
+      result.textContent = `Twój wynik: ${score} / ${questions.length}`;
+      result.scrollIntoView({ behavior: 'smooth' });
+    }
+ 
+    function sendResult() {
+      const scoreText = document.getElementById('result').textContent;
+      if (!scoreText) {
+        alert("Najpierw kliknij 'Sprawdź wszystkie odpowiedzi'.");
+        return;
+      }
+ 
+      const name = prompt("Podaj swoje imię:");
+      if (!name) {
+        alert("Imię jest wymagane.");
+        return;
+      }
+ 
+      const formURL = "https://docs.google.com/forms/d/e/TWÓJ_ID/formResponse"; // ← zamień na swój
+      const scoreField = "entry.1234567890"; // ← zamień na swój
+      const nameField = "entry.0987654321";  // ← zamień na swój
+ 
+      const data = `${scoreField}=${encodeURIComponent(scoreText)}&${nameField}=${encodeURIComponent(name)}`;
+ 
+      fetch(formURL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: data
+      });
+ 
+      alert("✅ Wynik został wysłany!");
+    }
+ 
+    loadQuiz();
+  </script>
+</body>
+</html>

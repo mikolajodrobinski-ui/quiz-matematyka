@@ -1,0 +1,113 @@
+[
+  {
+    "id": "q1",
+    "question": "Ile wynosi 3 248 + 1 967?",
+    "options": {
+      "A": "5 115",
+      "B": "5 215",
+      "C": "5 305",
+      "D": "5 125"
+    },
+    "correct": "B"
+  },
+  {
+    "id": "q2",
+    "question": "Ile to 1 728 ÷ 12?",
+    "options": {
+      "A": "144",
+      "B": "132",
+      "C": "156",
+      "D": "172"
+    },
+    "correct": "A"
+  },
+  {
+    "id": "q3",
+    "question": "Który ułamek jest większy?",
+    "options": {
+      "A": "3/4",
+      "B": "5/8",
+      "C": "Są równe",
+      "D": "Nie da się porównać"
+    },
+    "correct": "A"
+  },
+  {
+    "id": "q4",
+    "question": "Który ułamek jest najmniejszy?",
+    "options": {
+      "A": "2/3",
+      "B": "1/2",
+      "C": "5/6",
+      "D": "Wszystkie są równe"
+    },
+    "correct": "B"
+  },
+  {
+    "id": "q5",
+    "question": "Ile to 3,75 + 2,6?",
+    "options": {
+      "A": "6,25",
+      "B": "6,35",
+      "C": "6,45",
+      "D": "6,15"
+    },
+    "correct": "B"
+  },
+  {
+    "id": "q6",
+    "question": "Zamień 2,5 km na metry.",
+    "options": {
+      "A": "250 m",
+      "B": "2 500 m",
+      "C": "25 000 m",
+      "D": "250 000 m"
+    },
+    "correct": "B"
+  },
+  {
+    "id": "q7",
+    "question": "Pole prostokąta o bokach 12 cm i 8 cm wynosi:",
+    "options": {
+      "A": "96 cm²",
+      "B": "100 cm²",
+      "C": "84 cm²",
+      "D": "104 cm²"
+    },
+    "correct": "A"
+  },
+  {
+    "id": "q8",
+    "question": "Obwód trójkąta o bokach 7 cm, 9 cm i 11 cm to:",
+    "options": {
+      "A": "27 cm",
+      "B": "26 cm",
+      "C": "28 cm",
+      "D": "29 cm"
+    },
+    "correct": "A"
+  },
+  {
+    "id": "q9",
+    "question": "Ile ciasta zostało, jeśli dzieci zjadły 2/5, 3/4 i 1/2 z trzech ciast?",
+    "options": {
+      "A": "1,25",
+      "B": "1,35",
+      "C": "1,45",
+      "D": "1,5"
+    },
+    "correct": "B"
+  },
+  {
+    "id": "q10",
+    "question": "Film zaczyna się o 17:20 i trwa 1 godz. 35 min. O której się skończy?",
+    "options": {
+      "A": "18:45",
+      "B": "18:55",
+      "C": "19:00",
+      "D": "19:05"
+    },
+    "correct": "B"
+  }
+]
+ 
