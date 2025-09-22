@@ -1,7 +1,7 @@
 [
   {
     "id": "q1",
-    "question": "1. Oblicz pisemnie (pod kreską) 3 248 + 1 967?",
+    "question": "Oblicz pisemnie (pod kreską) 3 248 + 1 967?",
     "options": {
       "A": "5 115",
       "B": "5 215",
@@ -12,7 +12,7 @@
   },
   {
     "id": "q2",
-    "question": "2. Oblicz pisemnie (pod kreską) 1 728 ÷ 12?",
+    "question": "Oblicz pisemnie (pod kreską) 1 728 ÷ 12?",
     "options": {
       "A": "144",
       "B": "132",
@@ -23,7 +23,7 @@
   },
   {
     "id": "q3",
-    "question": "3. Który ułamek jest większy?",
+    "question": "Który ułamek jest większy?",
     "options": {
       "A": "3/4",
       "B": "5/8",
@@ -34,7 +34,7 @@
   },
   {
     "id": "q4",
-    "question": "4. Który ułamek jest najmniejszy?",
+    "question": "Który ułamek jest najmniejszy?",
     "options": {
       "A": "2/3",
       "B": "1/2",
@@ -45,7 +45,7 @@
   },
   {
     "id": "q5",
-    "question": "5. Ile to 3,75 + 2,6?",
+    "question": "Ile to 3,75 + 2,6?",
     "options": {
       "A": "6,25",
       "B": "6,35",
@@ -56,7 +56,7 @@
   },
   {
     "id": "q6",
-    "question": "6. Zamień 2,5 km na metry.",
+    "question": "Zamień 2,5 km na metry.",
     "options": {
       "A": "250 m",
       "B": "2 500 m",
@@ -67,7 +67,7 @@
   },
   {
     "id": "q7",
-    "question": "7. Pole prostokąta o bokach 12 cm i 8 cm wynosi:",
+    "question": "Pole prostokąta o bokach 12 cm i 8 cm wynosi:",
     "options": {
       "A": "96 cm²",
       "B": "100 cm²",
@@ -78,7 +78,7 @@
   },
   {
     "id": "q8",
-    "question": "8. Obwód trójkąta o bokach 7 cm, 9 cm i 11 cm to:",
+    "question": "Obwód trójkąta o bokach 7 cm, 9 cm i 11 cm to:",
     "options": {
       "A": "27 cm",
       "B": "26 cm",
@@ -89,7 +89,7 @@
   },
   {
     "id": "q9",
-    "question": "9. Ile ciasta zostało, jeśli dzieci zjadły 2/5, 3/4 i 1/2 z trzech ciast?",
+    "question": "Ile ciasta zostało, jeśli dzieci zjadły 2/5, 3/4 i 1/2 z trzech ciast?",
     "options": {
       "A": "1,25",
       "B": "1,35",
@@ -100,7 +100,7 @@
   },
   {
     "id": "q10",
-    "question": "10. Film zaczyna się o 17:20 i trwa 1 godz. 35 min. O której się skończy?",
+    "question": "Film zaczyna się o 17:20 i trwa 1 godz. 35 min. O której się skończy?",
     "options": {
       "A": "18:45",
       "B": "18:55",
@@ -112,4 +112,5 @@
 ]
 
  
+
 
