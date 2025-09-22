@@ -120,8 +120,26 @@
       });
     }
 
-    function submitQuiz() {
+    function calculateScore() {
       let score = 0;
+      questions.forEach(q => {
+        const radios = document.getElementsByName(q.id);
+        let selected = null;
+        for (const radio of radios) {
+          if (radio.checked) {
+            selected = radio.value;
+            break;
+          }
+        }
+        if (selected === q.correct) {
+          score++;
+        }
+      });
+      return score;
+    }
+
+    function submitQuiz() {
+      const score = calculateScore();
       questions.forEach(q => {
         const radios = document.getElementsByName(q.id);
         let selected = null;
@@ -135,7 +153,6 @@
         if (selected === q.correct) {
           feedback.textContent = "✅ Dobra odpowiedź!";
           feedback.className = "correct";
-          score++;
         } else {
           feedback.textContent = "❌ Zła odpowiedź.";
           feedback.className = "incorrect";
@@ -154,26 +171,16 @@
         return;
       }
 
-      let answers = [];
-      questions.forEach(q => {
-        const radios = document.getElementsByName(q.id);
-        let selected = "brak";
-        for (const radio of radios) {
-          if (radio.checked) {
-            selected = radio.value;
-            break;
-          }
-        }
-        answers.push(`${q.id}: ${selected}`);
-      });
-
-      const answerText = answers.join(", ");
+      const score = calculateScore();
+      const scoreText = `Wynik: ${score} / ${questions.length}`;
+      const result = document.getElementById('result');
+      result.textContent = scoreText;
 
       const formURL = "https://docs.google.com/forms/d/e/1FAIpQLScSJr1zCKu2lPTC5Tjdcp8V98cXPEQkxYbaL7jMG6qsFuqBBg/formResponse"; // ← zamień na swój
       const scoreField = "entry.1830411495"; // ← zamień na swój
       const nameField = "entry.534100336";  // ← zamień na swój
 
-      const data = `${answerField}=${encodeURIComponent(answerText)}&${nameField}=${encodeURIComponent(name)}`;
+      const data = `${scoreField}=${encodeURIComponent(scoreText)}&${nameField}=${encodeURIComponent(name)}`;
 
       fetch(formURL, {
         method: "POST",
@@ -182,7 +189,7 @@
         body: data
       });
 
-      alert("✅ Odpowiedzi zostały wysłane!");
+      alert("✅ Wynik został wysłany!");
 
       // Odblokuj przycisk sprawdzania odpowiedzi
       document.getElementById('check-button').disabled = false;
