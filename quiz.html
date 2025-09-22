@@ -138,6 +138,22 @@
       return score;
     }
 
+    function collectAnswers() {
+      let answers = [];
+      questions.forEach(q => {
+        const radios = document.getElementsByName(q.id);
+        let selected = "brak";
+        for (const radio of radios) {
+          if (radio.checked) {
+            selected = radio.value;
+            break;
+          }
+        }
+        answers.push(`${q.id}: ${selected}`);
+      });
+      return answers.join(", ");
+    }
+
     function submitQuiz() {
       const score = calculateScore();
       questions.forEach(q => {
@@ -173,14 +189,17 @@
 
       const score = calculateScore();
       const scoreText = `Wynik: ${score} / ${questions.length}`;
+      const answerText = collectAnswers();
+
       const result = document.getElementById('result');
       result.textContent = scoreText;
 
       const formURL = "https://docs.google.com/forms/d/e/1FAIpQLScSJr1zCKu2lPTC5Tjdcp8V98cXPEQkxYbaL7jMG6qsFuqBBg/formResponse"; // ← zamień na swój
       const scoreField = "entry.1830411495"; // ← zamień na swój
       const nameField = "entry.534100336";  // ← zamień na swój
+      const answersField = "entry.1846742322"; // ← zamień na swój
 
-      const data = `${scoreField}=${encodeURIComponent(scoreText)}&${nameField}=${encodeURIComponent(name)}`;
+      const data = `${scoreField}=${encodeURIComponent(scoreText)}&${nameField}=${encodeURIComponent(name)}&${answersField}=${encodeURIComponent(answerText)}`;
 
       fetch(formURL, {
         method: "POST",
