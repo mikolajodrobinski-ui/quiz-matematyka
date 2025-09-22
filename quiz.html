@@ -288,12 +288,15 @@
         body: data
       });
 
-      alert("✅ Wynik został wysłany!");
+            alert("✅ Wynik został wysłany!");
       document.getElementById('check-button').disabled = false;
+    }
+
+    function toggleTheme() {
+      document.body.classList.toggle('dark-mode');
     }
 
     loadQuiz();
   </script>
 </body>
 </html>
-
