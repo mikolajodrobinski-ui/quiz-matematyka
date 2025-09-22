@@ -47,6 +47,10 @@
     button:hover {
       background-color: #005fa3;
     }
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
     .correct {
       color: green;
       font-weight: bold;
@@ -67,7 +71,7 @@
 <body>
   <h1>📱 Quiz matematyczny – Klasa 4–5</h1>
   <form id="quiz-form"></form>
-  <button onclick="submitQuiz()">Sprawdź wszystkie odpowiedzi</button>
+  <button id="check-button" onclick="submitQuiz()" disabled>Sprawdź wszystkie odpowiedzi</button>
   <div id="result"></div>
   <button onclick="sendResult()">Wyślij wynik do nauczyciela</button>
 
@@ -170,11 +174,12 @@
       });
 
       alert("✅ Wynik został wysłany!");
+
+      // Odblokuj przycisk sprawdzania odpowiedzi
+      document.getElementById('check-button').disabled = false;
     }
 
     loadQuiz();
   </script>
 </body>
 </html>
-
-
