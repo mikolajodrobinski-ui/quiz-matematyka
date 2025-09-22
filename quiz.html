@@ -141,8 +141,8 @@
       return score;
     }
 
-    function collectAnswers() {
-      let answers = [];
+    function collectWrongAnswers() {
+      let wrongAnswers = [];
       questions.forEach(q => {
         const radios = document.getElementsByName(q.id);
         let selected = "brak";
@@ -152,9 +152,11 @@
             break;
           }
         }
-        answers.push(`${q.id}: ${selected}`);
+        if (selected !== q.correct) {
+          wrongAnswers.push(`${q.id}: ${selected}`);
+        }
       });
-      return answers.join(", ");
+      return wrongAnswers.length > 0 ? wrongAnswers.join(", ") : "Brak błędnych odpowiedzi";
     }
 
     function submitQuiz() {
@@ -192,7 +194,7 @@
 
       const score = calculateScore();
       const scoreText = `Wynik: ${score} / ${questions.length}`;
-      const answerText = collectAnswers();
+      const wrongAnswersText = collectWrongAnswers();
 
       const result = document.getElementById('result');
       result.textContent = scoreText;
@@ -202,7 +204,7 @@
       const nameField = "entry.534100336";  // ← zamień na swój
       const answersField = "entry.1846742322"; // ← zamień na swój
 
-      const data = `${scoreField}=${encodeURIComponent(scoreText)}&${nameField}=${encodeURIComponent(name)}&${answersField}=${encodeURIComponent(answerText)}`;
+      const data = `${scoreField}=${encodeURIComponent(scoreText)}&${nameField}=${encodeURIComponent(name)}&${answersField}=${encodeURIComponent(wrongAnswersText)}`;
 
       fetch(formURL, {
         method: "POST",
