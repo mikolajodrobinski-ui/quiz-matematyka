@@ -111,7 +111,7 @@
     let questions = [];
 
     async function loadQuiz() {
-      const response = await fetch('questions.json');
+      const response = await fetch('questions2.json');
       questions = await response.json();
       const form = document.getElementById('quiz-form');
 
@@ -250,3 +250,4 @@
   </script>
 </body>
 </html>
+
