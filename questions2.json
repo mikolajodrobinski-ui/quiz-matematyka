@@ -437,7 +437,7 @@
       "C": "32 cm",
       "D": "34 cm"
     },
-    "correct": "C"
+    "correct": "A"
   },
   {
     "id": "q41",
@@ -463,7 +463,7 @@
   },
   {
     "id": "q43",
-    "question": "Który z poniższych kształtów ma oś symetrii?",
+    "question": "Który z poniższych kształtów ma najwięcej osi symetrii?",
     "options": {
       "A": "Kwadrat",
       "B": "Trapez",
