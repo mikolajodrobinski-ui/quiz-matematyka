@@ -1,0 +1,2 @@
+- licznik czas
+- wysyłanie ile czasu zajelo
