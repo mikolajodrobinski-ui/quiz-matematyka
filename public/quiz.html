@@ -5,36 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quiz matematyczny</title>
   <link rel="stylesheet" href="css/style.css" />
-  <style>
-    body { font-family: Arial, sans-serif; padding: 20px; }
-    .question { margin-bottom: 20px; }
-    .correct { color: green; font-weight: bold; }
-    .incorrect { color: red; font-weight: bold; }
-    #timer { font-size: 20px; font-weight: bold; color: darkred; text-align: center; margin-bottom: 20px; }
-    #result { font-size: 18px; font-weight: bold; margin-top: 30px; text-align: center; }
-    .buttons { display: flex; justify-content: center; gap: 20px; margin-top: 30px; flex-wrap: wrap; }
-    button { padding: 10px 20px; font-size: 16px; cursor: pointer; }
-    button:disabled { background-color: #ccc; cursor: not-allowed; }
-  </style>
 </head>
 <body>
-  
-  <h1>🧮 Quiz matematyczny</h1>
-  <a href="index.html">
-    <button style="margin-bottom: 20px;">⬅️ Wróć do menu</button>
-  </a>
-  <div id="timer">
-    ⏳ Pozostały czas: <span id="time-left">--:--</span>
-  </div>
+  <main class="quiz-container">
+    <a href="index.html">
+      <button style="margin-bottom: 20px;">⬅️ Wróć do menu</button>
+    </a>
 
-  <form id="quiz-form"></form>
+    <h1>🧠 Quiz matematyczny</h1>
 
-  <div id="result"></div>
+    <div id="time-left">Czas: 00:00</div>
 
-  <div class="buttons">
-    <button onclick="sendResult()" id="send-button">📤 Wyślij do nauczyciela</button>
-    <button onclick="submitQuiz()" id="check-button" disabled>✅ Sprawdź wynik</button>
-  </div>
+    <form id="quiz-form"></form>
+
+    <div id="result"></div>
+
+    <div class="button-row">
+      <button id="check-button" onclick="submitQuiz()">Sprawdź odpowiedzi</button>
+      <button id="send-button" onclick="sendResult()">Wyślij wynik</button>
+    </div>
+  </main>
 
   <script src="js/quiz.js"></script>
 </body>

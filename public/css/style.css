@@ -1,39 +1,58 @@
+/* Ogólne ustawienia */
 body {
   font-family: Arial, sans-serif;
   margin: 10px;
   padding: 10px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
   transition: background-color 0.3s, color 0.3s;
 }
 
+/* Kontener quizu */
+.quiz-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Nagłówek */
 h1 {
-  font-size: 1.5em;
+  font-size: 2em;
   text-align: center;
   margin-bottom: 20px;
 }
 
-.question,
-.definition {
+/* Pojedyncze pytanie w quizie */
+.question {
   margin-bottom: 25px;
-  padding: 10px;
-  border: 1px solid #ddd;
+  padding: 15px;
+  border: 2px solid #0078D4;
   border-radius: 8px;
+  background-color: #eef6ff;
+  color: #000;
+}
+
+/* Definicje matematyczne */
+.definition {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
   background-color: #f9f9f9;
   color: #000;
 }
 
+/* Linie opcji odpowiedzi */
 .option-line {
   display: block;
   margin-top: 6px;
 }
 
+/* Etykiety odpowiedzi */
 label {
   margin-left: 6px;
   font-size: 1em;
 }
 
+/* Pola wyboru i tekstowe */
 select,
 input {
   padding: 8px;
@@ -47,6 +66,7 @@ input {
   box-sizing: border-box;
 }
 
+/* Przycisk */
 button {
   display: block;
   width: 100%;
@@ -69,6 +89,15 @@ button:disabled {
   cursor: not-allowed;
 }
 
+/* Wiersz przycisków */
+.button-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Informacja zwrotna */
 .correct {
   color: green;
   font-weight: bold;
@@ -81,23 +110,40 @@ button:disabled {
   margin-top: 8px;
 }
 
+/* Wynik i czas */
 #result {
   font-size: 1.2em;
   margin-top: 30px;
   text-align: center;
 }
 
-/* Automatyczny ciemny motyw */
+#time-left {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Tryb ciemny */
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #121212;
     color: #f0f0f0;
   }
 
-  .question,
+  .quiz-container {
+    background-color: transparent;
+  }
+
+  .question {
+    background-color: #1a2a3a;
+    border-color: #3399ff;
+    color: #f0f0f0;
+  }
+
   .definition {
     background-color: #1e1e1e;
-    border-color: #333;
+    border-color: #444;
     color: #f0f0f0;
   }
 
