@@ -5,37 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Definicje matematyczne</title>
   <link rel="stylesheet" href="css/style.css" />
-
 </head>
 <body>
-  <a href="index.html">
-    <button style="margin-bottom: 20px;">⬅️ Wróć do menu</button>
-  </a>
+  <main class="quiz-container">
+    <a href="index.html">
+      <button style="margin-bottom: 20px;">⬅️ Wróć do menu</button>
+    </a>
 
-  <h1>📖 Definicje matematyczne – klasy 4–6</h1>
+    <h1>📖 Definicje matematyczne – klasy 4–6</h1>
 
-  <label for="category-select">Wybierz kategorię:</label>
-  <select id="category-select">
-    <option value="wszystkie">Wszystkie</option>
-  </select>
+    <label for="category-select">Wybierz kategorię:</label>
+    <select id="category-select">
+      <option value="wszystkie">Wszystkie</option>
+    </select>
 
-  <div id="definitions"></div>
+    <div id="definitions"></div>
+  </main>
 
   <script>
-    let allDefinitions = [
-      { term: "Liczby naturalne", description: "Liczby całkowite dodatnie: 1, 2, 3, ...", category: "Arytmetyka" },
-      { term: "Mnożenie", description: "Dodawanie tej samej liczby wielokrotnie.", category: "Arytmetyka" },
-      { term: "Dzielenie z resztą", description: "Dzielenie, w którym nie da się podzielić dokładnie.", category: "Arytmetyka" },
-      { term: "Ułamek zwykły", description: "Liczba przedstawiająca część całości, zapisana jako licznik/mianownik.", category: "Ułamki" },
-      { term: "Ułamek dziesiętny", description: "Ułamek zapisany z przecinkiem, np. 0,25.", category: "Ułamki" },
-      { term: "Kąt prosty", description: "Kąt o mierze 90 stopni.", category: "Geometria" },
-      { term: "Obwód prostokąta", description: "Suma długości wszystkich boków prostokąta.", category: "Geometria" },
-      { term: "Pole figury", description: "Powierzchnia zajmowana przez figurę geometryczną.", category: "Geometria" },
-      { term: "Średnia arytmetyczna", description: "Suma wszystkich liczb podzielona przez ich ilość.", category: "Statystyka" },
-      { term: "Diagram słupkowy", description: "Wykres przedstawiający dane za pomocą słupków.", category: "Statystyka" },
-      { term: "Procent", description: "Jedna setna całości, oznaczana symbolem %.", category: "Procenty" },
-      { term: "Rabaty", description: "Obniżki cen wyrażone w procentach.", category: "Procenty" }
-    ];
+    let allDefinitions = [];
+
+    async function loadDefinitions() {
+      try {
+        const response = await fetch('data/definicje.json');
+        allDefinitions = await response.json();
+        loadCategories();
+      } catch (error) {
+        console.error("❌ Błąd ładowania definicji:", error);
+        document.getElementById('definitions').innerHTML = "<p>Nie udało się załadować definicji.</p>";
+      }
+    }
 
     function loadCategories() {
       const categories = [...new Set(allDefinitions.map(def => def.category))];
@@ -66,12 +65,16 @@
       filtered.forEach(def => {
         const div = document.createElement('div');
         div.className = 'definition';
-        div.innerHTML = `<strong>${def.term}</strong><p>${def.description}</p><p><em>Kategoria:</em> ${def.category}</p>`;
+        div.innerHTML = `
+          <strong>${def.term}</strong>
+          <p>${def.description}</p>
+          <p><em>Kategoria:</em> ${def.category}</p>
+        `;
         container.appendChild(div);
       });
     }
 
-    loadCategories();
+    loadDefinitions();
   </script>
 </body>
 </html>

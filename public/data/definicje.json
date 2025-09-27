@@ -1,17 +1,27 @@
 [
   {
+    "term": "Liczby naturalne",
+    "description": "Liczby całkowite dodatnie: 1, 2, 3, ...",
+    "category": "Arytmetyka"
+  },
+  {
     "term": "Mnożenie",
     "description": "Dodawanie tej samej liczby wielokrotnie.",
     "category": "Arytmetyka"
   },
   {
-    "term": "Dzielenie",
-    "description": "Podział liczby na równe części.",
+    "term": "Dzielenie z resztą",
+    "description": "Dzielenie, w którym nie da się podzielić dokładnie.",
     "category": "Arytmetyka"
   },
   {
-    "term": "Ułamek",
-    "description": "Liczba przedstawiająca część całości.",
+    "term": "Ułamek zwykły",
+    "description": "Liczba przedstawiająca część całości, zapisana jako licznik/mianownik.",
+    "category": "Ułamki"
+  },
+  {
+    "term": "Ułamek dziesiętny",
+    "description": "Ułamek zapisany z przecinkiem, np. 0,25.",
     "category": "Ułamki"
   },
   {
@@ -20,8 +30,33 @@
     "category": "Geometria"
   },
   {
-    "term": "Obwód",
-    "description": "Długość granicy figury geometrycznej.",
+    "term": "Obwód prostokąta",
+    "description": "Suma długości wszystkich boków prostokąta.",
     "category": "Geometria"
+  },
+  {
+    "term": "Pole figury",
+    "description": "Powierzchnia zajmowana przez figurę geometryczną.",
+    "category": "Geometria"
+  },
+  {
+    "term": "Średnia arytmetyczna",
+    "description": "Suma wszystkich liczb podzielona przez ich ilość.",
+    "category": "Statystyka"
+  },
+  {
+    "term": "Diagram słupkowy",
+    "description": "Wykres przedstawiający dane za pomocą słupków.",
+    "category": "Statystyka"
+  },
+  {
+    "term": "Procent",
+    "description": "Jedna setna całości, oznaczana symbolem %.",
+    "category": "Procenty"
+  },
+  {
+    "term": "Rabaty",
+    "description": "Obniżki cen wyrażone w procentach.",
+    "category": "Procenty"
   }
 ]
