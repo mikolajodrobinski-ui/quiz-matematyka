@@ -25,6 +25,27 @@ async function loadQuiz() {
   });
 }
 
+function calculateScore(questions) {
+  let score = 0;
+  questions.forEach(q => {
+    const selected = document.querySelector(`input[name="${q.id}"]:checked`);
+    if (selected && selected.value === q.correct) {
+      score++;
+    }
+  });
+  return score;
+}
+
+function collectWrongAnswers(questions) {
+  return questions
+    .filter(q => {
+      const selected = document.querySelector(`input[name="${q.id}"]:checked`);
+      return !selected || selected.value !== q.correct;
+    })
+    .map(q => `❌ ${q.id}: ${q.question}`)
+    .join('\n');
+}
+
 function submitQuiz() {
   const score = calculateScore(questions);
   questions.forEach(q => {
@@ -55,6 +76,25 @@ function sendResult() {
   const scoreText = `Wynik: ${score} / ${questions.length}`;
   const wrongAnswersText = collectWrongAnswers(questions);
 
+  // 1️⃣ Wysyłanie do bazy danych na Renderze
+  fetch('https://quiz-matematyka.onrender.com/zapisz-wynik', {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      imie: name,
+      wynik: scoreText,
+      bledy: wrongAnswersText
+    })
+  })
+  .then(res => res.text())
+  .then(msg => {
+    console.log("✅ Baza danych:", msg);
+  })
+  .catch(err => {
+    console.error("❌ Błąd zapisu do bazy:", err);
+  });
+
+  // 2️⃣ Wysyłanie do Google Forms
   const formURL = "https://docs.google.com/forms/d/e/1FAIpQLScSJr1zCKu2lPTC5Tjdcp8V98cXPEQkxYbaL7jMG6qsFuqBBg/formResponse";
   const scoreField = "entry.1830411495";
   const nameField = "entry.534100336";
@@ -74,4 +114,3 @@ function sendResult() {
 }
 
 loadQuiz();
-
