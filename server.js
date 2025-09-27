@@ -12,7 +12,21 @@ const pool = new Pool({
   ssl: { rejectUnauthorized: false }
 });
 
-// Middleware
+// Tworzenie tabeli przy starcie serwera
+pool.query(`
+  CREATE TABLE IF NOT EXISTS wyniki (
+    id SERIAL PRIMARY KEY,
+    imie TEXT,
+    wynik TEXT,
+    bledy TEXT,
+    data TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  )
+`).then(() => {
+  console.log("✅ Tabela 'wyniki' gotowa");
+}).catch(err => {
+  console.error("❌ Błąd tworzenia tabeli:", err);
+});
+
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static('public'));
@@ -21,22 +35,13 @@ app.use(express.static('public'));
 app.post('/zapisz-wynik', async (req, res) => {
   const { imie, wynik, bledy } = req.body;
   try {
-    await pool.query(`
-      CREATE TABLE IF NOT EXISTS wyniki (
-        id SERIAL PRIMARY KEY,
-        imie TEXT,
-        wynik TEXT,
-        bledy TEXT,
-        data TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-      )
-    `);
     await pool.query(
       'INSERT INTO wyniki (imie, wynik, bledy) VALUES ($1, $2, $3)',
       [imie, wynik, bledy]
     );
     res.send("✅ Wynik zapisany!");
   } catch (err) {
-    console.error("Błąd zapisu:", err);
+    console.error("❌ Błąd zapisu:", err);
     res.status(500).send("❌ Błąd zapisu");
   }
 });
@@ -47,7 +52,7 @@ app.get('/wyniki', async (req, res) => {
     const result = await pool.query('SELECT * FROM wyniki ORDER BY data DESC');
     res.json(result.rows);
   } catch (err) {
-    console.error("Błąd pobierania wyników:", err);
+    console.error("❌ Błąd pobierania wyników:", err);
     res.status(500).send("❌ Błąd pobierania wyników");
   }
 });
