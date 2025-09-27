@@ -97,6 +97,7 @@ function sendResult(auto = false) {
   .then(msg => {
     console.log("✅ Baza danych:", msg);
     if (!auto) alert(msg);
+    document.getElementById('check-button').disabled = false;
   })
   .catch(err => {
     console.error("❌ Błąd zapisu do bazy:", err);
@@ -133,7 +134,8 @@ function startTimer(seconds) {
       alert("⏰ Czas minął! Quiz został zakończony.");
       submitQuiz();
       sendResult(true); // automatyczne wysłanie
-      document.getElementById('check-button').disabled = true;
+      document.getElementById('check-button').disabled = false;
+      document.getElementById('send-button').disabled = true;
     }
   }, 1000);
 }
