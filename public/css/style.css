@@ -61,18 +61,21 @@ h1 {
 .option-line {
   display: flex;
   align-items: center;
-  margin-top: 8px;
-  gap: 8px;
-}
-
-/* Etykiety odpowiedzi */
-label {
-  font-size: 1em;
+  gap: 10px;
+  margin-top: 10px;
+  padding-left: 5px;
 }
 
 /* Powiększenie kółek wyboru */
 input[type="radio"] {
   transform: scale(1.2);
+  accent-color: #0078D4;
+}
+
+/* Etykiety odpowiedzi */
+label {
+  font-size: 1em;
+  line-height: 1.4;
 }
 
 /* Pola wyboru i tekstowe */
@@ -176,6 +179,14 @@ button:disabled {
     background-color: #1e1e1e;
     color: #f0f0f0;
     border: 1px solid #444;
+  }
+
+  input[type="radio"] {
+    accent-color: #3399ff;
+  }
+
+  label {
+    color: #f0f0f0;
   }
 
   button {
