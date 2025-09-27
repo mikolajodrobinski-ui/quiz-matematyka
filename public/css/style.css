@@ -8,9 +8,11 @@ body {
 
 /* Kontener quizu */
 .quiz-container {
-  max-width: 700px;
+  max-width: 600px;
+  width: 100%;
   margin: 0 auto;
-  padding: 20px;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 /* Nagłówek */
@@ -42,14 +44,20 @@ h1 {
 
 /* Linie opcji odpowiedzi */
 .option-line {
-  display: block;
-  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  gap: 8px;
 }
 
 /* Etykiety odpowiedzi */
 label {
-  margin-left: 6px;
   font-size: 1em;
+}
+
+/* Powiększenie kółek wyboru */
+input[type="radio"] {
+  transform: scale(1.2);
 }
 
 /* Pola wyboru i tekstowe */
