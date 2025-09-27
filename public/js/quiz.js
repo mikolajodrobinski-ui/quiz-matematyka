@@ -114,21 +114,6 @@ function sendResult(auto = false) {
     console.error("❌ Błąd zapisu do bazy:", err);
   });
 
-  // Wysyłanie do Google Forms (opcjonalnie)
-  const formURL = "https://docs.google.com/forms/d/e/1FAIpQLScSJr1zCKu2lPTC5Tjdcp8V98cXPEQkxYbaL7jMG6qsFuqBBg/formResponse";
-  const scoreField = "entry.1830411495";
-  const nameField = "entry.534100336";
-  const answersField = "entry.1846742322";
-  const timeField = "entry.1234567890"; // ← zamień na prawidłowy identyfikator pola czasu
-
-  const data = `${scoreField}=${encodeURIComponent(scoreText)}&${nameField}=${encodeURIComponent(name)}&${answersField}=${encodeURIComponent(wrongAnswersText)}&${timeField}=${encodeURIComponent(durationText)}`;
-
-  fetch(formURL, {
-    method: "POST",
-    mode: "no-cors",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: data
-  });
 }
 
 function startTimer(seconds) {
