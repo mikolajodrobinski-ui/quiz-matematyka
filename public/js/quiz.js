@@ -86,8 +86,11 @@ function sendResult(auto = false) {
   const wrongAnswersText = collectWrongAnswers(questions);
 
   const durationMs = Date.now() - quizStartTime;
-  const durationMin = Math.floor(durationMs / 60000);
-  const durationText = `${durationMin} minut`;
+  const totalSec = Math.floor(durationMs / 1000);
+  const min = Math.floor(totalSec / 60);
+  const sec = totalSec % 60;
+  const durationText = `${min} min ${sec} sek`;
+
 
   // Wysyłanie do bazy danych
   fetch('https://quiz-matematyka.onrender.com/zapisz-wynik', {
