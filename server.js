@@ -19,6 +19,7 @@ pool.query(`
     imie TEXT,
     wynik TEXT,
     bledy TEXT,
+    czas TEXT,
     data TIMESTAMP DEFAULT CURRENT_TIMESTAMP
   )
 `).then(() => {
@@ -33,12 +34,12 @@ app.use(express.static('public'));
 
 // Endpoint do zapisu wyniku
 app.post('/zapisz-wynik', async (req, res) => {
-  const { imie, wynik, bledy } = req.body;
+  const { imie, wynik, bledy, czas } = req.body;
   console.log("📥 Odebrano dane:", req.body);
   try {
     await pool.query(
-      'INSERT INTO wyniki (imie, wynik, bledy) VALUES ($1, $2, $3)',
-      [imie, wynik, bledy]
+      'INSERT INTO wyniki (imie, wynik, bledy, czas) VALUES ($1, $2, $3, $4)',
+      [imie, wynik, bledy, czas]
     );
     res.send("✅ Wynik zapisany!");
   } catch (err) {
@@ -67,20 +68,6 @@ app.delete('/usun-wynik/:id', async (req, res) => {
   } catch (err) {
     console.error("❌ Błąd usuwania wpisu:", err);
     res.status(500).send("❌ Błąd usuwania wpisu");
-  }
-});
-
-// (Opcjonalnie) Testowy wpis do bazy
-app.get('/test-wpis', async (req, res) => {
-  try {
-    await pool.query(
-      'INSERT INTO wyniki (imie, wynik, bledy) VALUES ($1, $2, $3)',
-      ['Testowy Uczeń', '3 / 5', 'Pytanie 2, Pytanie 4']
-    );
-    res.send("✅ Testowy wpis dodany");
-  } catch (err) {
-    console.error("❌ Błąd testowego wpisu:", err);
-    res.status(500).send("❌ Błąd testowego wpisu");
   }
 });
 

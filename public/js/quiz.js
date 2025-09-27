@@ -1,4 +1,5 @@
 let questions = [];
+let quizStartTime = null;
 
 async function loadQuiz() {
   const response = await fetch('data/questions2.json');
@@ -24,6 +25,7 @@ async function loadQuiz() {
     form.appendChild(div);
   });
 
+  quizStartTime = Date.now();
   startTimer(questions.length * 2 * 60); // 2 minuty na pytanie
 }
 
@@ -83,6 +85,10 @@ function sendResult(auto = false) {
   const scoreText = `Wynik: ${score} / ${questions.length}`;
   const wrongAnswersText = collectWrongAnswers(questions);
 
+  const durationMs = Date.now() - quizStartTime;
+  const durationMin = Math.floor(durationMs / 60000);
+  const durationText = `${durationMin} minut`;
+
   // Wysyłanie do bazy danych
   fetch('https://quiz-matematyka.onrender.com/zapisz-wynik', {
     method: "POST",
@@ -90,7 +96,8 @@ function sendResult(auto = false) {
     body: JSON.stringify({
       imie: name,
       wynik: scoreText,
-      bledy: wrongAnswersText
+      bledy: wrongAnswersText,
+      czas: durationText
     })
   })
   .then(res => res.text())
@@ -98,18 +105,20 @@ function sendResult(auto = false) {
     console.log("✅ Baza danych:", msg);
     if (!auto) alert(msg);
     document.getElementById('check-button').disabled = false;
+    document.getElementById('send-button').disabled = true;
   })
   .catch(err => {
     console.error("❌ Błąd zapisu do bazy:", err);
   });
 
-  // Wysyłanie do Google Forms
+  // Wysyłanie do Google Forms (opcjonalnie)
   const formURL = "https://docs.google.com/forms/d/e/1FAIpQLScSJr1zCKu2lPTC5Tjdcp8V98cXPEQkxYbaL7jMG6qsFuqBBg/formResponse";
   const scoreField = "entry.1830411495";
   const nameField = "entry.534100336";
   const answersField = "entry.1846742322";
+  const timeField = "entry.1234567890"; // ← zamień na prawidłowy identyfikator pola czasu
 
-  const data = `${scoreField}=${encodeURIComponent(scoreText)}&${nameField}=${encodeURIComponent(name)}&${answersField}=${encodeURIComponent(wrongAnswersText)}`;
+  const data = `${scoreField}=${encodeURIComponent(scoreText)}&${nameField}=${encodeURIComponent(name)}&${answersField}=${encodeURIComponent(wrongAnswersText)}&${timeField}=${encodeURIComponent(durationText)}`;
 
   fetch(formURL, {
     method: "POST",

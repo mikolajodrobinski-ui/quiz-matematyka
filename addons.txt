@@ -1,6 +1,6 @@
-- licznik czas
+
 - wysyłanie ile czasu zajelo
-- jak skończy się czas wyślij powiadomienie + wynik
+
 - podzielić po 20 pytań + 20 pytań
-- SQL lite
+
 - API do OpenAI
