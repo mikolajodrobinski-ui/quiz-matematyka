@@ -71,17 +71,6 @@ app.delete('/usun-wynik/:id', async (req, res) => {
   }
 });
 
-// Tymczasowy endpoint do dodania kolumny 'czas'
-app.get('/dodaj-czas', async (req, res) => {
-  try {
-    await pool.query('ALTER TABLE wyniki ADD COLUMN czas TEXT');
-    res.send("✅ Kolumna 'czas' została dodana");
-  } catch (err) {
-    console.error("❌ Błąd ALTER TABLE:", err);
-    res.status(500).send("❌ Nie udało się dodać kolumny");
-  }
-});
-
 // Uruchomienie serwera
 app.listen(port, () => {
   console.log(`🚀 Serwer działa na porcie ${port}`);
