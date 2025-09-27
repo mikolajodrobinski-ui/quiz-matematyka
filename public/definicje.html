@@ -17,52 +17,57 @@
     <label for="category-select">Wybierz kategorię:</label>
     <select id="category-select">
       <option value="wszystkie">Wszystkie</option>
+      <option value="Arytmetyka">Arytmetyka</option>
+      <option value="Ułamki">Ułamki</option>
+      <option value="Geometria">Geometria</option>
+      <option value="Procenty">Procenty</option>
+      <option value="Statystyka">Statystyka</option>
+      <option value="Logika">Logika</option>
     </select>
 
     <div id="definitions"></div>
   </main>
 
   <script>
-    let allDefinitions = [];
+    const categoryFiles = {
+      "Arytmetyka": "arytmetyka.json",
+      "Ułamki": "ulamki.json",
+      "Geometria": "geometria.json",
+      "Procenty": "procenty.json",
+      "Statystyka": "statystyka.json",
+      "Logika": "logika.json"
+    };
 
-    async function loadDefinitions() {
+    async function loadDefinitions(category) {
+      const container = document.getElementById('definitions');
+      container.innerHTML = "<p>⏳ Ładowanie definicji...</p>";
+
       try {
-        const response = await fetch('data/definicje.json');
-        allDefinitions = await response.json();
-        loadCategories();
+        let definitions = [];
+
+        if (category === "wszystkie") {
+          const allPromises = Object.values(categoryFiles).map(file =>
+            fetch(`data/${file}`).then(res => res.json())
+          );
+          const results = await Promise.all(allPromises);
+          definitions = results.flat();
+        } else {
+          const response = await fetch(`data/${categoryFiles[category]}`);
+          definitions = await response.json();
+        }
+
+        showDefinitions(definitions);
       } catch (error) {
         console.error("❌ Błąd ładowania definicji:", error);
-        document.getElementById('definitions').innerHTML = "<p>Nie udało się załadować definicji.</p>";
+        container.innerHTML = "<p>Nie udało się załadować definicji.</p>";
       }
     }
 
-    function loadCategories() {
-      const categories = [...new Set(allDefinitions.map(def => def.category))];
-      const select = document.getElementById('category-select');
-
-      categories.forEach(cat => {
-        const option = document.createElement('option');
-        option.value = cat;
-        option.textContent = cat;
-        select.appendChild(option);
-      });
-
-      select.addEventListener('change', () => {
-        showDefinitions(select.value);
-      });
-
-      showDefinitions("wszystkie");
-    }
-
-    function showDefinitions(category) {
+    function showDefinitions(definitions) {
       const container = document.getElementById('definitions');
       container.innerHTML = "";
 
-      const filtered = category === "wszystkie"
-        ? allDefinitions
-        : allDefinitions.filter(def => def.category === category);
-
-      filtered.forEach(def => {
+      definitions.forEach(def => {
         const div = document.createElement('div');
         div.className = 'definition';
         div.innerHTML = `
@@ -74,7 +79,12 @@
       });
     }
 
-    loadDefinitions();
+    document.getElementById('category-select').addEventListener('change', e => {
+      loadDefinitions(e.target.value);
+    });
+
+    // Ładowanie domyślne
+    loadDefinitions("wszystkie");
   </script>
 </body>
 </html>

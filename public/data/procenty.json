@@ -1,0 +1,22 @@
+[
+  { "term": "Procent", "description": "Jedna setna całości, oznaczana symbolem %.", "category": "Procenty" },
+  { "term": "Obliczanie procentu", "description": "Wyznaczanie części liczby na podstawie procentu.", "category": "Procenty" },
+  { "term": "Procent składany", "description": "Procent naliczany od wartości powiększonej o wcześniejsze odsetki.", "category": "Procenty" },
+  { "term": "Rabaty", "description": "Obniżki cen wyrażone w procentach.", "category": "Procenty" },
+  { "term": "Podatek VAT", "description": "Dodatkowy koszt wyrażony w procentach.", "category": "Procenty" },
+  { "term": "Zysk procentowy", "description": "Wzrost wartości wyrażony w procentach.", "category": "Procenty" },
+  { "term": "Strata procentowa", "description": "Spadek wartości wyrażony w procentach.", "category": "Procenty" },
+  { "term": "Cena po rabacie", "description": "Cena po odjęciu procentowej zniżki.", "category": "Procenty" },
+  { "term": "Cena przed rabatem", "description": "Cena przed zastosowaniem zniżki procentowej.", "category": "Procenty" },
+  { "term": "Procent jako ułamek", "description": "Procent zapisany jako ułamek zwykły lub dziesiętny.", "category": "Procenty" },
+  { "term": "100%", "description": "Całość, czyli pełna wartość.", "category": "Procenty" },
+  { "term": "50%", "description": "Połowa wartości.", "category": "Procenty" },
+  { "term": "25%", "description": "Jedna czwarta wartości.", "category": "Procenty" },
+  { "term": "10%", "description": "Jedna dziesiąta wartości.", "category": "Procenty" },
+  { "term": "1%", "description": "Jedna setna wartości.", "category": "Procenty" },
+  { "term": "Wzrost procentowy", "description": "Zwiększenie wartości o określony procent.", "category": "Procenty" },
+  { "term": "Zmiana procentowa", "description": "Różnica między dwiema wartościami wyrażona w procentach.", "category": "Procenty" },
+  { "term": "Obliczanie procentu z liczby", "description": "Mnożenie liczby przez procent zapisany jako ułamek.", "category": "Procenty" },
+  { "term": "Obliczanie liczby na podstawie procentu", "description": "Dzielenie wartości procentowej przez procent.", "category": "Procenty" },
+  { "term": "Procent w życiu codziennym", "description": "Zastosowanie procentów w zakupach, podatkach i oszczędzaniu.", "category": "Procenty" }
+]

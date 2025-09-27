@@ -1,0 +1,22 @@
+[
+  { "term": "Punkt", "description": "Podstawowy element geometrii, nie ma wymiarów.", "category": "Geometria" },
+  { "term": "Prosta", "description": "Nieskończony ciąg punktów w jednej linii.", "category": "Geometria" },
+  { "term": "Odcinek", "description": "Część prostej ograniczona dwoma punktami.", "category": "Geometria" },
+  { "term": "Kąt prosty", "description": "Kąt o mierze 90°.", "category": "Geometria" },
+  { "term": "Kąt ostry", "description": "Kąt mniejszy niż 90°.", "category": "Geometria" },
+  { "term": "Kąt rozwarty", "description": "Kąt większy niż 90°, ale mniejszy niż 180°.", "category": "Geometria" },
+  { "term": "Trójkąt", "description": "Figura o trzech bokach i trzech kątach.", "category": "Geometria" },
+  { "term": "Prostokąt", "description": "Czworokąt o czterech kątach prostych.", "category": "Geometria" },
+  { "term": "Kwadrat", "description": "Prostokąt o równych bokach.", "category": "Geometria" },
+  { "term": "Równoległobok", "description": "Czworokąt o dwóch parach boków równoległych.", "category": "Geometria" },
+  { "term": "Romb", "description": "Równoległobok o równych bokach.", "category": "Geometria" },
+  { "term": "Koło", "description": "Zbiór punktów w równej odległości od środka.", "category": "Geometria" },
+  { "term": "Średnica", "description": "Odcinek przechodzący przez środek koła i łączący dwa punkty na obwodzie.", "category": "Geometria" },
+  { "term": "Promień", "description": "Odcinek od środka koła do punktu na obwodzie.", "category": "Geometria" },
+  { "term": "Obwód figury", "description": "Suma długości wszystkich boków figury.", "category": "Geometria" },
+  { "term": "Pole powierzchni", "description": "Powierzchnia zajmowana przez figurę geometryczną.", "category": "Geometria" },
+  { "term": "Symetria osiowa", "description": "Odbicie figury względem osi.", "category": "Geometria" },
+  { "term": "Symetria środkowa", "description": "Odbicie figury względem punktu.", "category": "Geometria" },
+  { "term": "Bryła", "description": "Figura przestrzenna, np. sześcian, walec.", "category": "Geometria" },
+  { "term": "Siatka bryły", "description": "Rozłożona powierzchnia bryły pokazująca jej ściany.", "category": "Geometria" }
+]

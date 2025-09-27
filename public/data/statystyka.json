@@ -1,0 +1,22 @@
+[
+  { "term": "Średnia arytmetyczna", "description": "Suma wszystkich liczb podzielona przez ich ilość.", "category": "Statystyka" },
+  { "term": "Mediana", "description": "Środkowa wartość uporządkowanego zbioru danych.", "category": "Statystyka" },
+  { "term": "Moda", "description": "Wartość występująca najczęściej w zbiorze danych.", "category": "Statystyka" },
+  { "term": "Rozstęp", "description": "Różnica między największą a najmniejszą wartością w zbiorze.", "category": "Statystyka" },
+  { "term": "Diagram słupkowy", "description": "Wykres przedstawiający dane za pomocą słupków.", "category": "Statystyka" },
+  { "term": "Diagram kołowy", "description": "Wykres przedstawiający dane jako części koła.", "category": "Statystyka" },
+  { "term": "Tabela danych", "description": "Zestawienie informacji w kolumnach i wierszach.", "category": "Statystyka" },
+  { "term": "Zbiór danych", "description": "Grupa wartości liczbowych poddanych analizie.", "category": "Statystyka" },
+  { "term": "Najczęstsza wartość", "description": "Wartość, która pojawia się najwięcej razy.", "category": "Statystyka" },
+  { "term": "Rozrzut danych", "description": "Zakres między najmniejszą a największą wartością.", "category": "Statystyka" },
+  { "term": "Wartość minimalna", "description": "Najmniejsza liczba w zbiorze danych.", "category": "Statystyka" },
+  { "term": "Wartość maksymalna", "description": "Największa liczba w zbiorze danych.", "category": "Statystyka" },
+  { "term": "Liczność", "description": "Liczba wystąpień danej wartości w zbiorze.", "category": "Statystyka" },
+  { "term": "Częstość", "description": "Procentowy udział danej wartości w zbiorze.", "category": "Statystyka" },
+  { "term": "Średnia ważona", "description": "Średnia uwzględniająca wagę poszczególnych wartości.", "category": "Statystyka" },
+  { "term": "Grupowanie danych", "description": "Łączenie danych w przedziały.", "category": "Statystyka" },
+  { "term": "Przedział liczbowy", "description": "Zakres wartości w grupie danych.", "category": "Statystyka" },
+  { "term": "Histogram", "description": "Wykres słupkowy przedstawiający rozkład danych.", "category": "Statystyka" },
+  { "term": "Analiza danych", "description": "Badanie i interpretacja informacji liczbowych.", "category": "Statystyka" },
+  { "term": "Wnioski statystyczne", "description": "Informacje uzyskane na podstawie danych.", "category": "Statystyka" }
+]

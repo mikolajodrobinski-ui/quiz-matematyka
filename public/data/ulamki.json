@@ -1,0 +1,22 @@
+[
+  { "term": "Ułamek zwykły", "description": "Liczba w postaci licznik/mianownik.", "category": "Ułamki" },
+  { "term": "Ułamek dziesiętny", "description": "Ułamek zapisany z przecinkiem, np. 0,5.", "category": "Ułamki" },
+  { "term": "Licznik", "description": "Górna liczba w ułamku – ile części mamy.", "category": "Ułamki" },
+  { "term": "Mianownik", "description": "Dolna liczba w ułamku – na ile części dzielimy.", "category": "Ułamki" },
+  { "term": "Skracanie ułamków", "description": "Zmniejszanie licznika i mianownika przez wspólny dzielnik.", "category": "Ułamki" },
+  { "term": "Rozszerzanie ułamków", "description": "Mnożenie licznika i mianownika przez tę samą liczbę.", "category": "Ułamki" },
+  { "term": "Ułamki równoważne", "description": "Ułamki o tej samej wartości, np. 1/2 i 2/4.", "category": "Ułamki" },
+  { "term": "Porównywanie ułamków", "description": "Określanie, który ułamek jest większy lub mniejszy.", "category": "Ułamki" },
+  { "term": "Dodawanie ułamków", "description": "Łączenie dwóch ułamków w jeden.", "category": "Ułamki" },
+  { "term": "Odejmowanie ułamków", "description": "Zmniejszanie jednego ułamka o drugi.", "category": "Ułamki" },
+  { "term": "Mnożenie ułamków", "description": "Iloczyn dwóch ułamków.", "category": "Ułamki" },
+  { "term": "Dzielenie ułamków", "description": "Iloraz dwóch ułamków.", "category": "Ułamki" },
+  { "term": "Ułamek większy niż 1", "description": "Ułamek, którego licznik jest większy niż mianownik.", "category": "Ułamki" },
+  { "term": "Ułamek mniejszy niż 1", "description": "Ułamek, którego licznik jest mniejszy niż mianownik.", "category": "Ułamki" },
+  { "term": "Ułamek dziesiętny okresowy", "description": "Ułamek z powtarzającą się częścią po przecinku.", "category": "Ułamki" },
+  { "term": "Zamiana ułamka zwykłego na dziesiętny", "description": "Dzielenie licznika przez mianownik.", "category": "Ułamki" },
+  { "term": "Zamiana ułamka dziesiętnego na zwykły", "description": "Zapisanie ułamka jako licznik/mianownik.", "category": "Ułamki" },
+  { "term": "Ułamek jako część całości", "description": "Ułamek pokazuje, ile części z całości mamy.", "category": "Ułamki" },
+  { "term": "Ułamek jako wynik dzielenia", "description": "Ułamek to wynik podziału jednej liczby przez drugą.", "category": "Ułamki" },
+  { "term": "Ułamek jako proporcja", "description": "Ułamek pokazuje stosunek dwóch wielkości.", "category": "Ułamki" }
+]
