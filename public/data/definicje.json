@@ -1,62 +1,41 @@
 [
-  {
-    "term": "Liczby naturalne",
-    "description": "Liczby całkowite dodatnie: 1, 2, 3, ...",
-    "category": "Arytmetyka"
-  },
-  {
-    "term": "Mnożenie",
-    "description": "Dodawanie tej samej liczby wielokrotnie.",
-    "category": "Arytmetyka"
-  },
-  {
-    "term": "Dzielenie z resztą",
-    "description": "Dzielenie, w którym nie da się podzielić dokładnie.",
-    "category": "Arytmetyka"
-  },
-  {
-    "term": "Ułamek zwykły",
-    "description": "Liczba przedstawiająca część całości, zapisana jako licznik/mianownik.",
-    "category": "Ułamki"
-  },
-  {
-    "term": "Ułamek dziesiętny",
-    "description": "Ułamek zapisany z przecinkiem, np. 0,25.",
-    "category": "Ułamki"
-  },
-  {
-    "term": "Kąt prosty",
-    "description": "Kąt o mierze 90 stopni.",
-    "category": "Geometria"
-  },
-  {
-    "term": "Obwód prostokąta",
-    "description": "Suma długości wszystkich boków prostokąta.",
-    "category": "Geometria"
-  },
-  {
-    "term": "Pole figury",
-    "description": "Powierzchnia zajmowana przez figurę geometryczną.",
-    "category": "Geometria"
-  },
-  {
-    "term": "Średnia arytmetyczna",
-    "description": "Suma wszystkich liczb podzielona przez ich ilość.",
-    "category": "Statystyka"
-  },
-  {
-    "term": "Diagram słupkowy",
-    "description": "Wykres przedstawiający dane za pomocą słupków.",
-    "category": "Statystyka"
-  },
-  {
-    "term": "Procent",
-    "description": "Jedna setna całości, oznaczana symbolem %.",
-    "category": "Procenty"
-  },
-  {
-    "term": "Rabaty",
-    "description": "Obniżki cen wyrażone w procentach.",
-    "category": "Procenty"
-  }
+  { "term": "Liczby parzyste", "description": "Liczby podzielne przez 2, np. 2, 4, 6.", "category": "Arytmetyka" },
+  { "term": "Liczby nieparzyste", "description": "Liczby, które nie dzielą się przez 2 bez reszty.", "category": "Arytmetyka" },
+  { "term": "Dodawanie", "description": "Łączenie dwóch lub więcej liczb w jedną sumę.", "category": "Arytmetyka" },
+  { "term": "Odejmowanie", "description": "Zmniejszanie jednej liczby o drugą.", "category": "Arytmetyka" },
+  { "term": "Mnożenie", "description": "Dodawanie tej samej liczby wielokrotnie.", "category": "Arytmetyka" },
+  { "term": "Dzielenie", "description": "Rozdzielanie liczby na równe części.", "category": "Arytmetyka" },
+  { "term": "Reszta z dzielenia", "description": "Liczba, która zostaje po niedokładnym podziale.", "category": "Arytmetyka" },
+  { "term": "Porównywanie liczb", "description": "Określanie, która liczba jest większa lub mniejsza.", "category": "Arytmetyka" },
+  { "term": "Szacowanie", "description": "Przybliżone obliczenie wyniku.", "category": "Arytmetyka" },
+  { "term": "Ułamek zwykły", "description": "Liczba w postaci licznik/mianownik.", "category": "Ułamki" },
+  { "term": "Ułamek dziesiętny", "description": "Ułamek zapisany z przecinkiem, np. 0,5.", "category": "Ułamki" },
+  { "term": "Licznik", "description": "Górna liczba w ułamku – ile części mamy.", "category": "Ułamki" },
+  { "term": "Mianownik", "description": "Dolna liczba w ułamku – na ile części dzielimy.", "category": "Ułamki" },
+  { "term": "Skracanie ułamków", "description": "Zmniejszanie licznika i mianownika przez wspólny dzielnik.", "category": "Ułamki" },
+  { "term": "Rozszerzanie ułamków", "description": "Mnożenie licznika i mianownika przez tę samą liczbę.", "category": "Ułamki" },
+  { "term": "Ułamki równoważne", "description": "Ułamki o tej samej wartości, np. 1/2 i 2/4.", "category": "Ułamki" },
+  { "term": "Kąt prosty", "description": "Kąt o mierze 90°.", "category": "Geometria" },
+  { "term": "Kąt ostry", "description": "Kąt mniejszy niż 90°.", "category": "Geometria" },
+  { "term": "Kąt rozwarty", "description": "Kąt większy niż 90°, ale mniejszy niż 180°.", "category": "Geometria" },
+  { "term": "Prostokąt", "description": "Figura o czterech kątach prostych.", "category": "Geometria" },
+  { "term": "Kwadrat", "description": "Prostokąt o równych bokach.", "category": "Geometria" },
+  { "term": "Trójkąt", "description": "Figura o trzech bokach.", "category": "Geometria" },
+  { "term": "Obwód", "description": "Suma długości wszystkich boków figury.", "category": "Geometria" },
+  { "term": "Pole powierzchni", "description": "Powierzchnia zajmowana przez figurę.", "category": "Geometria" },
+  { "term": "Środek symetrii", "description": "Punkt, względem którego figura jest symetryczna.", "category": "Geometria" },
+  { "term": "Procent", "description": "Jedna setna całości, oznaczana symbolem %.", "category": "Procenty" },
+  { "term": "Rabaty", "description": "Obniżki cen wyrażone w procentach.", "category": "Procenty" },
+  { "term": "Podatek VAT", "description": "Dodatkowy koszt wyrażony w procentach.", "category": "Procenty" },
+  { "term": "Zysk procentowy", "description": "Wzrost wartości wyrażony w procentach.", "category": "Procenty" },
+  { "term": "Obliczanie procentu", "description": "Wyznaczanie części liczby na podstawie procentu.", "category": "Procenty" },
+  { "term": "Średnia arytmetyczna", "description": "Suma liczb podzielona przez ich ilość.", "category": "Statystyka" },
+  { "term": "Diagram słupkowy", "description": "Wykres zbudowany ze słupków.", "category": "Statystyka" },
+  { "term": "Tabela danych", "description": "Zestawienie informacji w kolumnach i wierszach.", "category": "Statystyka" },
+  { "term": "Najczęstsza wartość", "description": "Wartość występująca najczęściej w zbiorze.", "category": "Statystyka" },
+  { "term": "Rozrzut danych", "description": "Zakres między najmniejszą a największą wartością.", "category": "Statystyka" },
+  { "term": "Równanie", "description": "Wyrażenie z niewiadomą, np. x + 3 = 5.", "category": "Logika" },
+  { "term": "Niewiadoma", "description": "Liczba, którą trzeba obliczyć.", "category": "Logika" },
+  { "term": "Zadanie tekstowe", "description": "Problem matematyczny opisany słownie.", "category": "Logika" },
+  { "term": "Strategia rozwiązania", "description": "Sposób podejścia do zadania.", "category": "Logika" }
 ]
