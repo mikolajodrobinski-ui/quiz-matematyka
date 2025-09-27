@@ -34,6 +34,19 @@ label {
   font-size: 1em;
 }
 
+select,
+input {
+  padding: 8px;
+  margin: 10px 0;
+  font-size: 16px;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 button {
   display: block;
   width: 100%;
@@ -86,6 +99,13 @@ button:disabled {
     background-color: #1e1e1e;
     border-color: #333;
     color: #f0f0f0;
+  }
+
+  select,
+  input {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+    border: 1px solid #444;
   }
 
   button {
