@@ -17,6 +17,18 @@
     <a href="definicje.html">
       <button>📖 Przeglądaj definicje matematyczne</button>
     </a>
+    <button onclick="sprawdzHaslo()">📊 Wyniki</button>
   </div>
+
+  <script>
+    function sprawdzHaslo() {
+      const haslo = prompt("🔐 Podaj hasło nauczyciela:");
+      if (haslo === "notsecret") {
+        window.location.href = "wyniki.html";
+      } else {
+        alert("❌ Nieprawidłowe hasło.");
+      }
+    }
+  </script>
 </body>
 </html>
