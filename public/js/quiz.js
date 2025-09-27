@@ -23,6 +23,8 @@ async function loadQuiz() {
 
     form.appendChild(div);
   });
+
+  startTimer(questions.length * 2 * 60); // 2 minuty na pytanie
 }
 
 function calculateScore(questions) {
@@ -65,18 +67,23 @@ function submitQuiz() {
   result.scrollIntoView({ behavior: 'smooth' });
 }
 
-function sendResult() {
-  const name = prompt("Podaj swoje imię:");
-  if (!name) {
-    alert("Imię jest wymagane.");
-    return;
+function sendResult(auto = false) {
+  let name;
+  if (auto) {
+    name = "Anonim (auto)";
+  } else {
+    name = prompt("Podaj swoje imię:");
+    if (!name) {
+      alert("Imię jest wymagane.");
+      return;
+    }
   }
 
   const score = calculateScore(questions);
   const scoreText = `Wynik: ${score} / ${questions.length}`;
   const wrongAnswersText = collectWrongAnswers(questions);
 
-  // 1️⃣ Wysyłanie do bazy danych na Renderze
+  // Wysyłanie do bazy danych
   fetch('https://quiz-matematyka.onrender.com/zapisz-wynik', {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -89,12 +96,13 @@ function sendResult() {
   .then(res => res.text())
   .then(msg => {
     console.log("✅ Baza danych:", msg);
+    if (!auto) alert(msg);
   })
   .catch(err => {
     console.error("❌ Błąd zapisu do bazy:", err);
   });
 
-  // 2️⃣ Wysyłanie do Google Forms
+  // Wysyłanie do Google Forms
   const formURL = "https://docs.google.com/forms/d/e/1FAIpQLScSJr1zCKu2lPTC5Tjdcp8V98cXPEQkxYbaL7jMG6qsFuqBBg/formResponse";
   const scoreField = "entry.1830411495";
   const nameField = "entry.534100336";
@@ -108,9 +116,26 @@ function sendResult() {
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: data
   });
+}
 
-  alert("✅ Wynik został wysłany!");
-  document.getElementById('check-button').disabled = false;
+function startTimer(seconds) {
+  const timeDisplay = document.getElementById("time-left");
+  let remaining = seconds;
+
+  const interval = setInterval(() => {
+    const min = Math.floor(remaining / 60);
+    const sec = remaining % 60;
+    timeDisplay.textContent = `${min}:${sec.toString().padStart(2, '0')}`;
+    remaining--;
+
+    if (remaining < 0) {
+      clearInterval(interval);
+      alert("⏰ Czas minął! Quiz został zakończony.");
+      submitQuiz();
+      sendResult(true); // automatyczne wysłanie
+      document.getElementById('check-button').disabled = true;
+    }
+  }, 1000);
 }
 
 loadQuiz();

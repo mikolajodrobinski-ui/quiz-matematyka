@@ -3,22 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quiz matematyczny – Klasa 4–5</title>
+  <title>Quiz matematyczny</title>
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .question { margin-bottom: 20px; }
+    .correct { color: green; font-weight: bold; }
+    .incorrect { color: red; font-weight: bold; }
+    #timer { font-size: 20px; font-weight: bold; color: darkred; text-align: center; margin-bottom: 20px; }
+    #result { font-size: 18px; font-weight: bold; margin-top: 30px; text-align: center; }
+    button { padding: 10px 20px; font-size: 16px; margin-top: 20px; display: block; margin-left: auto; margin-right: auto; }
+  </style>
 </head>
 <body>
-  <a href="index.html">
-    <button style="margin-bottom: 20px;">⬅️ Wróć do menu</button>
-  </a>
+  <h1>🧮 Quiz matematyczny</h1>
 
-  <h1>📱 Quiz matematyczny – Klasa 4–5</h1>
+  <div id="timer">
+    ⏳ Pozostały czas: <span id="time-left">--:--</span>
+  </div>
 
   <form id="quiz-form"></form>
-  <button onclick="sendResult()">Wyślij wynik do nauczyciela</button>
-  <button id="check-button" onclick="submitQuiz()" disabled>Sprawdź wszystkie odpowiedzi</button>
+
   <div id="result"></div>
 
-  <script src="js/utils.js"></script>
+  <button id="check-button" onclick="submitQuiz(); sendResult();">✅ Zakończ quiz</button>
+
   <script src="js/quiz.js"></script>
 </body>
 </html>
