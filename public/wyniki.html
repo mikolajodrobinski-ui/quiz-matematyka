@@ -5,45 +5,71 @@
   <title>Wyniki quizu</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
     table { border-collapse: collapse; width: 100%; margin-top: 20px; }
     th, td { border: 1px solid #ccc; padding: 8px; text-align: left; vertical-align: top; }
     th { background-color: #f0f0f0; }
     pre { white-space: pre-wrap; word-wrap: break-word; }
+    button.usun { background-color: #e74c3c; color: white; border: none; padding: 5px 10px; cursor: pointer; }
+    button.usun:hover { background-color: #c0392b; }
   </style>
 </head>
 <body>
   <h1>📊 Wyniki quizu</h1>
-  <table id="results-table">
+  <div id="access-denied" style="color:red; display:none;">❌ Dostęp zabroniony – nieprawidłowe hasło.</div>
+  <table id="results-table" style="display:none;">
     <thead>
       <tr>
+        <th>ID</th>
         <th>Imię</th>
         <th>Wynik</th>
         <th>Błędy</th>
         <th>Data</th>
+        <th>Akcja</th>
       </tr>
     </thead>
     <tbody></tbody>
   </table>
 
   <script>
-    fetch('/wyniki')
-      .then(res => res.json())
-      .then(data => {
-        const tbody = document.querySelector('#results-table tbody');
-        data.forEach(entry => {
-          const row = document.createElement('tr');
-          row.innerHTML = `
-            <td>${entry.imie}</td>
-            <td>${entry.wynik}</td>
-            <td><pre>${entry.bledy}</pre></td>
-            <td>${new Date(entry.data).toLocaleString()}</td>
-          `;
-          tbody.appendChild(row);
+    const haslo = prompt("🔐 Podaj hasło nauczyciela:");
+    if (haslo === "tajne123") {
+      document.getElementById("results-table").style.display = "table";
+      fetch('/wyniki')
+        .then(res => res.json())
+        .then(data => {
+          const tbody = document.querySelector('#results-table tbody');
+          data.forEach(entry => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+              <td>${entry.id}</td>
+              <td>${entry.imie}</td>
+              <td>${entry.wynik}</td>
+              <td><pre>${entry.bledy}</pre></td>
+              <td>${new Date(entry.data).toLocaleString()}</td>
+              <td><button class="usun" onclick="usunWpis(${entry.id})">Usuń</button></td>
+            `;
+            tbody.appendChild(row);
+          });
         });
-      })
-      .catch(err => {
-        console.error("❌ Błąd ładowania wyników:", err);
-      });
+    } else {
+      document.getElementById("access-denied").style.display = "block";
+    }
+
+    function usunWpis(id) {
+      if (confirm("Czy na pewno chcesz usunąć wpis ID " + id + "?")) {
+        fetch('/usun-wynik/' + id, { method: 'DELETE' })
+          .then(res => res.text())
+          .then(msg => {
+            alert(msg);
+            location.reload();
+          })
+          .catch(err => {
+            console.error("❌ Błąd usuwania:", err);
+            alert("❌ Nie udało się usunąć wpisu.");
+          });
+      }
+    }
   </script>
 </body>
 </html>
