@@ -2,24 +2,25 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <title>Wyniki quizu</title>
+  <title>Panel nauczyciela – wyniki quizu</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
     body { font-family: Arial, sans-serif; padding: 20px; }
+    h1 { text-align: center; }
     table { border-collapse: collapse; width: 100%; margin-top: 20px; }
     th, td { border: 1px solid #ccc; padding: 8px; text-align: left; vertical-align: top; }
     th { background-color: #f0f0f0; }
     pre { white-space: pre-wrap; word-wrap: break-word; }
     button.usun { background-color: #e74c3c; color: white; border: none; padding: 5px 10px; cursor: pointer; }
     button.usun:hover { background-color: #c0392b; }
+    #access-denied { color: red; text-align: center; margin-top: 20px; }
   </style>
 </head>
 <body>
-  <a href="index.html">
-    <button style="margin-bottom: 20px;">⬅️ Wróć do menu</button>
-  </a>
-  <h1>📊 Wyniki quizu</h1>
-  <div id="access-denied" style="color:red; display:none;">❌ Dostęp zabroniony – nieprawidłowe hasło.</div>
+  <h1>📊 Panel nauczyciela – wyniki quizu</h1>
+
+  <div id="access-denied" style="display:none;">❌ Dostęp zabroniony – nieprawidłowe hasło.</div>
+
   <table id="results-table" style="display:none;">
     <thead>
       <tr>
@@ -27,6 +28,7 @@
         <th>Imię</th>
         <th>Wynik</th>
         <th>Błędy</th>
+        <th>Czas</th>
         <th>Data</th>
         <th>Akcja</th>
       </tr>
@@ -36,7 +38,7 @@
 
   <script>
     const haslo = prompt("🔐 Podaj hasło nauczyciela:");
-    if (haslo === "notsecret") {
+    if (haslo === "tajne123") {
       document.getElementById("results-table").style.display = "table";
       fetch('/wyniki')
         .then(res => res.json())
@@ -49,6 +51,7 @@
               <td>${entry.imie}</td>
               <td>${entry.wynik}</td>
               <td><pre>${entry.bledy}</pre></td>
+              <td>${entry.czas || '-'}</td>
               <td>${new Date(entry.data).toLocaleString()}</td>
               <td><button class="usun" onclick="usunWpis(${entry.id})">Usuń</button></td>
             `;
