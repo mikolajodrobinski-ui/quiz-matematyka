@@ -6,8 +6,9 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Kontener quizu */
-.quiz-container {
+/* Kontenery stron */
+.quiz-container,
+.main-menu {
   max-width: 600px;
   width: 100%;
   margin: 0 auto;
@@ -15,11 +16,25 @@ body {
   box-sizing: border-box;
 }
 
-/* Nagłówek */
+/* Nagłówki */
 h1 {
   font-size: 2em;
   text-align: center;
   margin-bottom: 20px;
+}
+
+/* Wprowadzenie na stronie głównej */
+.intro {
+  font-size: 1.1em;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Przyciskowe menu na stronie głównej */
+.menu-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 /* Pojedyncze pytanie w quizie */
@@ -139,7 +154,8 @@ button:disabled {
     color: #f0f0f0;
   }
 
-  .quiz-container {
+  .quiz-container,
+  .main-menu {
     background-color: transparent;
   }
 
