@@ -38,7 +38,7 @@
 
   <script>
     const haslo = prompt("🔐 Podaj hasło nauczyciela:");
-    if (haslo === "tajne123") {
+    if (haslo === "notsecret") {
       document.getElementById("results-table").style.display = "table";
       fetch('/wyniki')
         .then(res => res.json())
