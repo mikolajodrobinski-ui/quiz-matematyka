@@ -1,0 +1,22 @@
+[
+  { "term": "Liczby parzyste", "description": "Liczby podzielne przez 2, np. 2, 4, 6.", "category": "Arytmetyka" },
+  { "term": "Liczby nieparzyste", "description": "Liczby, które nie dzielą się przez 2 bez reszty.", "category": "Arytmetyka" },
+  { "term": "Dodawanie", "description": "Łączenie dwóch lub więcej liczb w jedną sumę.", "category": "Arytmetyka" },
+  { "term": "Odejmowanie", "description": "Zmniejszanie jednej liczby o drugą.", "category": "Arytmetyka" },
+  { "term": "Mnożenie", "description": "Dodawanie tej samej liczby wielokrotnie.", "category": "Arytmetyka" },
+  { "term": "Dzielenie", "description": "Rozdzielanie liczby na równe części.", "category": "Arytmetyka" },
+  { "term": "Reszta z dzielenia", "description": "Liczba, która zostaje po niedokładnym podziale.", "category": "Arytmetyka" },
+  { "term": "Porównywanie liczb", "description": "Określanie, która liczba jest większa lub mniejsza.", "category": "Arytmetyka" },
+  { "term": "Szacowanie", "description": "Przybliżone obliczenie wyniku.", "category": "Arytmetyka" },
+  { "term": "Liczby rzymskie", "description": "System zapisu liczb za pomocą liter, np. V = 5.", "category": "Arytmetyka" },
+  { "term": "Kolejność działań", "description": "Zasady wykonywania działań w odpowiedniej kolejności.", "category": "Arytmetyka" },
+  { "term": "Działania pisemne", "description": "Obliczenia wykonywane krok po kroku na papierze.", "category": "Arytmetyka" },
+  { "term": "Liczby całkowite", "description": "Liczby dodatnie, ujemne i zero.", "category": "Arytmetyka" },
+  { "term": "Liczby naturalne", "description": "Liczby całkowite dodatnie: 1, 2, 3, ...", "category": "Arytmetyka" },
+  { "term": "Zera w liczbach", "description": "Cyfra zero może oznaczać brak jednostek.", "category": "Arytmetyka" },
+  { "term": "Zaokrąglanie", "description": "Zastępowanie liczby przybliżoną wartością.", "category": "Arytmetyka" },
+  { "term": "Dzielenie pisemne", "description": "Metoda dzielenia liczby krok po kroku.", "category": "Arytmetyka" },
+  { "term": "Mnożenie pisemne", "description": "Metoda mnożenia liczby krok po kroku.", "category": "Arytmetyka" },
+  { "term": "Suma", "description": "Wynik dodawania.", "category": "Arytmetyka" },
+  { "term": "Różnica", "description": "Wynik odejmowania.", "category": "Arytmetyka" }
+]

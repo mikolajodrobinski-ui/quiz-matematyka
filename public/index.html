@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu główne – Quiz matematyczny</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main class="main-menu">
+    <h1>📚 Kwizmat!</h1>
+    <p class="intro">Choose your destiny:</p>
+
+    <div class="menu-buttons">
+      <a href="quiz.html">
+        <button>🧮 Rozwiąż quiz matematyczny</button>
+      </a>
+      <a href="definicje.html">
+        <button>📖 Przeglądaj definicje matematyczne</button>
+      </a>
+      <button onclick="sprawdzHaslo()">📊 Wyniki</button>
+    </div>
+  </main>
+
+  <script>
+    function sprawdzHaslo() {
+      const haslo = prompt("🔐 Podaj hasło nauczyciela:");
+      if (haslo === "notsecret") {
+        window.location.href = "wyniki.html";
+      } else {
+        alert("❌ Nieprawidłowe hasło.");
+      }
+    }
+  </script>
+</body>
+
+</html>

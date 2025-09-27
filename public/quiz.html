@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz matematyczny</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main class="quiz-container">
+    <a href="index.html">
+      <button style="margin-bottom: 20px;">⬅️ Wróć do menu</button>
+    </a>
+
+    <h1>🧠 Quiz matematyczny</h1>
+
+    <div id="time-left">Czas: 00:00</div>
+
+    <form id="quiz-form"></form>
+
+    <div id="result"></div>
+
+    <div class="button-row">
+      <button id="check-button" onclick="submitQuiz()">Sprawdź odpowiedzi</button>
+      <button id="send-button" onclick="sendResult()">Wyślij wynik</button>
+    </div>
+  </main>
+
+  <script src="js/quiz.js"></script>
+</body>
+</html>

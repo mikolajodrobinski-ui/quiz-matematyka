@@ -1,0 +1,22 @@
+[
+  { "term": "Równanie", "description": "Wyrażenie z niewiadomą, np. x + 3 = 5.", "category": "Logika" },
+  { "term": "Niewiadoma", "description": "Liczba, którą trzeba obliczyć.", "category": "Logika" },
+  { "term": "Zadanie tekstowe", "description": "Problem matematyczny opisany słownie.", "category": "Logika" },
+  { "term": "Strategia rozwiązania", "description": "Sposób podejścia do zadania.", "category": "Logika" },
+  { "term": "Schemat blokowy", "description": "Graficzne przedstawienie kolejnych kroków rozwiązania.", "category": "Logika" },
+  { "term": "Wyrażenie algebraiczne", "description": "Zapis matematyczny zawierający liczby, symbole i działania.", "category": "Logika" },
+  { "term": "Podstawienie", "description": "Zamiana niewiadomej na konkretną wartość.", "category": "Logika" },
+  { "term": "Rozwiązanie równania", "description": "Wartość niewiadomej, która spełnia równanie.", "category": "Logika" },
+  { "term": "Zmienna", "description": "Symbol reprezentujący dowolną liczbę.", "category": "Logika" },
+  { "term": "Wyrażenie logiczne", "description": "Zapis pokazujący zależności między wielkościami.", "category": "Logika" },
+  { "term": "Dowód matematyczny", "description": "Uzasadnienie poprawności twierdzenia.", "category": "Logika" },
+  { "term": "Warunek", "description": "Założenie, które musi być spełnione.", "category": "Logika" },
+  { "term": "Zależność", "description": "Powiązanie między wielkościami lub zmiennymi.", "category": "Logika" },
+  { "term": "Argument", "description": "Wartość podstawiana do wyrażenia.", "category": "Logika" },
+  { "term": "Wartość wyrażenia", "description": "Wynik obliczenia po podstawieniu.", "category": "Logika" },
+  { "term": "Zadanie złożone", "description": "Problem wymagający kilku kroków rozwiązania.", "category": "Logika" },
+  { "term": "Zadanie otwarte", "description": "Zadanie bez jednej poprawnej odpowiedzi.", "category": "Logika" },
+  { "term": "Zadanie zamknięte", "description": "Zadanie z gotowymi odpowiedziami do wyboru.", "category": "Logika" },
+  { "term": "Analiza treści", "description": "Zrozumienie i wyodrębnienie danych z zadania.", "category": "Logika" },
+  { "term": "Model matematyczny", "description": "Zapis matematyczny opisujący sytuację z zadania.", "category": "Logika" }
+]

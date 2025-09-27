@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Definicje matematyczne</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main class="quiz-container">
+    <a href="index.html">
+      <button style="margin-bottom: 20px;">⬅️ Wróć do menu</button>
+    </a>
+
+    <h1>📖 Definicje matematyczne – klasy 4–6</h1>
+
+    <label for="category-select">Wybierz kategorię:</label>
+    <select id="category-select">
+      <option value="wszystkie">Wszystkie</option>
+      <option value="Arytmetyka">Arytmetyka</option>
+      <option value="Ułamki">Ułamki</option>
+      <option value="Geometria">Geometria</option>
+      <option value="Procenty">Procenty</option>
+      <option value="Statystyka">Statystyka</option>
+      <option value="Logika">Logika</option>
+    </select>
+
+    <div id="definitions"></div>
+  </main>
+
+  <script>
+    const categoryFiles = {
+      "Arytmetyka": "arytmetyka.json",
+      "Ułamki": "ulamki.json",
+      "Geometria": "geometria.json",
+      "Procenty": "procenty.json",
+      "Statystyka": "statystyka.json",
+      "Logika": "logika.json"
+    };
+
+    async function loadDefinitions(category) {
+      const container = document.getElementById('definitions');
+      container.innerHTML = "<p>⏳ Ładowanie definicji...</p>";
+
+      try {
+        let definitions = [];
+
+        if (category === "wszystkie") {
+          const allPromises = Object.values(categoryFiles).map(file =>
+            fetch(`data/${file}`).then(res => res.json())
+          );
+          const results = await Promise.all(allPromises);
+          definitions = results.flat();
+        } else {
+          const response = await fetch(`data/${categoryFiles[category]}`);
+          definitions = await response.json();
+        }
+
+        showDefinitions(definitions);
+      } catch (error) {
+        console.error("❌ Błąd ładowania definicji:", error);
+        container.innerHTML = "<p>Nie udało się załadować definicji.</p>";
+      }
+    }
+
+    function showDefinitions(definitions) {
+      const container = document.getElementById('definitions');
+      container.innerHTML = "";
+
+      definitions.forEach(def => {
+        const div = document.createElement('div');
+        div.className = 'definition';
+        div.innerHTML = `
+          <strong>${def.term}</strong>
+          <p>${def.description}</p>
+          <p><em>Kategoria:</em> ${def.category}</p>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    document.getElementById('category-select').addEventListener('change', e => {
+      loadDefinitions(e.target.value);
+    });
+
+    // Ładowanie domyślne
+    loadDefinitions("wszystkie");
+  </script>
+</body>
+</html>
