@@ -27,6 +27,10 @@ async function loadQuiz() {
 
   quizStartTime = Date.now();
   startTimer(questions.length * 2 * 60); // 2 minuty na pytanie
+
+  // Zablokuj przycisk sprawdzania na starcie
+  document.getElementById('check-button').disabled = true;
+  document.getElementById('send-button').disabled = false;
 }
 
 function calculateScore(questions) {
@@ -51,6 +55,12 @@ function collectWrongAnswers(questions) {
 }
 
 function submitQuiz() {
+  const checkButton = document.getElementById('check-button');
+  if (checkButton.disabled) {
+    alert("📩 Najpierw wyślij odpowiedzi do nauczyciela.");
+    return;
+  }
+
   const score = calculateScore(questions);
   questions.forEach(q => {
     const selected = document.querySelector(`input[name="${q.id}"]:checked`);
@@ -91,8 +101,6 @@ function sendResult(auto = false) {
   const sec = totalSec % 60;
   const durationText = `${min} min ${sec} sek`;
 
-
-  // Wysyłanie do bazy danych
   fetch('https://quiz-matematyka.onrender.com/zapisz-wynik', {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -112,8 +120,8 @@ function sendResult(auto = false) {
   })
   .catch(err => {
     console.error("❌ Błąd zapisu do bazy:", err);
+    alert("❌ Nie udało się wysłać wyników.");
   });
-
 }
 
 function startTimer(seconds) {
