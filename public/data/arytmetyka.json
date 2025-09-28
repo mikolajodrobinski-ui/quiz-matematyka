@@ -1,22 +1,128 @@
 [
-  { "term": "Liczby parzyste", "description": "Liczby podzielne przez 2, np. 2, 4, 6.", "category": "Arytmetyka" },
-  { "term": "Liczby nieparzyste", "description": "Liczby, które nie dzielą się przez 2 bez reszty.", "category": "Arytmetyka" },
-  { "term": "Dodawanie", "description": "Łączenie dwóch lub więcej liczb w jedną sumę.", "category": "Arytmetyka" },
-  { "term": "Odejmowanie", "description": "Zmniejszanie jednej liczby o drugą.", "category": "Arytmetyka" },
-  { "term": "Mnożenie", "description": "Dodawanie tej samej liczby wielokrotnie.", "category": "Arytmetyka" },
-  { "term": "Dzielenie", "description": "Rozdzielanie liczby na równe części.", "category": "Arytmetyka" },
-  { "term": "Reszta z dzielenia", "description": "Liczba, która zostaje po niedokładnym podziale.", "category": "Arytmetyka" },
-  { "term": "Porównywanie liczb", "description": "Określanie, która liczba jest większa lub mniejsza.", "category": "Arytmetyka" },
-  { "term": "Szacowanie", "description": "Przybliżone obliczenie wyniku.", "category": "Arytmetyka" },
-  { "term": "Liczby rzymskie", "description": "System zapisu liczb za pomocą liter, np. V = 5.", "category": "Arytmetyka" },
-  { "term": "Kolejność działań", "description": "Zasady wykonywania działań w odpowiedniej kolejności.", "category": "Arytmetyka" },
-  { "term": "Działania pisemne", "description": "Obliczenia wykonywane krok po kroku na papierze.", "category": "Arytmetyka" },
-  { "term": "Liczby całkowite", "description": "Liczby dodatnie, ujemne i zero.", "category": "Arytmetyka" },
-  { "term": "Liczby naturalne", "description": "Liczby całkowite dodatnie: 1, 2, 3, ...", "category": "Arytmetyka" },
-  { "term": "Zera w liczbach", "description": "Cyfra zero może oznaczać brak jednostek.", "category": "Arytmetyka" },
-  { "term": "Zaokrąglanie", "description": "Zastępowanie liczby przybliżoną wartością.", "category": "Arytmetyka" },
-  { "term": "Dzielenie pisemne", "description": "Metoda dzielenia liczby krok po kroku.", "category": "Arytmetyka" },
-  { "term": "Mnożenie pisemne", "description": "Metoda mnożenia liczby krok po kroku.", "category": "Arytmetyka" },
-  { "term": "Suma", "description": "Wynik dodawania.", "category": "Arytmetyka" },
-  { "term": "Różnica", "description": "Wynik odejmowania.", "category": "Arytmetyka" }
+  {
+    "term": "Liczby parzyste",
+    "description": "Liczby podzielne przez 2, czyli takie, które mają resztę 0 przy dzieleniu przez 2.",
+    "example": "2, 4, 6, 8, 10 – każda z nich dzieli się przez 2 bez reszty.",
+    "category": "Arytmetyka"
+  },
+  {
+    "term": "Liczby nieparzyste",
+    "description": "Liczby, które nie dzielą się przez 2 bez reszty.",
+    "example": "1, 3, 5, 7, 9 – każda z nich zostawia resztę 1 przy dzieleniu przez 2.",
+    "category": "Arytmetyka"
+  },
+  {
+    "term": "Dodawanie",
+    "description": "Łączenie dwóch lub więcej liczb w jedną sumę.",
+    "example": "5 + 3 = 8 – dodajemy trzy do pięciu i otrzymujemy osiem.",
+    "category": "Arytmetyka"
+  },
+  {
+    "term": "Odejmowanie",
+    "description": "Zmniejszanie jednej liczby o drugą.",
+    "example": "9 − 4 = 5 – odejmujemy cztery od dziewięciu.",
+    "category": "Arytmetyka"
+  },
+  {
+    "term": "Mnożenie",
+    "description": "Dodawanie tej samej liczby wielokrotnie.",
+    "example": "3 × 4 = 12 – trzy dodane cztery razy to dwanaście.",
+    "category": "Arytmetyka"
+  },
+  {
+    "term": "Dzielenie",
+    "description": "Rozdzielanie liczby na równe części.",
+    "example": "12 ÷ 3 = 4 – dwanaście podzielone na trzy równe części daje cztery.",
+    "category": "Arytmetyka"
+  },
+  {
+    "term": "Reszta z dzielenia",
+    "description": "Liczba, która zostaje po niedokładnym podziale.",
+    "example": "7 ÷ 3 = 2 reszty 1 – bo 3 × 2 = 6, a do 7 brakuje 1.",
+    "category": "Arytmetyka"
+  },
+  {
+    "term": "Porównywanie liczb",
+    "description": "Określanie, która liczba jest większa, mniejsza lub równa.",
+    "example": "8 > 5, 3 < 6, 4 = 4 – używamy znaków >, <, =.",
+    "category": "Arytmetyka"
+  },
+  {
+    "term": "Szacowanie",
+    "description": "Przybliżone obliczenie wyniku bez dokładnego rachunku.",
+    "example": "Zamiast 49 + 51, szacujemy: około 50 + 50 = 100.",
+    "category": "Arytmetyka"
+  },
+  {
+    "term": "Liczby rzymskie",
+    "description": "System zapisu liczb za pomocą liter.",
+    "example": "I = 1, V = 5, X = 10, L = 50, C = 100, D = 500, M = 1000.",
+    "category": "Arytmetyka"
+  },
+  {
+    "term": "Kolejność działań",
+    "description": "Zasady wykonywania działań w odpowiedniej kolejności.",
+    "example": "Najpierw nawiasy, potem mnożenie/dzielenie, na końcu dodawanie/odejmowanie: 2 + 3 × (4 − 1) = 11.",
+    "category": "Arytmetyka"
+  },
+  {
+    "term": "Działania pisemne",
+    "description": "Obliczenia wykonywane krok po kroku na papierze.",
+    "example": "Pisemne dodawanie: 456 + 789 – zapisujemy liczby jedna pod drugą i dodajemy kolumnami.",
+    "category": "Arytmetyka"
+  },
+  {
+    "term": "Liczby całkowite",
+    "description": "Liczby dodatnie, ujemne i zero.",
+    "example": "−3, −2, −1, 0, 1, 2, 3 – wszystkie to liczby całkowite.",
+    "category": "Arytmetyka"
+  },
+  {
+    "term": "Liczby naturalne",
+    "description": "Liczby całkowite dodatnie: 1, 2, 3, ...",
+    "example": "0 czasem też jest uznawane za liczbę naturalną, zależnie od definicji.",
+    "category": "Arytmetyka"
+  },
+  {
+    "term": "Zera w liczbach",
+    "description": "Cyfra zero może oznaczać brak jednostek lub miejsce w wartości liczby.",
+    "example": "W liczbie 105 zero oznacza brak dziesiątek.",
+    "category": "Arytmetyka"
+  },
+  {
+    "term": "Zaokrąglanie",
+    "description": "Zastępowanie liczby przybliżoną wartością.",
+    "example": "Zaokrąglając 47 do dziesiątek otrzymujemy 50.",
+    "category": "Arytmetyka"
+  },
+  {
+    "term": "Działania pisemne",
+    "description": "Obliczenia wykonywane krok po kroku na papierze, z ustawieniem liczb jedna pod drugą.",
+    "example": "Dodawanie pisemne: 456 + 789\n1. Zapisz liczby jedna pod drugą, wyrównując kolumny.\n2. Dodaj jednostki: 6 + 9 = 15 → zapisz 5, przenieś 1.\n3. Dodaj dziesiątki: 5 + 8 + 1 = 14 → zapisz 4, przenieś 1.\n4. Dodaj setki: 4 + 7 + 1 = 12 → zapisz 12.\nWynik: 1245.",
+    "category": "Arytmetyka"
+  },
+  {
+    "term": "Mnożenie pisemne",
+    "description": "Metoda mnożenia liczby krok po kroku, z zapisem kolejnych wyników pod kreską.",
+    "example": "Mnożenie pisemne: 23 × 7\n1. Zapisz liczby jedna pod drugą.\n2. Mnożenie jednostek: 3 × 7 = 21 → zapisz 1, przenieś 2.\n3. Mnożenie dziesiątek: 2 × 7 = 14 + 2 = 16 → zapisz 16.\nWynik: 161.",
+    "category": "Arytmetyka"
+  },
+  {
+    "term": "Dzielenie pisemne",
+    "description": "Metoda dzielenia liczby krok po kroku, z zapisem pod kreską i obliczaniem reszt.",
+    "example": "Dzielenie pisemne: 132 ÷ 4\n1. Sprawdź, ile razy 4 mieści się w 13 → 3 razy.\n2. 3 × 4 = 12 → zapisz 12 pod 13, odejmij: 13 − 12 = 1.\n3. Przenieś 2 → mamy 12.\n4. 12 ÷ 4 = 3 → zapisz 3.\nWynik: 33.",
+    "category": "Arytmetyka"
+  },
+  {
+    "term": "Suma",
+    "description": "Wynik dodawania.",
+    "example": "W działaniu 6 + 4 = 10, liczba 10 to suma.",
+    "category": "Arytmetyka"
+  },
+  {
+    "term": "Różnica",
+    "description": "Wynik odejmowania.",
+    "example": "W działaniu 9 − 5 = 4, liczba 4 to różnica.",
+    "category": "Arytmetyka"
+  }
 ]

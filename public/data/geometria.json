@@ -1,22 +1,156 @@
 [
-  { "term": "Punkt", "description": "Podstawowy element geometrii, nie ma wymiarów.", "category": "Geometria" },
-  { "term": "Prosta", "description": "Nieskończony ciąg punktów w jednej linii.", "category": "Geometria" },
-  { "term": "Odcinek", "description": "Część prostej ograniczona dwoma punktami.", "category": "Geometria" },
-  { "term": "Kąt prosty", "description": "Kąt o mierze 90°.", "category": "Geometria" },
-  { "term": "Kąt ostry", "description": "Kąt mniejszy niż 90°.", "category": "Geometria" },
-  { "term": "Kąt rozwarty", "description": "Kąt większy niż 90°, ale mniejszy niż 180°.", "category": "Geometria" },
-  { "term": "Trójkąt", "description": "Figura o trzech bokach i trzech kątach.", "category": "Geometria" },
-  { "term": "Prostokąt", "description": "Czworokąt o czterech kątach prostych.", "category": "Geometria" },
-  { "term": "Kwadrat", "description": "Prostokąt o równych bokach.", "category": "Geometria" },
-  { "term": "Równoległobok", "description": "Czworokąt o dwóch parach boków równoległych.", "category": "Geometria" },
-  { "term": "Romb", "description": "Równoległobok o równych bokach.", "category": "Geometria" },
-  { "term": "Koło", "description": "Zbiór punktów w równej odległości od środka.", "category": "Geometria" },
-  { "term": "Średnica", "description": "Odcinek przechodzący przez środek koła i łączący dwa punkty na obwodzie.", "category": "Geometria" },
-  { "term": "Promień", "description": "Odcinek od środka koła do punktu na obwodzie.", "category": "Geometria" },
-  { "term": "Obwód figury", "description": "Suma długości wszystkich boków figury.", "category": "Geometria" },
-  { "term": "Pole powierzchni", "description": "Powierzchnia zajmowana przez figurę geometryczną.", "category": "Geometria" },
-  { "term": "Symetria osiowa", "description": "Odbicie figury względem osi.", "category": "Geometria" },
-  { "term": "Symetria środkowa", "description": "Odbicie figury względem punktu.", "category": "Geometria" },
-  { "term": "Bryła", "description": "Figura przestrzenna, np. sześcian, walec.", "category": "Geometria" },
-  { "term": "Siatka bryły", "description": "Rozłożona powierzchnia bryły pokazująca jej ściany.", "category": "Geometria" }
+  {
+    "term": "Punkt",
+    "description": "Podstawowy element geometrii, nie ma długości, szerokości ani wysokości.",
+    "example": "Punkt oznaczamy literą, np. A. To miejsce na płaszczyźnie.",
+    "category": "Geometria"
+  },
+  {
+    "term": "Prosta",
+    "description": "Nieskończony ciąg punktów w jednej linii, bez początku i końca.",
+    "example": "Prosta AB przechodzi przez punkty A i B i ciągnie się w obu kierunkach.",
+    "category": "Geometria"
+  },
+  {
+    "term": "Odcinek",
+    "description": "Część prostej ograniczona dwoma punktami.",
+    "example": "Odcinek CD ma początek w punkcie C i koniec w punkcie D.",
+    "category": "Geometria"
+  },
+  {
+    "term": "Kąt prosty",
+    "description": "Kąt o mierze dokładnie 90 stopni.",
+    "example": "Róg kartki papieru to przykład kąta prostego.",
+    "category": "Geometria"
+  },
+  {
+    "term": "Kąt ostry",
+    "description": "Kąt mniejszy niż 90 stopni.",
+    "example": "Kąt 45° to kąt ostry – wygląda jak zagięta strzałka.",
+    "category": "Geometria"
+  },
+  {
+    "term": "Kąt rozwarty",
+    "description": "Kąt większy niż 90°, ale mniejszy niż 180°.",
+    "example": "Kąt 120° jest rozwarty – wygląda jak szeroko otwarte nożyczki.",
+    "category": "Geometria"
+  },
+  {
+    "term": "Trójkąt",
+    "description": "Figura o trzech bokach i trzech kątach.",
+    "example": "Trójkąt może być równoboczny (wszystkie boki równe) lub różnoboczny.",
+    "category": "Geometria"
+  },
+  {
+    "term": "Prostokąt",
+    "description": "Czworokąt o czterech kątach prostych.",
+    "example": "Kartka zeszytu to przykład prostokąta.",
+    "category": "Geometria"
+  },
+  {
+    "term": "Kwadrat",
+    "description": "Prostokąt o równych bokach.",
+    "example": "Plansza do gry w szachy składa się z kwadratów.",
+    "category": "Geometria"
+  },
+  {
+    "term": "Równoległobok",
+    "description": "Czworokąt o dwóch parach boków równoległych.",
+    "example": "Równoległobok wygląda jak przechylony prostokąt.",
+    "category": "Geometria"
+  },
+  {
+    "term": "Romb",
+    "description": "Równoległobok o równych bokach.",
+    "example": "Znak drogowy „ustąp pierwszeństwa” ma kształt rombu.",
+    "category": "Geometria"
+  },
+  {
+    "term": "Koło",
+    "description": "Zbiór punktów w równej odległości od środka.",
+    "example": "Talerz, piłka czy zegar mają kształt koła.",
+    "category": "Geometria"
+  },
+  {
+    "term": "Średnica",
+    "description": "Odcinek przechodzący przez środek koła i łączący dwa punkty na obwodzie.",
+    "example": "Średnica jest dwa razy dłuższa niż promień.",
+    "category": "Geometria"
+  },
+  {
+    "term": "Promień",
+    "description": "Odcinek od środka koła do punktu na obwodzie.",
+    "example": "Jeśli promień koła wynosi 5 cm, to średnica wynosi 10 cm.",
+    "category": "Geometria"
+  },
+  {
+    "term": "Obwód figury",
+    "description": "Suma długości wszystkich boków figury geometrycznej.",
+    "example": "Obwód prostokąta o bokach 4 cm i 6 cm to 4 + 6 + 4 + 6 = 20 cm.",
+    "category": "Geometria"
+  },
+  {
+    "term": "Pole powierzchni",
+    "description": "Powierzchnia zajmowana przez figurę geometryczną.",
+    "example": "Pole kwadratu o boku 5 cm to 5 × 5 = 25 cm².",
+    "category": "Geometria"
+  },
+  {
+    "term": "Symetria osiowa",
+    "description": "Odbicie figury względem osi – jak w lustrze.",
+    "example": "Serce przecięte pionowo ma symetrię osiową.",
+    "category": "Geometria"
+  },
+  {
+    "term": "Symetria środkowa",
+    "description": "Odbicie figury względem punktu – jakby obrócona o 180°.",
+    "example": "Gwiazda pięcioramienna ma symetrię środkową względem środka.",
+    "category": "Geometria"
+  },
+  {
+    "term": "Bryła",
+    "description": "Figura przestrzenna, która ma długość, szerokość i wysokość.",
+    "example": "Sześcian, walec, stożek i kula to przykłady brył.",
+    "category": "Geometria"
+  },
+  {
+    "term": "Siatka bryły",
+    "description": "Rozłożona powierzchnia bryły pokazująca jej ściany.",
+    "example": "Siatka sześcianu to sześć połączonych kwadratów, które można złożyć w kostkę.",
+    "category": "Geometria"
+  },
+
+  {
+    "term": "Kwadrat",
+    "description": "Prostokąt o równych bokach i czterech kątach prostych.",
+    "example": "Plansza do gry w szachy składa się z kwadratów.",
+    "formula": "Pole = a × a",
+    "formulaExample": "Jeśli bok kwadratu ma 5 cm, to pole = 5 × 5 = 25 cm².",
+    "category": "Geometria"
+  },
+  {
+    "term": "Prostokąt",
+    "description": "Czworokąt o dwóch parach równych boków i czterech kątach prostych.",
+    "example": "Kartka zeszytu to przykład prostokąta.",
+    "formula": "Pole = a × b",
+    "formulaExample": "Jeśli boki mają 4 cm i 6 cm, to pole = 4 × 6 = 24 cm².",
+    "category": "Geometria"
+  },
+  {
+    "term": "Trójkąt",
+    "description": "Figura o trzech bokach i trzech kątach.",
+    "example": "Trójkąt może być równoboczny, równoramienny lub różnoboczny.",
+    "formula": "Pole = (a × h) ÷ 2",
+    "formulaExample": "Jeśli podstawa ma 6 cm, a wysokość 4 cm, to pole = (6 × 4) ÷ 2 = 12 cm².",
+    "category": "Geometria"
+  },
+  {
+    "term": "Koło",
+    "description": "Zbiór punktów w równej odległości od środka.",
+    "example": "Talerz, piłka czy zegar mają kształt koła.",
+    "formula": "Pole = π × r²",
+    "formulaExample": "Jeśli promień wynosi 3 cm, to pole ≈ 3,14 × 9 = 28,26 cm².",
+    "category": "Geometria"
+  }
 ]
+
