@@ -73,6 +73,7 @@
         div.innerHTML = `
           <strong>${def.term}</strong>
           <p>${def.description}</p>
+          ${def.example ? `<p><em>Przykład:</em> ${def.example}</p>` : ""}
           <p><em>Kategoria:</em> ${def.category}</p>
         `;
         container.appendChild(div);
