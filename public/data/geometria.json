@@ -21,78 +21,103 @@
     "term": "Kąt prosty",
     "description": "Kąt o mierze dokładnie 90 stopni.",
     "example": "Róg kartki papieru to przykład kąta prostego.",
+    "latex": "\\angle = 90^\\circ",
     "category": "Geometria"
   },
   {
     "term": "Kąt ostry",
     "description": "Kąt mniejszy niż 90 stopni.",
     "example": "Kąt 45° to kąt ostry – wygląda jak zagięta strzałka.",
+    "latex": "\\angle < 90^\\circ",
     "category": "Geometria"
   },
   {
     "term": "Kąt rozwarty",
     "description": "Kąt większy niż 90°, ale mniejszy niż 180°.",
     "example": "Kąt 120° jest rozwarty – wygląda jak szeroko otwarte nożyczki.",
+    "latex": "90^\\circ < \\angle < 180^\\circ",
     "category": "Geometria"
   },
   {
     "term": "Trójkąt",
     "description": "Figura o trzech bokach i trzech kątach.",
-    "example": "Trójkąt może być równoboczny (wszystkie boki równe) lub różnoboczny.",
+    "example": "Trójkąt może być równoboczny, równoramienny lub różnoboczny.",
+    "formula": "Pole = (a × h) ÷ 2",
+    "formulaExample": "Jeśli podstawa ma 6 cm, a wysokość 4 cm, to pole = (6 × 4) ÷ 2 = 12 cm².",
+    "latex": "P = \\frac{a \\times h}{2}",
     "category": "Geometria"
   },
   {
     "term": "Prostokąt",
-    "description": "Czworokąt o czterech kątach prostych.",
+    "description": "Czworokąt o dwóch parach równych boków i czterech kątach prostych.",
     "example": "Kartka zeszytu to przykład prostokąta.",
+    "formula": "Pole = a × b",
+    "formulaExample": "Jeśli boki mają 4 cm i 6 cm, to pole = 4 × 6 = 24 cm².",
+    "latex": "P = a \\times b",
     "category": "Geometria"
   },
   {
     "term": "Kwadrat",
-    "description": "Prostokąt o równych bokach.",
+    "description": "Prostokąt o równych bokach i czterech kątach prostych.",
     "example": "Plansza do gry w szachy składa się z kwadratów.",
+    "formula": "Pole = a × a",
+    "formulaExample": "Jeśli bok kwadratu ma 5 cm, to pole = 5 × 5 = 25 cm².",
+    "latex": "P = a^2",
     "category": "Geometria"
   },
   {
     "term": "Równoległobok",
     "description": "Czworokąt o dwóch parach boków równoległych.",
     "example": "Równoległobok wygląda jak przechylony prostokąt.",
+    "formula": "Pole = a × h",
+    "formulaExample": "Jeśli bok ma 7 cm, a wysokość 3 cm, to pole = 7 × 3 = 21 cm².",
+    "latex": "P = a \\times h",
     "category": "Geometria"
   },
   {
     "term": "Romb",
     "description": "Równoległobok o równych bokach.",
     "example": "Znak drogowy „ustąp pierwszeństwa” ma kształt rombu.",
+    "formula": "Pole = (e × f) ÷ 2",
+    "formulaExample": "Jeśli przekątne mają 6 cm i 4 cm, to pole = (6 × 4) ÷ 2 = 12 cm².",
+    "latex": "P = \\frac{e \\times f}{2}",
     "category": "Geometria"
   },
   {
     "term": "Koło",
     "description": "Zbiór punktów w równej odległości od środka.",
-    "example": "Talerz, piłka czy zegar mają kształt koła.",
+    "example": "Talerz, czy zegar mają kształt koła.",
+    "formula": "Pole = π × r²",
+    "formulaExample": "Jeśli promień wynosi 3 cm, to pole ≈ 3,14 × 9 = 28,26 cm².",
+    "latex": "P = \\pi \\times r^2",
     "category": "Geometria"
   },
   {
     "term": "Średnica",
     "description": "Odcinek przechodzący przez środek koła i łączący dwa punkty na obwodzie.",
     "example": "Średnica jest dwa razy dłuższa niż promień.",
+    "latex": "d = 2r",
     "category": "Geometria"
   },
   {
     "term": "Promień",
     "description": "Odcinek od środka koła do punktu na obwodzie.",
     "example": "Jeśli promień koła wynosi 5 cm, to średnica wynosi 10 cm.",
+    "latex": "r = \\frac{d}{2}",
     "category": "Geometria"
   },
   {
     "term": "Obwód figury",
     "description": "Suma długości wszystkich boków figury geometrycznej.",
     "example": "Obwód prostokąta o bokach 4 cm i 6 cm to 4 + 6 + 4 + 6 = 20 cm.",
+    "latex": "O = 2a + 2b",
     "category": "Geometria"
   },
   {
     "term": "Pole powierzchni",
     "description": "Powierzchnia zajmowana przez figurę geometryczną.",
     "example": "Pole kwadratu o boku 5 cm to 5 × 5 = 25 cm².",
+    "latex": "P = a^2",
     "category": "Geometria"
   },
   {
@@ -118,39 +143,5 @@
     "description": "Rozłożona powierzchnia bryły pokazująca jej ściany.",
     "example": "Siatka sześcianu to sześć połączonych kwadratów, które można złożyć w kostkę.",
     "category": "Geometria"
-  },
-
-  {
-    "term": "Kwadrat",
-    "description": "Prostokąt o równych bokach i czterech kątach prostych.",
-    "example": "Plansza do gry w szachy składa się z kwadratów.",
-    "formula": "Pole = a × a",
-    "formulaExample": "Jeśli bok kwadratu ma 5 cm, to pole = 5 × 5 = 25 cm².",
-    "category": "Geometria"
-  },
-  {
-    "term": "Prostokąt",
-    "description": "Czworokąt o dwóch parach równych boków i czterech kątach prostych.",
-    "example": "Kartka zeszytu to przykład prostokąta.",
-    "formula": "Pole = a × b",
-    "formulaExample": "Jeśli boki mają 4 cm i 6 cm, to pole = 4 × 6 = 24 cm².",
-    "category": "Geometria"
-  },
-  {
-    "term": "Trójkąt",
-    "description": "Figura o trzech bokach i trzech kątach.",
-    "example": "Trójkąt może być równoboczny, równoramienny lub różnoboczny.",
-    "formula": "Pole = (a × h) ÷ 2",
-    "formulaExample": "Jeśli podstawa ma 6 cm, a wysokość 4 cm, to pole = (6 × 4) ÷ 2 = 12 cm².",
-    "category": "Geometria"
-  },
-  {
-    "term": "Koło",
-    "description": "Zbiór punktów w równej odległości od środka.",
-    "example": "Talerz, piłka czy zegar mają kształt koła.",
-    "formula": "Pole = π × r²",
-    "formulaExample": "Jeśli promień wynosi 3 cm, to pole ≈ 3,14 × 9 = 28,26 cm².",
-    "category": "Geometria"
   }
 ]
-

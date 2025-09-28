@@ -3,120 +3,140 @@
     "term": "Ułamek zwykły",
     "description": "Liczba w postaci licznik/mianownik, np. 3/4. Pokazuje, ile części z całości mamy.",
     "example": "Jeśli zjesz 3 kawałki z pizzy podzielonej na 4, masz 3/4 pizzy.",
+    "latex": "\\frac{3}{4}",
     "category": "Ułamki"
   },
   {
     "term": "Licznik",
     "description": "Górna liczba w ułamku – mówi, ile części mamy.",
     "example": "W ułamku 2/5 licznik to 2 – mamy dwie części.",
+    "latex": "\\text{Licznik} = 2 \\text{ w } \\frac{2}{5}",
     "category": "Ułamki"
   },
   {
     "term": "Mianownik",
     "description": "Dolna liczba w ułamku – mówi, na ile części podzielono całość.",
     "example": "W ułamku 2/5 mianownik to 5 – całość podzielono na pięć części.",
+    "latex": "\\text{Mianownik} = 5 \\text{ w } \\frac{2}{5}",
     "category": "Ułamki"
   },
   {
     "term": "Ułamek dziesiętny",
     "description": "Ułamek zapisany z przecinkiem, np. 0,5 zamiast 1/2.",
     "example": "0,25 to ułamek dziesiętny równy 1/4.",
+    "latex": "0{,}25 = \\frac{1}{4}",
     "category": "Ułamki"
   },
   {
     "term": "Zamiana ułamka zwykłego na dziesiętny",
     "description": "Dzielenie licznika przez mianownik.",
     "example": "1/4 = 1 ÷ 4 = 0,25",
+    "latex": "\\frac{1}{4} = 1 \\div 4 = 0{,}25",
     "category": "Ułamki"
   },
   {
     "term": "Zamiana ułamka dziesiętnego na zwykły",
     "description": "Zapisanie ułamka jako licznik/mianownik.",
     "example": "0,5 = 5/10 = 1/2",
+    "latex": "0{,}5 = \\frac{5}{10} = \\frac{1}{2}",
     "category": "Ułamki"
   },
   {
     "term": "Skracanie ułamków",
     "description": "Zmniejszanie licznika i mianownika przez wspólny dzielnik.",
     "example": "6/8 → podziel przez 2 → 3/4",
+    "latex": "\\frac{6}{8} = \\frac{3}{4}",
     "category": "Ułamki"
   },
   {
     "term": "Rozszerzanie ułamków",
     "description": "Mnożenie licznika i mianownika przez tę samą liczbę.",
     "example": "1/2 × 3 = 3/6",
+    "latex": "\\frac{1}{2} \\times 3 = \\frac{3}{6}",
     "category": "Ułamki"
   },
   {
     "term": "Ułamki równoważne",
     "description": "Ułamki o tej samej wartości, mimo że wyglądają inaczej.",
     "example": "1/2 = 2/4 = 4/8",
+    "latex": "\\frac{1}{2} = \\frac{2}{4} = \\frac{4}{8}",
     "category": "Ułamki"
   },
   {
     "term": "Porównywanie ułamków",
     "description": "Określanie, który ułamek jest większy lub mniejszy.",
     "example": "2/3 > 1/2, bo 0,666... > 0,5",
+    "latex": "\\frac{2}{3} > \\frac{1}{2}",
     "category": "Ułamki"
   },
   {
     "term": "Dodawanie ułamków",
     "description": "Łączenie dwóch ułamków w jeden – wymaga wspólnego mianownika.",
     "example": "1/4 + 2/4 = 3/4",
+    "latex": "\\frac{1}{4} + \\frac{2}{4} = \\frac{3}{4}",
     "category": "Ułamki"
   },
   {
     "term": "Odejmowanie ułamków",
     "description": "Zmniejszanie jednego ułamka o drugi – wymaga wspólnego mianownika.",
     "example": "5/6 − 2/6 = 3/6 = 1/2",
+    "latex": "\\frac{5}{6} - \\frac{2}{6} = \\frac{3}{6} = \\frac{1}{2}",
     "category": "Ułamki"
   },
   {
     "term": "Mnożenie ułamków",
     "description": "Iloczyn dwóch ułamków – mnożymy licznik z licznikiem, mianownik z mianownikiem.",
     "example": "2/3 × 3/4 = 6/12 = 1/2",
+    "latex": "\\frac{2}{3} \\times \\frac{3}{4} = \\frac{6}{12} = \\frac{1}{2}",
     "category": "Ułamki"
   },
   {
     "term": "Dzielenie ułamków",
     "description": "Iloraz dwóch ułamków – mnożymy przez odwrotność drugiego.",
     "example": "3/4 ÷ 1/2 = 3/4 × 2/1 = 6/4 = 1 1/2",
+    "latex": "\\frac{3}{4} \\div \\frac{1}{2} = \\frac{3}{4} \\times \\frac{2}{1} = \\frac{6}{4} = 1\\frac{1}{2}",
     "category": "Ułamki"
   },
   {
     "term": "Ułamek większy niż 1",
     "description": "Ułamek, którego licznik jest większy niż mianownik.",
     "example": "5/4 = 1 1/4",
+    "latex": "\\frac{5}{4} = 1\\frac{1}{4}",
     "category": "Ułamki"
   },
   {
     "term": "Ułamek mniejszy niż 1",
     "description": "Ułamek, którego licznik jest mniejszy niż mianownik.",
     "example": "3/8 < 1",
+    "latex": "\\frac{3}{8} < 1",
     "category": "Ułamki"
   },
   {
     "term": "Ułamek dziesiętny okresowy",
     "description": "Ułamek z powtarzającą się częścią po przecinku.",
     "example": "0,333... = 1/3",
+    "latex": "0{,}\\overline{3} = \\frac{1}{3}",
     "category": "Ułamki"
   },
   {
     "term": "Ułamek jako część całości",
     "description": "Ułamek pokazuje, ile części z całości mamy.",
     "example": "2/5 tortu to dwie z pięciu części.",
+    "latex": "\\frac{2}{5}",
     "category": "Ułamki"
   },
   {
     "term": "Ułamek jako wynik dzielenia",
     "description": "Ułamek to wynik podziału jednej liczby przez drugą.",
     "example": "3 ÷ 4 = 3/4",
+    "latex": "3 \\div 4 = \\frac{3}{4}",
     "category": "Ułamki"
   },
   {
     "term": "Ułamek jako proporcja",
     "description": "Ułamek pokazuje stosunek dwóch wielkości.",
     "example": "Jeśli w klasie jest 10 chłopców i 15 dziewczynek, chłopcy to 10/25 = 2/5 klasy.",
+    "latex": "\\frac{10}{25} = \\frac{2}{5}",
     "category": "Ułamki"
   }
 ]
