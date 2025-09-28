@@ -96,9 +96,9 @@
     "category": "Arytmetyka"
   },
   {
-    "term": "Działania pisemne",
+    "term": "Dodawanie pisemne",
     "description": "Obliczenia wykonywane krok po kroku na papierze, z ustawieniem liczb jedna pod drugą.",
-    "example": "Dodawanie pisemne: 456 + 789",
+    "example": "Dodawanie: 456 + 789",
     "steps": [
       "Zapisz liczby jedna pod drugą, wyrównując kolumny.",
       "Dodaj jednostki: 6 + 9 = 15 → zapisz 5, przenieś 1.",
@@ -106,24 +106,26 @@
       "Dodaj setki: 4 + 7 + 1 = 12 → zapisz 12.",
       "Wynik: 1245."
     ],
+    "latex": "\\begin{array}{r} \\phantom{+}456 \\\\ +789 \\\\ \\hline 1245 \\end{array}",
     "category": "Arytmetyka"
   },
   {
     "term": "Mnożenie pisemne",
     "description": "Metoda mnożenia liczby krok po kroku, z zapisem kolejnych wyników pod kreską.",
-    "example": "Mnożenie pisemne: 23 × 7",
+    "example": "Mnożenie: 23 × 7",
     "steps": [
       "Zapisz liczby jedna pod drugą.",
       "Mnożenie jednostek: 3 × 7 = 21 → zapisz 1, przenieś 2.",
       "Mnożenie dziesiątek: 2 × 7 = 14 + 2 = 16 → zapisz 16.",
       "Wynik: 161."
     ],
+    "latex": "\\begin{array}{r} \\phantom{\\times}23 \\\\ \\times\\phantom{0}7 \\\\ \\hline 161 \\end{array}",
     "category": "Arytmetyka"
   },
   {
     "term": "Dzielenie pisemne",
     "description": "Metoda dzielenia liczby krok po kroku, z zapisem pod kreską i obliczaniem reszt.",
-    "example": "Dzielenie pisemne: 132 ÷ 4",
+    "example": "Dzielenie: 132 ÷ 4",
     "steps": [
       "Sprawdź, ile razy 4 mieści się w 13 → 3 razy.",
       "3 × 4 = 12 → zapisz 12 pod 13, odejmij: 13 − 12 = 1.",
@@ -131,6 +133,21 @@
       "12 ÷ 4 = 3 → zapisz 3.",
       "Wynik: 33."
     ],
+    "latex": "\\begin{array}{rcl} 4\\,|\\,13 &\\rightarrow& 3 \\text{ razy} \\\\ 3 \\times 4 &=& 12 \\\\ 13 - 12 &=& 1 \\\\ \\text{Przenieś 2} &\\rightarrow& 12 \\\\ 12 \\div 4 &=& 3 \\\\ \\text{Wynik} &=& 33 \\end{array}",
+    "category": "Arytmetyka"
+  },
+  {
+    "term": "Odejmowanie pisemne",
+    "description": "Obliczenia wykonywane krok po kroku, odejmując liczby kolumnami od prawej do lewej.",
+    "example": "Odejmowanie: 802 − 456",
+    "steps": [
+      "Zapisz liczby jedna pod drugą, wyrównując kolumny.",
+      "Odejmij jednostki: 2 − 6 → pożycz 1 z dziesiątek.",
+      "Odejmij dziesiątki: 0 − 5 (pożyczone) → pożycz 1 z setek.",
+      "Odejmij setki: 8 − 4 = 4.",
+      "Wynik: 346."
+    ],
+    "latex": "\\begin{array}{r} \\phantom{-}802 \\\\ -456 \\\\ \\hline 346 \\end{array}",
     "category": "Arytmetyka"
   },
   {

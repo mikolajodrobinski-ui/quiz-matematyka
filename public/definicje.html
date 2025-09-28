@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Definicje matematyczne</title>
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- MathJax do renderowania LaTeX -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
 </head>
 <body>
   <main class="quiz-container">
@@ -63,41 +69,52 @@
       }
     }
 
-function showDefinitions(definitions) {
-  const container = document.getElementById('definitions');
-  container.innerHTML = "";
+    function showDefinitions(definitions) {
+      const container = document.getElementById('definitions');
+      container.innerHTML = "";
 
-  definitions.forEach(def => {
-    const div = document.createElement('div');
-    div.className = 'definition';
+      definitions.forEach(def => {
+        const div = document.createElement('div');
+        div.className = 'definition';
 
-    div.innerHTML = `
-      <strong>${def.term}</strong>
-      <p>${def.description}</p>
-      ${def.example ? `<p><em>Przykład:</em> ${def.example}</p>` : ""}
-      ${def.formula ? `<p><em>Wzór na pole:</em> ${def.formula}</p>` : ""}
-      ${def.formulaExample ? `<p><em>Przykład obliczenia:</em> ${def.formulaExample}</p>` : ""}
-      <p><em>Kategoria:</em> ${def.category}</p>
-    `;
+        div.innerHTML = `
+          <strong>${def.term}</strong>
+          <p>${def.description}</p>
+          ${def.example ? `<p><em>Przykład:</em> ${def.example}</p>` : ""}
+          ${def.formula ? `<p><em>Wzór na pole:</em> ${def.formula}</p>` : ""}
+          ${def.formulaExample ? `<p><em>Przykład obliczenia:</em> ${def.formulaExample}</p>` : ""}
+          <p><em>Kategoria:</em> ${def.category}</p>
+        `;
 
-    // Dodaj kroki, jeśli istnieją
-    if (def.steps && Array.isArray(def.steps)) {
-      const stepsTitle = document.createElement('p');
-      stepsTitle.innerHTML = "<em>Kroki:</em>";
-      const stepsList = document.createElement('ol');
-      def.steps.forEach(step => {
-        const li = document.createElement('li');
-        li.textContent = step;
-        stepsList.appendChild(li);
+        // Dodaj kroki, jeśli istnieją
+        if (def.steps && Array.isArray(def.steps)) {
+          const stepsTitle = document.createElement('p');
+          stepsTitle.innerHTML = "<em>Kroki:</em>";
+          const stepsList = document.createElement('ol');
+          def.steps.forEach(step => {
+            const li = document.createElement('li');
+            li.textContent = step;
+            stepsList.appendChild(li);
+          });
+          div.appendChild(stepsTitle);
+          div.appendChild(stepsList);
+        }
+
+        // Dodaj LaTeX, jeśli istnieje
+        if (def.latex) {
+          const latexBlock = document.createElement('div');
+          latexBlock.innerHTML = `\\(${def.latex}\\)`;
+          div.appendChild(latexBlock);
+        }
+
+        container.appendChild(div);
       });
-      div.appendChild(stepsTitle);
-      div.appendChild(stepsList);
+
+      // Po dodaniu wszystkich definicji, uruchom ponowne renderowanie MathJax
+      if (window.MathJax) {
+        MathJax.typesetPromise();
+      }
     }
-
-    container.appendChild(div);
-  });
-}
-
 
     document.getElementById('category-select').addEventListener('change', e => {
       loadDefinitions(e.target.value);
