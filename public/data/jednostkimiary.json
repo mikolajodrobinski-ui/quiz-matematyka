@@ -1,0 +1,100 @@
+[
+  {
+    "term": "Centymetr",
+    "description": "Jednostka długości. 1 metr to 100 centymetrów.",
+    "example": "Długość ołówka to około 18 cm.",
+    "latex": "1\\ \\text{m} = 100\\ \\text{cm}",
+    "category": "Jednostki miary"
+  },
+  {
+    "term": "Milimetr",
+    "description": "Jednostka długości mniejsza niż centymetr. 1 cm = 10 mm.",
+    "example": "Grubość monety to około 2 mm.",
+    "latex": "1\\ \\text{cm} = 10\\ \\text{mm}",
+    "category": "Jednostki miary"
+  },
+  {
+    "term": "Metr",
+    "description": "Podstawowa jednostka długości w układzie SI.",
+    "example": "Wzrost człowieka to około 1,6 m.",
+    "latex": "1\\ \\text{m} = 100\\ \\text{cm}",
+    "category": "Jednostki miary"
+  },
+  {
+    "term": "Kilometr",
+    "description": "Jednostka długości używana do mierzenia większych odległości.",
+    "example": "Odległość do szkoły wynosi 2 km.",
+    "latex": "1\\ \\text{km} = 1000\\ \\text{m}",
+    "category": "Jednostki miary"
+  },
+  {
+    "term": "Gram",
+    "description": "Podstawowa jednostka masy.",
+    "example": "Jabłko waży około 150 g.",
+    "latex": "1\\ \\text{kg} = 1000\\ \\text{g}",
+    "category": "Jednostki miary"
+  },
+  {
+    "term": "Kilogram",
+    "description": "Jednostka masy używana w życiu codziennym.",
+    "example": "Bochenek chleba waży około 0,5 kg.",
+    "latex": "1\\ \\text{kg} = 1000\\ \\text{g}",
+    "category": "Jednostki miary"
+  },
+  {
+    "term": "Tona",
+    "description": "Duża jednostka masy. 1 tona to 1000 kg.",
+    "example": "Samochód może ważyć około 1,5 tony.",
+    "latex": "1\\ \\text{t} = 1000\\ \\text{kg}",
+    "category": "Jednostki miary"
+  },
+  {
+    "term": "Litr",
+    "description": "Jednostka objętości płynów.",
+    "example": "Butelka wody ma pojemność 1 litra.",
+    "latex": "1\\ \\text{l} = 1000\\ \\text{ml}",
+    "category": "Jednostki miary"
+  },
+  {
+    "term": "Mililitr",
+    "description": "Mała jednostka objętości. 1 litr to 1000 mililitrów.",
+    "example": "Łyżka syropu to około 15 ml.",
+    "latex": "1\\ \\text{l} = 1000\\ \\text{ml}",
+    "category": "Jednostki miary"
+  },
+  {
+    "term": "Godzina",
+    "description": "Jednostka czasu równa 60 minutom.",
+    "example": "Lekcja trwa 45 minut, czyli mniej niż godzina.",
+    "latex": "1\\ \\text{h} = 60\\ \\text{min}",
+    "category": "Jednostki miary"
+  },
+  {
+    "term": "Minuta",
+    "description": "Jednostka czasu równa 60 sekundom.",
+    "example": "Gotowanie jajka trwa około 5 minut.",
+    "latex": "1\\ \\text{min} = 60\\ \\text{s}",
+    "category": "Jednostki miary"
+  },
+  {
+    "term": "Sekunda",
+    "description": "Najmniejsza jednostka czasu używana w codziennych pomiarach.",
+    "example": "Sportowiec przebiegł 100 m w 12 sekund.",
+    "latex": "1\\ \\text{min} = 60\\ \\text{s}",
+    "category": "Jednostki miary"
+  },
+  {
+    "term": "Pole powierzchni",
+    "description": "Wielkość opisująca rozmiar figury płaskiej.",
+    "example": "Pole prostokąta o bokach 4 cm i 6 cm to 24 cm².",
+    "latex": "P = a \\times b",
+    "category": "Jednostki miary"
+  },
+  {
+    "term": "Objętość",
+    "description": "Miara przestrzeni zajmowanej przez ciało.",
+    "example": "Objętość pudełka o wymiarach 2×3×4 cm to 24 cm³.",
+    "latex": "V = a \\times b \\times h",
+    "category": "Jednostki miary"
+  }
+]
