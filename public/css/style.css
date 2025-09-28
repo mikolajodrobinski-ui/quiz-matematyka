@@ -150,6 +150,48 @@ button:disabled {
   text-align: center;
 }
 
+/* Tabela wyników */
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.results-table th,
+.results-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.results-table th {
+  background-color: #f0f0f0;
+}
+
+/* Przycisk usuń */
+.usun-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.usun-button:hover {
+  background-color: #c0392b;
+}
+
+/* Komunikat błędu */
+.error-message {
+  color: red;
+  text-align: center;
+  margin-top: 20px;
+}
+
 /* Tryb ciemny */
 @media (prefers-color-scheme: dark) {
   body {
@@ -209,6 +251,35 @@ button:disabled {
   }
 
   .incorrect {
+    color: #ff7f7f;
+  }
+
+  .results-table {
+    background-color: transparent;
+    color: #f0f0f0;
+  }
+
+  .results-table th,
+  .results-table td {
+    border: 1px solid #444;
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+  }
+
+  .results-table th {
+    background-color: #2a2a2a;
+  }
+
+  .usun-button {
+    background-color: #c0392b;
+    color: white;
+  }
+
+  .usun-button:hover {
+    background-color: #e74c3c;
+  }
+
+  .error-message {
     color: #ff7f7f;
   }
 }

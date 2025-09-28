@@ -1,22 +1,134 @@
 [
-  { "term": "Średnia arytmetyczna", "description": "Suma wszystkich liczb podzielona przez ich ilość.", "category": "Statystyka" },
-  { "term": "Mediana", "description": "Środkowa wartość uporządkowanego zbioru danych.", "category": "Statystyka" },
-  { "term": "Moda", "description": "Wartość występująca najczęściej w zbiorze danych.", "category": "Statystyka" },
-  { "term": "Rozstęp", "description": "Różnica między największą a najmniejszą wartością w zbiorze.", "category": "Statystyka" },
-  { "term": "Diagram słupkowy", "description": "Wykres przedstawiający dane za pomocą słupków.", "category": "Statystyka" },
-  { "term": "Diagram kołowy", "description": "Wykres przedstawiający dane jako części koła.", "category": "Statystyka" },
-  { "term": "Tabela danych", "description": "Zestawienie informacji w kolumnach i wierszach.", "category": "Statystyka" },
-  { "term": "Zbiór danych", "description": "Grupa wartości liczbowych poddanych analizie.", "category": "Statystyka" },
-  { "term": "Najczęstsza wartość", "description": "Wartość, która pojawia się najwięcej razy.", "category": "Statystyka" },
-  { "term": "Rozrzut danych", "description": "Zakres między najmniejszą a największą wartością.", "category": "Statystyka" },
-  { "term": "Wartość minimalna", "description": "Najmniejsza liczba w zbiorze danych.", "category": "Statystyka" },
-  { "term": "Wartość maksymalna", "description": "Największa liczba w zbiorze danych.", "category": "Statystyka" },
-  { "term": "Liczność", "description": "Liczba wystąpień danej wartości w zbiorze.", "category": "Statystyka" },
-  { "term": "Częstość", "description": "Procentowy udział danej wartości w zbiorze.", "category": "Statystyka" },
-  { "term": "Średnia ważona", "description": "Średnia uwzględniająca wagę poszczególnych wartości.", "category": "Statystyka" },
-  { "term": "Grupowanie danych", "description": "Łączenie danych w przedziały.", "category": "Statystyka" },
-  { "term": "Przedział liczbowy", "description": "Zakres wartości w grupie danych.", "category": "Statystyka" },
-  { "term": "Histogram", "description": "Wykres słupkowy przedstawiający rozkład danych.", "category": "Statystyka" },
-  { "term": "Analiza danych", "description": "Badanie i interpretacja informacji liczbowych.", "category": "Statystyka" },
-  { "term": "Wnioski statystyczne", "description": "Informacje uzyskane na podstawie danych.", "category": "Statystyka" }
+  {
+    "term": "Średnia arytmetyczna",
+    "description": "Suma wszystkich liczb podzielona przez ich ilość.",
+    "example": "Dla zbioru: 4, 6, 10 → średnia = (4 + 6 + 10) ÷ 3 = 6,67",
+    "latex": "\\bar{x} = \\frac{4 + 6 + 10}{3} = 6{,}67",
+    "category": "Statystyka"
+  },
+  {
+    "term": "Mediana",
+    "description": "Środkowa wartość uporządkowanego zbioru danych.",
+    "example": "Dla zbioru: 3, 5, 8 → mediana = 5",
+    "latex": "\\text{Mediana} = 5",
+    "category": "Statystyka"
+  },
+  {
+    "term": "Moda",
+    "description": "Wartość występująca najczęściej w zbiorze danych.",
+    "example": "Dla zbioru: 2, 4, 4, 5 → moda = 4",
+    "latex": "\\text{Moda} = 4",
+    "category": "Statystyka"
+  },
+  {
+    "term": "Rozstęp",
+    "description": "Różnica między największą a najmniejszą wartością w zbiorze.",
+    "example": "Dla zbioru: 2, 5, 9 → rozstęp = 9 − 2 = 7",
+    "latex": "\\text{Rozstęp} = 9 - 2 = 7",
+    "category": "Statystyka"
+  },
+  {
+    "term": "Diagram słupkowy",
+    "description": "Wykres przedstawiający dane za pomocą słupków.",
+    "example": "Liczba uczniów w klasach: A – 20, B – 25, C – 15",
+    "category": "Statystyka"
+  },
+  {
+    "term": "Diagram kołowy",
+    "description": "Wykres przedstawiający dane jako części koła.",
+    "example": "Udział procentowy: Matematyka – 40%, Język – 30%, Przyroda – 30%",
+    "category": "Statystyka"
+  },
+  {
+    "term": "Tabela danych",
+    "description": "Zestawienie informacji w kolumnach i wierszach.",
+    "example": "Kolumna: Przedmiot | Wiersz: Liczba uczniów",
+    "category": "Statystyka"
+  },
+  {
+    "term": "Zbiór danych",
+    "description": "Grupa wartości liczbowych poddanych analizie.",
+    "example": "Zbiór: 3, 7, 8, 10, 12",
+    "category": "Statystyka"
+  },
+  {
+    "term": "Najczęstsza wartość",
+    "description": "Wartość, która pojawia się najwięcej razy.",
+    "example": "W zbiorze: 1, 2, 2, 3, 2 → najczęstsza wartość to 2",
+    "latex": "\\text{Najczęstsza wartość} = 2",
+    "category": "Statystyka"
+  },
+  {
+    "term": "Rozrzut danych",
+    "description": "Zakres między najmniejszą a największą wartością.",
+    "example": "Dla zbioru: 5, 9, 12 → rozrzut = 12 − 5 = 7",
+    "latex": "\\text{Rozrzut} = 12 - 5 = 7",
+    "category": "Statystyka"
+  },
+  {
+    "term": "Wartość minimalna",
+    "description": "Najmniejsza liczba w zbiorze danych.",
+    "example": "W zbiorze: 4, 6, 9 → wartość minimalna = 4",
+    "latex": "\\min(x) = 4",
+    "category": "Statystyka"
+  },
+  {
+    "term": "Wartość maksymalna",
+    "description": "Największa liczba w zbiorze danych.",
+    "example": "W zbiorze: 4, 6, 9 → wartość maksymalna = 9",
+    "latex": "\\max(x) = 9",
+    "category": "Statystyka"
+  },
+  {
+    "term": "Liczność",
+    "description": "Liczba wystąpień danej wartości w zbiorze.",
+    "example": "W zbiorze: 2, 2, 3, 4 → liczność liczby 2 = 2",
+    "latex": "n(2) = 2",
+    "category": "Statystyka"
+  },
+  {
+    "term": "Częstość",
+    "description": "Procentowy udział danej wartości w zbiorze.",
+    "example": "W zbiorze 20 liczb, wartość 5 występuje 4 razy → częstość = 20%",
+    "latex": "\\frac{4}{20} \\times 100\\% = 20\\%",
+    "category": "Statystyka"
+  },
+  {
+    "term": "Średnia ważona",
+    "description": "Średnia uwzględniająca wagę poszczególnych wartości.",
+    "example": "Oceny: 5 (waga 3), 4 (waga 2) → średnia = (5×3 + 4×2) ÷ (3+2) = 4,6",
+    "latex": "\\bar{x} = \\frac{5 \\times 3 + 4 \\times 2}{3 + 2} = 4{,}6",
+    "category": "Statystyka"
+  },
+  {
+    "term": "Grupowanie danych",
+    "description": "Łączenie danych w przedziały.",
+    "example": "Wiek uczniów: 7–9 lat, 10–12 lat, 13–15 lat",
+    "category": "Statystyka"
+  },
+  {
+    "term": "Przedział liczbowy",
+    "description": "Zakres wartości w grupie danych.",
+    "example": "Przedział: [10, 20]",
+    "latex": "[10, 20]",
+    "category": "Statystyka"
+  },
+  {
+    "term": "Histogram",
+    "description": "Wykres słupkowy przedstawiający rozkład danych.",
+    "example": "Liczba uczniów w przedziałach wzrostu: 140–150 cm, 150–160 cm, 160–170 cm",
+    "category": "Statystyka"
+  },
+  {
+    "term": "Analiza danych",
+    "description": "Badanie i interpretacja informacji liczbowych.",
+    "example": "Oblicz średnią, mediana, rozstęp i wyciągnij wnioski.",
+    "category": "Statystyka"
+  },
+  {
+    "term": "Wnioski statystyczne",
+    "description": "Informacje uzyskane na podstawie danych.",
+    "example": "Na podstawie wyników testu można stwierdzić, że klasa dobrze opanowała materiał.",
+    "category": "Statystyka"
+  }
 ]

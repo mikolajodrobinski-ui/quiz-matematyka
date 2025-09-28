@@ -1,22 +1,135 @@
 [
-  { "term": "Równanie", "description": "Wyrażenie z niewiadomą, np. x + 3 = 5.", "category": "Logika" },
-  { "term": "Niewiadoma", "description": "Liczba, którą trzeba obliczyć.", "category": "Logika" },
-  { "term": "Zadanie tekstowe", "description": "Problem matematyczny opisany słownie.", "category": "Logika" },
-  { "term": "Strategia rozwiązania", "description": "Sposób podejścia do zadania.", "category": "Logika" },
-  { "term": "Schemat blokowy", "description": "Graficzne przedstawienie kolejnych kroków rozwiązania.", "category": "Logika" },
-  { "term": "Wyrażenie algebraiczne", "description": "Zapis matematyczny zawierający liczby, symbole i działania.", "category": "Logika" },
-  { "term": "Podstawienie", "description": "Zamiana niewiadomej na konkretną wartość.", "category": "Logika" },
-  { "term": "Rozwiązanie równania", "description": "Wartość niewiadomej, która spełnia równanie.", "category": "Logika" },
-  { "term": "Zmienna", "description": "Symbol reprezentujący dowolną liczbę.", "category": "Logika" },
-  { "term": "Wyrażenie logiczne", "description": "Zapis pokazujący zależności między wielkościami.", "category": "Logika" },
-  { "term": "Dowód matematyczny", "description": "Uzasadnienie poprawności twierdzenia.", "category": "Logika" },
-  { "term": "Warunek", "description": "Założenie, które musi być spełnione.", "category": "Logika" },
-  { "term": "Zależność", "description": "Powiązanie między wielkościami lub zmiennymi.", "category": "Logika" },
-  { "term": "Argument", "description": "Wartość podstawiana do wyrażenia.", "category": "Logika" },
-  { "term": "Wartość wyrażenia", "description": "Wynik obliczenia po podstawieniu.", "category": "Logika" },
-  { "term": "Zadanie złożone", "description": "Problem wymagający kilku kroków rozwiązania.", "category": "Logika" },
-  { "term": "Zadanie otwarte", "description": "Zadanie bez jednej poprawnej odpowiedzi.", "category": "Logika" },
-  { "term": "Zadanie zamknięte", "description": "Zadanie z gotowymi odpowiedziami do wyboru.", "category": "Logika" },
-  { "term": "Analiza treści", "description": "Zrozumienie i wyodrębnienie danych z zadania.", "category": "Logika" },
-  { "term": "Model matematyczny", "description": "Zapis matematyczny opisujący sytuację z zadania.", "category": "Logika" }
+  {
+    "term": "Równanie",
+    "description": "Wyrażenie z niewiadomą, które można rozwiązać, np. x + 3 = 5.",
+    "example": "Aby znaleźć x, odejmij 3 od obu stron: x = 2.",
+    "latex": "x + 3 = 5",
+    "category": "Logika"
+  },
+  {
+    "term": "Niewiadoma",
+    "description": "Liczba, którą trzeba obliczyć, zwykle oznaczana literą.",
+    "example": "W równaniu x − 4 = 10, niewiadomą jest x.",
+    "latex": "x - 4 = 10",
+    "category": "Logika"
+  },
+  {
+    "term": "Zadanie tekstowe",
+    "description": "Problem matematyczny opisany słownie, wymagający analizy i przekształcenia na równanie.",
+    "example": "Ala ma o 3 jabłka więcej niż Basia. Razem mają 11. Ile ma Basia?",
+    "category": "Logika"
+  },
+  {
+    "term": "Strategia rozwiązania",
+    "description": "Sposób podejścia do zadania, np. zapis równania, rysunek, tabela.",
+    "example": "Wybierz zmienną, zapisz równanie, rozwiąż krok po kroku.",
+    "category": "Logika"
+  },
+  {
+    "term": "Schemat blokowy",
+    "description": "Graficzne przedstawienie kolejnych kroków rozwiązania lub algorytmu.",
+    "example": "Start → Wprowadź dane → Oblicz → Wyświetl wynik → Stop",
+    "category": "Logika"
+  },
+  {
+    "term": "Wyrażenie algebraiczne",
+    "description": "Zapis matematyczny zawierający liczby, symbole i działania.",
+    "example": "3x + 2 to wyrażenie algebraiczne.",
+    "latex": "3x + 2",
+    "category": "Logika"
+  },
+  {
+    "term": "Podstawienie",
+    "description": "Zamiana niewiadomej na konkretną wartość w wyrażeniu lub równaniu.",
+    "example": "Dla x = 4, wyrażenie 2x + 1 daje 2×4 + 1 = 9.",
+    "latex": "2x + 1 \\quad \\text{dla } x = 4 \\Rightarrow 2 \\times 4 + 1 = 9",
+    "category": "Logika"
+  },
+  {
+    "term": "Rozwiązanie równania",
+    "description": "Wartość niewiadomej, która sprawia, że równanie jest prawdziwe.",
+    "example": "Dla równania x − 2 = 5, rozwiązaniem jest x = 7.",
+    "latex": "x - 2 = 5 \\Rightarrow x = 7",
+    "category": "Logika"
+  },
+  {
+    "term": "Zmienna",
+    "description": "Symbol reprezentujący dowolną liczbę, zwykle x, y, z.",
+    "example": "W wyrażeniu 5y − 3, zmienną jest y.",
+    "latex": "5y - 3",
+    "category": "Logika"
+  },
+  {
+    "term": "Wyrażenie logiczne",
+    "description": "Zapis pokazujący zależności między wielkościami, często z użyciem znaków nierówności.",
+    "example": "x > 3 oznacza, że x jest większe niż 3.",
+    "latex": "x > 3",
+    "category": "Logika"
+  },
+  {
+    "term": "Dowód matematyczny",
+    "description": "Uzasadnienie poprawności twierdzenia krok po kroku.",
+    "example": "Aby udowodnić, że suma dwóch liczb parzystych jest parzysta, pokaż że każda ma postać 2n.",
+    "latex": "2n + 2m = 2(n + m)",
+    "category": "Logika"
+  },
+  {
+    "term": "Warunek",
+    "description": "Założenie, które musi być spełnione, np. x > 0.",
+    "example": "Jeśli x > 0, to √x jest liczbą rzeczywistą.",
+    "latex": "x > 0 \\Rightarrow \\sqrt{x} \\in \\mathbb{R}",
+    "category": "Logika"
+  },
+  {
+    "term": "Zależność",
+    "description": "Powiązanie między wielkościami lub zmiennymi.",
+    "example": "Obwód koła zależy od promienia: O = 2πr.",
+    "latex": "O = 2\\pi r",
+    "category": "Logika"
+  },
+  {
+    "term": "Argument",
+    "description": "Wartość podstawiana do wyrażenia lub funkcji.",
+    "example": "Dla funkcji f(x) = x², argumentem może być x = 3.",
+    "latex": "f(x) = x^2 \\quad \\text{dla } x = 3",
+    "category": "Logika"
+  },
+  {
+    "term": "Wartość wyrażenia",
+    "description": "Wynik obliczenia po podstawieniu argumentu.",
+    "example": "Dla x = 3, wartość wyrażenia x² + 1 to 10.",
+    "latex": "x^2 + 1 \\quad \\text{dla } x = 3 \\Rightarrow 9 + 1 = 10",
+    "category": "Logika"
+  },
+  {
+    "term": "Zadanie złożone",
+    "description": "Problem wymagający kilku kroków rozwiązania, często z użyciem wielu działań.",
+    "example": "Oblicz pole prostokąta, a potem jego obwód.",
+    "category": "Logika"
+  },
+  {
+    "term": "Zadanie otwarte",
+    "description": "Zadanie bez jednej poprawnej odpowiedzi – uczeń może zaproponować różne rozwiązania.",
+    "example": "Jakie liczby dodane do siebie dają 10?",
+    "category": "Logika"
+  },
+  {
+    "term": "Zadanie zamknięte",
+    "description": "Zadanie z gotowymi odpowiedziami do wyboru.",
+    "example": "Która z liczb jest największa? A) 3 B) 5 C) 4",
+    "category": "Logika"
+  },
+  {
+    "term": "Analiza treści",
+    "description": "Zrozumienie i wyodrębnienie danych z zadania tekstowego.",
+    "example": "Zaznacz dane liczbowe, jednostki, pytanie końcowe.",
+    "category": "Logika"
+  },
+  {
+    "term": "Model matematyczny",
+    "description": "Zapis matematyczny opisujący sytuację z zadania.",
+    "example": "Jeśli Kasia ma x cukierków, a Basia 3 razy więcej, to Basia ma 3x.",
+    "latex": "x \\rightarrow \\text{Kasia}, \\quad 3x \\rightarrow \\text{Basia}",
+    "category": "Logika"
+  }
 ]

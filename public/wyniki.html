@@ -4,37 +4,31 @@
   <meta charset="UTF-8">
   <title>Panel nauczyciela – wyniki quizu</title>
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    body { font-family: Arial, sans-serif; padding: 20px; }
-    h1 { text-align: center; }
-    table { border-collapse: collapse; width: 100%; margin-top: 20px; }
-    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; vertical-align: top; }
-    th { background-color: #f0f0f0; }
-    pre { white-space: pre-wrap; word-wrap: break-word; }
-    button.usun { background-color: #e74c3c; color: white; border: none; padding: 5px 10px; cursor: pointer; }
-    button.usun:hover { background-color: #c0392b; }
-    #access-denied { color: red; text-align: center; margin-top: 20px; }
-  </style>
 </head>
 <body>
-  <h1>📊 Panel nauczyciela – wyniki quizu</h1>
+  <main class="quiz-container">
+    <a href="index.html">
+      <button style="margin-bottom: 20px;">⬅️ Wróć do menu</button>
+    </a>
 
-  <div id="access-denied" style="display:none;">❌ Dostęp zabroniony – nieprawidłowe hasło.</div>
+    <h1>📊 Panel nauczyciela – wyniki quizu</h1>
 
-  <table id="results-table" style="display:none;">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Imię</th>
-        <th>Wynik</th>
-        <th>Błędy</th>
-        <th>Czas</th>
-        <th>Data</th>
-        <th>Akcja</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
+    <div id="access-denied" class="error-message" style="display:none;">❌ Dostęp zabroniony – nieprawidłowe hasło.</div>
+
+    <table id="results-table" class="results-table" style="display:none;">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Imię</th>
+          <th>Wynik</th>
+          <th>Błędy</th>
+          <th>Czas</th>
+          <th>Data</th>
+          <th>Akcja</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
 
   <script>
     const haslo = prompt("🔐 Podaj hasło nauczyciela:");
@@ -47,14 +41,15 @@
           data.forEach(entry => {
             const row = document.createElement('tr');
             row.innerHTML = `
-              <td>${entry.id}</td>
-              <td>${entry.imie}</td>
-              <td>${entry.wynik}</td>
-              <td><pre>${entry.bledy}</pre></td>
-              <td>${entry.czas || '-'}</td>
-              <td>${new Date(entry.data).toLocaleString()}</td>
-              <td><button class="usun" onclick="usunWpis(${entry.id})">Usuń</button></td>
-            `;
+            <td>${entry.id}</td>
+            <td>${entry.imie}</td>
+            <td>${entry.wynik}</td>
+            <td><pre>${entry.bledy}</pre></td>
+            <td>${entry.czas || '-'}</td>
+            <td>${new Date(entry.data).toLocaleString()}</td>
+            <td><button class="usun-button" onclick="usunWpis(${entry.id})">Usuń</button></td>
+  `;
+
             tbody.appendChild(row);
           });
         });
