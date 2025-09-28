@@ -1,497 +1,277 @@
 [
   {
     "id": "q1",
-    "question": "Oblicz pisemnie: 2 345 + 1 678",
+    "question": "Co oznacza mianownik w ułamku zwykłym?",
     "options": {
-      "A": "4 013",
-      "B": "4 023",
-      "C": "4 033",
-      "D": "4 043"
+      "A": "Liczbę części, które mamy",
+      "B": "Liczbę części, na które dzielimy całość",
+      "C": "Sposób dodawania ułamków",
+      "D": "Wartość dziesiętną"
     },
     "correct": "B"
   },
   {
     "id": "q2",
-    "question": "Oblicz pisemnie: 4 789 + 2 112",
+    "question": "Który ułamek zwykły jest równy 1/2?",
     "options": {
-      "A": "6 891",
-      "B": "6 901",
-      "C": "6 911",
-      "D": "6 921"
-    },
-    "correct": "C"
-  },
-  {
-    "id": "q3",
-    "question": "Oblicz pisemnie: 3 006 + 5 994",
-    "options": {
-      "A": "9 000",
-      "B": "8 900",
-      "C": "9 100",
-      "D": "9 200"
-    },
-    "correct": "A"
-  },
-  {
-    "id": "q4",
-    "question": "Oblicz pisemnie: 5 432 − 2 198",
-    "options": {
-      "A": "3 234",
-      "B": "3 244",
-      "C": "3 254",
-      "D": "3 264"
+      "A": "2/3",
+      "B": "3/6",
+      "C": "1/3",
+      "D": "2/5"
     },
     "correct": "B"
   },
   {
-    "id": "q5",
-    "question": "Oblicz pisemnie: 7 000 − 3 456",
+    "id": "q3",
+    "question": "Oblicz: 1/4 + 2/4",
     "options": {
-      "A": "3 544",
-      "B": "3 554",
-      "C": "3 564",
-      "D": "3 574"
+      "A": "1/4",
+      "B": "2/8",
+      "C": "3/4",
+      "D": "1/2"
+    },
+    "correct": "C"
+  },
+  {
+    "id": "q4",
+    "question": "Oblicz: 2/5 + 1/5",
+    "options": {
+      "A": "3/10",
+      "B": "2/10",
+      "C": "1/10",
+      "D": "3/5"
+    },
+    "correct": "D"
+  },
+  {
+    "id": "q5",
+    "question": "Oblicz: 3/4 − 1/4",
+    "options": {
+      "A": "1/4",
+      "B": "3/8",
+      "C": "2/4",
+      "D": "1/2"
     },
     "correct": "C"
   },
   {
     "id": "q6",
-    "question": "Oblicz pisemnie: 6 321 − 1 234",
+    "question": "Oblicz: 5/6 − 2/6",
     "options": {
-      "A": "5 087",
-      "B": "5 097",
-      "C": "5 107",
-      "D": "5 117"
+      "A": "1/6",
+      "B": "2/3",
+      "C": "3/6",
+      "D": "1/2"
     },
-    "correct": "A"
+    "correct": "C"
   },
   {
     "id": "q7",
-    "question": "Oblicz pisemnie: 123 × 4",
+    "question": "Oblicz: 2/3 × 3/4",
     "options": {
-      "A": "492",
-      "B": "482",
-      "C": "502",
-      "D": "512"
+      "A": "6/7",
+      "B": "5/12",
+      "C": "1/2",
+      "D": "6/12"
     },
-    "correct": "A"
+    "correct": "D"
   },
   {
     "id": "q8",
-    "question": "Oblicz pisemnie: 215 × 6",
+    "question": "Oblicz: 1/2 × 2/5",
     "options": {
-      "A": "1 290",
-      "B": "1 280",
-      "C": "1 300",
-      "D": "1 310"
+      "A": "1/2",
+      "B": "2/10",
+      "C": "1/5",
+      "D": "3/10"
     },
-    "correct": "A"
+    "correct": "B"
   },
   {
     "id": "q9",
-    "question": "Oblicz pisemnie: 342 × 5",
+    "question": "Oblicz: 3/4 ÷ 1/2",
     "options": {
-      "A": "1 710",
-      "B": "1 720",
-      "C": "1 730",
-      "D": "1 740"
+      "A": "3/2",
+      "B": "1/2",
+      "C": "3/8",
+      "D": "1 1/2"
     },
     "correct": "A"
   },
   {
     "id": "q10",
-    "question": "Oblicz pisemnie: 1 728 ÷ 12",
+    "question": "Oblicz: 2/5 ÷ 1/5",
     "options": {
-      "A": "144",
-      "B": "134",
-      "C": "154",
-      "D": "164"
-    },
-    "correct": "A"
-  },
-  {
-    "id": "q11",
-    "question": "Oblicz pisemnie: 2 400 ÷ 16",
-    "options": {
-      "A": "150",
-      "B": "160",
-      "C": "140",
-      "D": "170"
-    },
-    "correct": "B"
-  },
-  {
-    "id": "q12",
-    "question": "Oblicz pisemnie: 1 008 ÷ 18",
-    "options": {
-      "A": "56",
-      "B": "58",
-      "C": "60",
-      "D": "62"
+      "A": "5",
+      "B": "10",
+      "C": "2",
+      "D": "1"
     },
     "correct": "C"
   },
   {
-    "id": "q13",
-    "question": "Ile to 1/4 + 2/4?",
+    "id": "q11",
+    "question": "Co oznacza przecinek w ułamku dziesiętnym?",
     "options": {
-      "A": "3/4",
-      "B": "1/2",
-      "C": "1",
-      "D": "2/2"
+      "A": "Oddziela część całkowitą od dziesiętnej",
+      "B": "Zastępuje znak dzielenia",
+      "C": "Pokazuje część setną",
+      "D": "Oddziela licznik od mianownika"
     },
     "correct": "A"
   },
   {
-    "id": "q14",
-    "question": "Ile to 2/5 + 1/5?",
-    "options": {
-      "A": "3/5",
-      "B": "2/5",
-      "C": "4/5",
-      "D": "1/5"
-    },
-    "correct": "A"
-  },
-  {
-    "id": "q15",
-    "question": "Ile to 3/8 + 2/8?",
-    "options": {
-      "A": "5/8",
-      "B": "6/8",
-      "C": "4/8",
-      "D": "3/8"
-    },
-    "correct": "A"
-  },
-  {
-    "id": "q16",
-    "question": "Ile to 3/4 − 1/4?",
+    "id": "q12",
+    "question": "Który zapis jest ułamkiem dziesiętnym?",
     "options": {
       "A": "2/4",
-      "B": "1/2",
-      "C": "3/2",
-      "D": "1/4"
+      "B": "3/6",
+      "C": "1/2",
+      "D": "0,5"
     },
-    "correct": "A"
+    "correct": "D"
   },
   {
-    "id": "q17",
-    "question": "Ile to 5/6 − 1/2?",
+    "id": "q13",
+    "question": "Oblicz: 0,3 + 0,4",
     "options": {
-      "A": "1/3",
-      "B": "2/6",
-      "C": "1/6",
-      "D": "2/3"
-    },
-    "correct": "A"
-  },
-  {
-    "id": "q18",
-    "question": "Ile to 7/8 − 3/8?",
-    "options": {
-      "A": "4/8",
-      "B": "5/8",
-      "C": "3/8",
-      "D": "2/8"
-    },
-    "correct": "A"
-  },
-  {
-    "id": "q19",
-    "question": "Ile to 2/3 × 3/4?",
-    "options": {
-      "A": "6/12",
-      "B": "6/10",
-      "C": "6/9",
-      "D": "6/8"
-    },
-    "correct": "A"
-  },
-  {
-    "id": "q20",
-    "question": "Ile to 1/2 × 2/5?",
-    "options": {
-      "A": "1/5",
-      "B": "2/10",
-      "C": "2/5",
-      "D": "1/2"
+      "A": "0,6",
+      "B": "0,7",
+      "C": "0,8",
+      "D": "0,9"
     },
     "correct": "B"
   },
   {
-    "id": "q21",
-    "question": "Ile to 3/4 × 1/3?",
+    "id": "q14",
+    "question": "Oblicz: 0,9 + 0,1",
     "options": {
-      "A": "3/12",
-      "B": "4/12",
-      "C": "1/4",
-      "D": "1/3"
+      "A": "0,99",
+      "B": "0,91",
+      "C": "1,0",
+      "D": "1,1"
     },
-    "correct": "A"
+    "correct": "C"
+  },
+  {
+    "id": "q15",
+    "question": "Oblicz: 0,8 − 0,3",
+    "options": {
+      "A": "0,4",
+      "B": "0,5",
+      "C": "0,3",
+      "D": "0,6"
+    },
+    "correct": "B"
+  },
+  {
+    "id": "q16",
+    "question": "Oblicz: 0,7 − 0,2",
+    "options": {
+      "A": "0,4",
+      "B": "0,5",
+      "C": "0,6",
+      "D": "0,3"
+    },
+    "correct": "B"
+  },
+  {
+    "id": "q17",
+    "question": "Oblicz: 0,5 × 0,2",
+    "options": {
+      "A": "0,2",
+      "B": "0,25",
+      "C": "0,3",
+      "D": "0,1"
+    },
+    "correct": "D"
+  },
+  {
+    "id": "q18",
+    "question": "Oblicz: 0,4 × 0,3",
+    "options": {
+      "A": "0,7",
+      "B": "0,14",
+      "C": "0,12",
+      "D": "0,1"
+    },
+    "correct": "C"
+  },
+  {
+    "id": "q19",
+    "question": "Oblicz: 0,6 ÷ 0,2",
+    "options": {
+      "A": "2",
+      "B": "4",
+      "C": "1",
+      "D": "3"
+    },
+    "correct": "D"
+  },
+  {
+    "id": "q20",
+    "question": "Oblicz: 0,9 ÷ 0,3",
+    "options": {
+      "A": "2",
+      "B": "4",
+      "C": "3",
+      "D": "1"
+    },
+    "correct": "C"
+  },
+  {
+    "id": "q21",
+    "question": "Co to jest pole figury?",
+    "options": {
+      "A": "Suma boków figury",
+      "B": "Powierzchnia zajmowana przez figurę",
+      "C": "Liczba kątów w figurze",
+      "D": "Odległość między punktami"
+    },
+    "correct": "B"
   },
   {
     "id": "q22",
-    "question": "Ile to 1/2 ÷ 1/4?",
+    "question": "Jak obliczamy obwód prostokąta?",
     "options": {
-      "A": "2",
-      "B": "1",
-      "C": "4",
-      "D": "3"
+      "A": "Długość × szerokość",
+      "B": "Długość + szerokość",
+      "C": "2 × (długość + szerokość)",
+      "D": "Długość ÷ szerokość"
     },
-    "correct": "A"
+    "correct": "C"
   },
   {
     "id": "q23",
-    "question": "Ile to 2/3 ÷ 1/6?",
+    "question": "Oblicz pole prostokąta o bokach 6 cm i 4 cm.",
     "options": {
-      "A": "4",
-      "B": "6",
-      "C": "3",
-      "D": "5"
+      "A": "10 cm²",
+      "B": "24 cm²",
+      "C": "20 cm²",
+      "D": "12 cm²"
     },
-    "correct": "A"
+    "correct": "B"
   },
   {
     "id": "q24",
-    "question": "Ile to 3/4 ÷ 3/8?",
+    "question": "Oblicz pole trójkąta o podstawie 8 cm i wysokości 5 cm.",
     "options": {
-      "A": "2",
-      "B": "1",
-      "C": "3",
-      "D": "4"
+      "A": "20 cm²",
+      "B": "40 cm²",
+      "C": "13 cm²",
+      "D": "30 cm²"
     },
     "correct": "A"
   },
   {
     "id": "q25",
-    "question": "Ile to 2,5 + 3,75?",
+    "question": "Ile kilometrów to 3 500 metrów?",
     "options": {
-      "A": "6,25",
-      "B": "6,35",
-      "C": "6,15",
-      "D": "6,45"
+      "A": "0,35 km",
+      "B": "3,5 km",
+      "C": "35 km",
+      "D": "350 km"
     },
     "correct": "B"
-  },
-  {
-    "id": "q26",
-    "question": "Ile to 1,2 + 4,8?",
-    "options": {
-      "A": "6,0",
-      "B": "6,1",
-      "C": "6,2",
-      "D": "6,3"
-    },
-    "correct": "A"
-  },
-  {
-    "id": "q27",
-    "question": "Ile to 0,75 + 0,25?",
-    "options": {
-      "A": "1,0",
-      "B": "0,95",
-      "C": "1,25",
-      "D": "0,85"
-    },
-    "correct": "A"
-  },
-  {
-    "id": "q28",
-    "question": "Ile to 5,6 − 2,3?",
-    "options": {
-      "A": "3,3",
-      "B": "3,2",
-      "C": "3,1",
-      "D": "3,4"
-    },
-    "correct": "A"
-  },
-  {
-    "id": "q29",
-    "question": "Ile to 7,5 − 4,25?",
-    "options": {
-      "A": "3,25",
-      "B": "3,15",
-      "C": "3,35",
-      "D": "3,45"
-    },
-    "correct": "A"
-  },
-  {
-    "id": "q30",
-    "question": "Ile to 9,0 − 3,6?",
-    "options": {
-      "A": "5,4",
-      "B": "5,3",
-      "C": "5,5",
-      "D": "5,6"
-    },
-    "correct": "A"
-  },
-  {
-    "id": "q31",
-    "question": "Ile to 2,5 × 4?",
-    "options": {
-      "A": "10",
-      "B": "9",
-      "C": "11",
-      "D": "8"
-    },
-    "correct": "A"
-  },
-  {
-    "id": "q32",
-    "question": "Ile to 1,2 × 3?",
-    "options": {
-      "A": "3,6",
-      "B": "3,4",
-      "C": "3,2",
-      "D": "3,8"
-    },
-    "correct": "A"
-  },
-  {
-    "id": "q33",
-    "question": "Ile to 0,5 × 0,2?",
-    "options": {
-      "A": "0,1",
-      "B": "0,2",
-      "C": "0,01",
-      "D": "0,05"
-    },
-    "correct": "A"
-  },
-  {
-    "id": "q34",
-    "question": "Ile to 4,8 ÷ 2?",
-    "options": {
-      "A": "2,4",
-      "B": "2,2",
-      "C": "2,6",
-      "D": "2,8"
-    },
-    "correct": "A"
-  },
-  {
-    "id": "q35",
-    "question": "Ile to 6 ÷ 0,5?",
-    "options": {
-      "A": "12",
-      "B": "3",
-      "C": "6",
-      "D": "9"
-    },
-    "correct": "A"
-  },
-  {
-    "id": "q36",
-    "question": "Ile to 2,4 ÷ 0,6?",
-    "options": {
-      "A": "4",
-      "B": "3",
-      "C": "2",
-      "D": "5"
-    },
-    "correct": "B"
-  },
-  {
-    "id": "q37",
-    "question": "Pole prostokąta o bokach 7 cm i 5 cm wynosi:",
-    "options": {
-      "A": "35 cm²",
-      "B": "30 cm²",
-      "C": "25 cm²",
-      "D": "40 cm²"
-    },
-    "correct": "A"
-  },
-  {
-    "id": "q38",
-    "question": "Pole trójkąta o podstawie 6 cm i wysokości 4 cm wynosi:",
-    "options": {
-      "A": "12 cm²",
-      "B": "24 cm²",
-      "C": "10 cm²",
-      "D": "14 cm²"
-    },
-    "correct": "A"
-  },
-  {
-    "id": "q39",
-    "question": "Pole kwadratu o boku 10 cm wynosi:",
-    "options": {
-      "A": "100 cm²",
-      "B": "40 cm²",
-      "C": "20 cm²",
-      "D": "80 cm²"
-    },
-    "correct": "A"
-  },
-  {
-    "id": "q40",
-    "question": "Obwód prostokąta o bokach 6 cm i 9 cm wynosi:",
-    "options": {
-      "A": "30 cm",
-      "B": "28 cm",
-      "C": "32 cm",
-      "D": "34 cm"
-    },
-    "correct": "A"
-  },
-  {
-    "id": "q41",
-    "question": "Obwód kwadratu o boku 7 cm wynosi:",
-    "options": {
-      "A": "28 cm",
-      "B": "21 cm",
-      "C": "24 cm",
-      "D": "25 cm"
-    },
-    "correct": "A"
-  },
-  {
-    "id": "q42",
-    "question": "Obwód trójkąta o bokach 5 cm, 6 cm i 7 cm wynosi:",
-    "options": {
-      "A": "18 cm",
-      "B": "17 cm",
-      "C": "16 cm",
-      "D": "19 cm"
-    },
-    "correct": "A"
-  },
-  {
-    "id": "q43",
-    "question": "Który z poniższych kształtów ma najwięcej osi symetrii?",
-    "options": {
-      "A": "Kwadrat",
-      "B": "Trapez",
-      "C": "Prostokąt",
-      "D": "Trójkąt prostokątny"
-    },
-    "correct": "A"
-  },
-  {
-    "id": "q44",
-    "question": "Który z poniższych kształtów NIE ma osi symetrii?",
-    "options": {
-      "A": "Trapez",
-      "B": "Koło",
-      "C": "Kwadrat",
-      "D": "Prostokąt"
-    },
-    "correct": "A"
-  },
-  {
-    "id": "q45",
-    "question": "Ile osi symetrii ma koło?",
-    "options": {
-      "A": "Nieskończenie wiele",
-      "B": "0",
-      "C": "2",
-      "D": "4"
-    },
-    "correct": "A"
   }
 ]
