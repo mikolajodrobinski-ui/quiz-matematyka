@@ -98,19 +98,39 @@
   {
     "term": "Działania pisemne",
     "description": "Obliczenia wykonywane krok po kroku na papierze, z ustawieniem liczb jedna pod drugą.",
-    "example": "Dodawanie pisemne: 456 + 789\n1. Zapisz liczby jedna pod drugą, wyrównując kolumny.\n2. Dodaj jednostki: 6 + 9 = 15 → zapisz 5, przenieś 1.\n3. Dodaj dziesiątki: 5 + 8 + 1 = 14 → zapisz 4, przenieś 1.\n4. Dodaj setki: 4 + 7 + 1 = 12 → zapisz 12.\nWynik: 1245.",
+    "example": "Dodawanie pisemne: 456 + 789",
+    "steps": [
+      "Zapisz liczby jedna pod drugą, wyrównując kolumny.",
+      "Dodaj jednostki: 6 + 9 = 15 → zapisz 5, przenieś 1.",
+      "Dodaj dziesiątki: 5 + 8 + 1 = 14 → zapisz 4, przenieś 1.",
+      "Dodaj setki: 4 + 7 + 1 = 12 → zapisz 12.",
+      "Wynik: 1245."
+    ],
     "category": "Arytmetyka"
   },
   {
     "term": "Mnożenie pisemne",
     "description": "Metoda mnożenia liczby krok po kroku, z zapisem kolejnych wyników pod kreską.",
-    "example": "Mnożenie pisemne: 23 × 7\n1. Zapisz liczby jedna pod drugą.\n2. Mnożenie jednostek: 3 × 7 = 21 → zapisz 1, przenieś 2.\n3. Mnożenie dziesiątek: 2 × 7 = 14 + 2 = 16 → zapisz 16.\nWynik: 161.",
+    "example": "Mnożenie pisemne: 23 × 7",
+    "steps": [
+      "Zapisz liczby jedna pod drugą.",
+      "Mnożenie jednostek: 3 × 7 = 21 → zapisz 1, przenieś 2.",
+      "Mnożenie dziesiątek: 2 × 7 = 14 + 2 = 16 → zapisz 16.",
+      "Wynik: 161."
+    ],
     "category": "Arytmetyka"
   },
   {
     "term": "Dzielenie pisemne",
     "description": "Metoda dzielenia liczby krok po kroku, z zapisem pod kreską i obliczaniem reszt.",
-    "example": "Dzielenie pisemne: 132 ÷ 4\n1. Sprawdź, ile razy 4 mieści się w 13 → 3 razy.\n2. 3 × 4 = 12 → zapisz 12 pod 13, odejmij: 13 − 12 = 1.\n3. Przenieś 2 → mamy 12.\n4. 12 ÷ 4 = 3 → zapisz 3.\nWynik: 33.",
+    "example": "Dzielenie pisemne: 132 ÷ 4",
+    "steps": [
+      "Sprawdź, ile razy 4 mieści się w 13 → 3 razy.",
+      "3 × 4 = 12 → zapisz 12 pod 13, odejmij: 13 − 12 = 1.",
+      "Przenieś 2 → mamy 12.",
+      "12 ÷ 4 = 3 → zapisz 3.",
+      "Wynik: 33."
+    ],
     "category": "Arytmetyka"
   },
   {

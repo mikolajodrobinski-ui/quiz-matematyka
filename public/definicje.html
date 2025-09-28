@@ -63,26 +63,41 @@
       }
     }
 
-        function showDefinitions(definitions) {
-        const container = document.getElementById('definitions');
-        container.innerHTML = "";
+function showDefinitions(definitions) {
+  const container = document.getElementById('definitions');
+  container.innerHTML = "";
 
-      definitions.forEach(def => {
-        const div = document.createElement('div');
-        div.className = 'definition';
+  definitions.forEach(def => {
+    const div = document.createElement('div');
+    div.className = 'definition';
 
-      div.innerHTML = `
-        <strong>${def.term}</strong>
-        <p>${def.description}</p>
-        ${def.example ? `<p><em>Przykład:</em> ${def.example}</p>` : ""}
-        ${def.formula ? `<p><em>Wzór na pole:</em> ${def.formula}</p>` : ""}
-        ${def.formulaExample ? `<p><em>Przykład obliczenia:</em> ${def.formulaExample}</p>` : ""}
-        <p><em>Kategoria:</em> ${def.category}</p>
-      `;
+    div.innerHTML = `
+      <strong>${def.term}</strong>
+      <p>${def.description}</p>
+      ${def.example ? `<p><em>Przykład:</em> ${def.example}</p>` : ""}
+      ${def.formula ? `<p><em>Wzór na pole:</em> ${def.formula}</p>` : ""}
+      ${def.formulaExample ? `<p><em>Przykład obliczenia:</em> ${def.formulaExample}</p>` : ""}
+      <p><em>Kategoria:</em> ${def.category}</p>
+    `;
 
-      container.appendChild(div);
-    });
+    // Dodaj kroki, jeśli istnieją
+    if (def.steps && Array.isArray(def.steps)) {
+      const stepsTitle = document.createElement('p');
+      stepsTitle.innerHTML = "<em>Kroki:</em>";
+      const stepsList = document.createElement('ol');
+      def.steps.forEach(step => {
+        const li = document.createElement('li');
+        li.textContent = step;
+        stepsList.appendChild(li);
+      });
+      div.appendChild(stepsTitle);
+      div.appendChild(stepsList);
+    }
+
+    container.appendChild(div);
+  });
 }
+
 
     document.getElementById('category-select').addEventListener('change', e => {
       loadDefinitions(e.target.value);
