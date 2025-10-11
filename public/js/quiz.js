@@ -28,7 +28,6 @@ async function loadQuiz() {
   quizStartTime = Date.now();
   startTimer(questions.length * 2 * 60); // 2 minuty na pytanie
 
-  // Zablokuj przycisk sprawdzania na starcie
   document.getElementById('check-button').disabled = true;
   document.getElementById('send-button').disabled = false;
 }
@@ -44,6 +43,17 @@ function calculateScore(questions) {
   return score;
 }
 
+function ocenaZaWynik(score, total) {
+  const procent = (score / total) * 100;
+
+  if (procent === 100) return "6";
+  if (procent >= 95) return "5";
+  if (procent >= 85) return "4";
+  if (procent >= 70) return "3";
+  if (procent >= 50) return "2";
+  return "1";
+}
+
 function collectWrongAnswers(questions) {
   return questions
     .filter(q => {
@@ -54,14 +64,16 @@ function collectWrongAnswers(questions) {
     .join('\n');
 }
 
-function submitQuiz() {
+function submitQuiz(force = false) {
   const checkButton = document.getElementById('check-button');
-  if (checkButton.disabled) {
+  if (checkButton.disabled && !force) {
     alert("📩 Najpierw wyślij odpowiedzi do nauczyciela.");
     return;
   }
 
   const score = calculateScore(questions);
+  const ocena = ocenaZaWynik(score, questions.length);
+
   questions.forEach(q => {
     const selected = document.querySelector(`input[name="${q.id}"]:checked`);
     const feedback = document.getElementById(`fb_${q.id}`);
@@ -75,7 +87,7 @@ function submitQuiz() {
   });
 
   const result = document.getElementById('result');
-  result.textContent = `Twój wynik: ${score} / ${questions.length}`;
+  result.textContent = `Twój wynik: ${score} / ${questions.length} 🧠 Ocena: ${ocena}`;
   result.scrollIntoView({ behavior: 'smooth' });
 }
 
@@ -92,7 +104,8 @@ function sendResult(auto = false) {
   }
 
   const score = calculateScore(questions);
-  const scoreText = `Wynik: ${score} / ${questions.length}`;
+  const ocena = ocenaZaWynik(score, questions.length);
+  const scoreText = `Wynik: ${score} / ${questions.length} (Ocena: ${ocena})`;
   const wrongAnswersText = collectWrongAnswers(questions);
 
   const durationMs = Date.now() - quizStartTime;
@@ -113,11 +126,15 @@ function sendResult(auto = false) {
   })
   .then(res => res.text())
   .then(msg => {
-    console.log("✅ Baza danych:", msg);
-    if (!auto) alert(msg);
-    document.getElementById('check-button').disabled = false;
-    document.getElementById('send-button').disabled = true;
-  })
+  console.log("✅ Baza danych:", msg);
+  if (!auto) {
+    alert(`${msg}\n\nTwój wynik: ${score} / ${questions.length}\nOcena: ${ocena}`);
+  }
+  submitQuiz(true);
+  document.getElementById('check-button').disabled = false;
+  document.getElementById('send-button').disabled = true;
+})
+
   .catch(err => {
     console.error("❌ Błąd zapisu do bazy:", err);
     alert("❌ Nie udało się wysłać wyników.");
@@ -137,7 +154,7 @@ function startTimer(seconds) {
     if (remaining < 0) {
       clearInterval(interval);
       alert("⏰ Czas minął! Quiz został zakończony.");
-      submitQuiz();
+      submitQuiz(true);
       sendResult(true); // automatyczne wysłanie
       document.getElementById('check-button').disabled = false;
       document.getElementById('send-button').disabled = true;
