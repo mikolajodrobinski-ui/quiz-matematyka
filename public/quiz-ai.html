@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz AI – Kwizmat</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main class="quiz-ai">
+    <h1>🤖 Quiz generowany przez AI</h1>
+    <p>Wybierz kategorię, a quiz zostanie wygenerowany automatycznie:</p>
+
+    <select id="category-select">
+      <option value="Arytmetyka">Arytmetyka</option>
+      <option value="Ułamki">Ułamki</option>
+      <option value="Geometria">Geometria</option>
+      <option value="Procenty">Procenty</option>
+      <option value="Statystyka">Statystyka</option>
+      <option value="Logika">Logika</option>
+      <option value="Jednostki miary">Jednostki miary</option>
+    </select>
+
+    <button onclick="generujQuiz()">🎲 Generuj quiz</button>
+
+    <form id="quiz-form"></form>
+    <p id="result"></p>
+  </main>
+
+  <script src="js/quiz-ai.js"></script>
+</body>
+</html>
