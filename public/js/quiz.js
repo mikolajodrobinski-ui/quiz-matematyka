@@ -126,12 +126,15 @@ function sendResult(auto = false) {
   })
   .then(res => res.text())
   .then(msg => {
-    console.log("✅ Baza danych:", msg);
-    if (!auto) alert(msg);
-    submitQuiz(true); // ⬅️ Pokazujemy wynik i ocenę po wysłaniu
-    document.getElementById('check-button').disabled = false;
-    document.getElementById('send-button').disabled = true;
-  })
+  console.log("✅ Baza danych:", msg);
+  if (!auto) {
+    alert(`${msg}\n\nTwój wynik: ${score} / ${questions.length}\nOcena: ${ocena}`);
+  }
+  submitQuiz(true);
+  document.getElementById('check-button').disabled = false;
+  document.getElementById('send-button').disabled = true;
+})
+
   .catch(err => {
     console.error("❌ Błąd zapisu do bazy:", err);
     alert("❌ Nie udało się wysłać wyników.");
