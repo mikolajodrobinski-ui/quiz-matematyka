@@ -64,9 +64,9 @@ function collectWrongAnswers(questions) {
     .join('\n');
 }
 
-function submitQuiz() {
+function submitQuiz(force = false) {
   const checkButton = document.getElementById('check-button');
-  if (checkButton.disabled) {
+  if (checkButton.disabled && !force) {
     alert("📩 Najpierw wyślij odpowiedzi do nauczyciela.");
     return;
   }
@@ -128,7 +128,7 @@ function sendResult(auto = false) {
   .then(msg => {
     console.log("✅ Baza danych:", msg);
     if (!auto) alert(msg);
-    submitQuiz(); // ⬅️ Pokazujemy wynik i ocenę po wysłaniu
+    submitQuiz(true); // ⬅️ Pokazujemy wynik i ocenę po wysłaniu
     document.getElementById('check-button').disabled = false;
     document.getElementById('send-button').disabled = true;
   })
@@ -151,7 +151,7 @@ function startTimer(seconds) {
     if (remaining < 0) {
       clearInterval(interval);
       alert("⏰ Czas minął! Quiz został zakończony.");
-      submitQuiz();
+      submitQuiz(true);
       sendResult(true); // automatyczne wysłanie
       document.getElementById('check-button').disabled = false;
       document.getElementById('send-button').disabled = true;
