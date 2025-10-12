@@ -19,26 +19,38 @@
     </a>
 
     <h1>🤖 Quiz generowany przez AI</h1>
-    <p>Wybierz kategorię, a quiz zostanie wygenerowany automatycznie:</p>
+    <div id="access-denied" class="error-message" style="display:none;">❌ Dostęp zabroniony – nieprawidłowe hasło.</div>
 
-    <label for="category-select">Wybierz kategorię:</label>
-    <select id="category-select">
-      <option value="Arytmetyka">Arytmetyka</option>
-      <option value="Ułamki">Ułamki</option>
-      <option value="Geometria">Geometria</option>
-      <option value="Procenty">Procenty</option>
-      <option value="Statystyka">Statystyka</option>
-      <option value="Logika">Logika</option>
-      <option value="Jednostki miary">Jednostki miary</option>
-    </select>
+    <div id="quiz-interface" style="display:none;">
+      <p>Wybierz kategorię, a quiz zostanie wygenerowany automatycznie:</p>
 
-    <button onclick="generujQuiz()" style="margin-top: 10px;">🎲 Generuj quiz</button>
+      <label for="category-select">Wybierz kategorię:</label>
+      <select id="category-select">
+        <option value="Arytmetyka">Arytmetyka</option>
+        <option value="Ułamki">Ułamki</option>
+        <option value="Geometria">Geometria</option>
+        <option value="Procenty">Procenty</option>
+        <option value="Statystyka">Statystyka</option>
+        <option value="Logika">Logika</option>
+        <option value="Jednostki miary">Jednostki miary</option>
+      </select>
 
-    <div id="quiz-content" style="margin-top: 20px;"></div>
-    <p id="result"></p>
+      <button onclick="generujQuiz()" style="margin-top: 10px;">🎲 Generuj quiz</button>
+
+      <div id="quiz-content" style="margin-top: 20px;"></div>
+      <p id="result"></p>
+    </div>
   </main>
 
   <script>
+    // Sprawdzenie dostępu
+    const dostep = localStorage.getItem("dostepNauczyciel");
+    if (dostep === "true") {
+      document.getElementById("quiz-interface").style.display = "block";
+    } else {
+      document.getElementById("access-denied").style.display = "block";
+    }
+
     function generujQuiz() {
       const category = document.getElementById("category-select").value;
       const container = document.getElementById("quiz-content");

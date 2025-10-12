@@ -37,6 +37,7 @@
     function sprawdzHasloAI() {
       const haslo = prompt("🔐 Podaj hasło do quizu AI:");
       if (haslo === "notsecret") {
+        localStorage.setItem("dostepNauczyciel", "true");
         window.location.href = "quiz-ai.html";
       } else {
         alert("❌ Nieprawidłowe hasło.");
