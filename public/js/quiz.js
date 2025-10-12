@@ -25,6 +25,11 @@ async function loadQuiz() {
     form.appendChild(div);
   });
 
+  // Renderuj LaTeX po dodaniu wszystkich pytań
+  if (window.MathJax) {
+    MathJax.typesetPromise();
+  }
+
   quizStartTime = Date.now();
   startTimer(questions.length * 2 * 60); // 2 minuty na pytanie
 
@@ -126,15 +131,14 @@ function sendResult(auto = false) {
   })
   .then(res => res.text())
   .then(msg => {
-  console.log("✅ Baza danych:", msg);
-  if (!auto) {
-    alert(`${msg}\n\nTwój wynik: ${score} / ${questions.length}\nOcena: ${ocena}`);
-  }
-  submitQuiz(true);
-  document.getElementById('check-button').disabled = false;
-  document.getElementById('send-button').disabled = true;
-})
-
+    console.log("✅ Baza danych:", msg);
+    if (!auto) {
+      alert(`${msg}\n\nTwój wynik: ${score} / ${questions.length}\nOcena: ${ocena}`);
+    }
+    submitQuiz(true);
+    document.getElementById('check-button').disabled = false;
+    document.getElementById('send-button').disabled = true;
+  })
   .catch(err => {
     console.error("❌ Błąd zapisu do bazy:", err);
     alert("❌ Nie udało się wysłać wyników.");
@@ -148,14 +152,14 @@ function startTimer(seconds) {
   const interval = setInterval(() => {
     const min = Math.floor(remaining / 60);
     const sec = remaining % 60;
-    timeDisplay.textContent = `${min}:${sec.toString().padStart(2, '0')}`;
+    timeDisplay.textContent = `Czas: ${min}:${sec.toString().padStart(2, '0')}`;
     remaining--;
 
     if (remaining < 0) {
       clearInterval(interval);
       alert("⏰ Czas minął! Quiz został zakończony.");
       submitQuiz(true);
-      sendResult(true); // automatyczne wysłanie
+      sendResult(true);
       document.getElementById('check-button').disabled = false;
       document.getElementById('send-button').disabled = true;
     }
