@@ -15,6 +15,7 @@
       <a href="quiz.html">
         <button>🧮 Rozwiąż quiz matematyczny</button>
       </a>
+      <button onclick="sprawdzHasloAI()">🤖 Quiz generowany przez AI</button>
       <a href="definicje.html">
         <button>📖 Definicje matematyczne</button>
       </a>
@@ -26,12 +27,22 @@
     function sprawdzHaslo() {
       const haslo = prompt("🔐 Podaj hasło nauczyciela:");
       if (haslo === "notsecret") {
+        localStorage.setItem("dostepNauczyciel", "true"); // ⬅️ zapamiętaj dostęp
         window.location.href = "wyniki.html";
+      } else {
+        alert("❌ Nieprawidłowe hasło.");
+      }
+    }
+
+    function sprawdzHasloAI() {
+      const haslo = prompt("🔐 Podaj hasło do quizu AI:");
+      if (haslo === "notsecret") {
+        localStorage.setItem("dostepNauczyciel", "true");
+        window.location.href = "quiz-ai.html";
       } else {
         alert("❌ Nieprawidłowe hasło.");
       }
     }
   </script>
 </body>
-
 </html>

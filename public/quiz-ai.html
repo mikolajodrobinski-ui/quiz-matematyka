@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz AI – Kwizmat</title>
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- MathJax do renderowania LaTeX -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+<body>
+  <main class="quiz-container">
+    <a href="index.html">
+      <button style="margin-bottom: 20px;">⬅️ Wróć do menu</button>
+    </a>
+
+    <h1>🤖 Quiz generowany przez AI</h1>
+    <div id="access-denied" class="error-message" style="display:none;">❌ Dostęp zabroniony – nieprawidłowe hasło.</div>
+
+    <div id="quiz-interface" style="display:none;">
+      <p>Wybierz kategorię, a quiz zostanie wygenerowany automatycznie:</p>
+
+      <label for="category-select">Wybierz kategorię:</label>
+      <select id="category-select">
+        <option value="Arytmetyka">Arytmetyka</option>
+        <option value="Ułamki">Ułamki</option>
+        <option value="Geometria">Geometria</option>
+        <option value="Procenty">Procenty</option>
+        <option value="Statystyka">Statystyka</option>
+        <option value="Logika">Logika</option>
+        <option value="Jednostki miary">Jednostki miary</option>
+      </select>
+
+      <button onclick="generujQuiz()" style="margin-top: 10px;">🎲 Generuj quiz</button>
+
+      <div id="quiz-content" style="margin-top: 20px;"></div>
+      <p id="result"></p>
+    </div>
+  </main>
+
+  <script>
+    // Sprawdzenie dostępu
+    const dostep = localStorage.getItem("dostepNauczyciel");
+    if (dostep === "true") {
+      document.getElementById("quiz-interface").style.display = "block";
+    } else {
+      document.getElementById("access-denied").style.display = "block";
+    }
+
+    function generujQuiz() {
+      const category = document.getElementById("category-select").value;
+      const container = document.getElementById("quiz-content");
+      container.innerHTML = `<p>⏳ Generowanie quizu z kategorii: <strong>${category}</strong>...</p>`;
+
+      // Tu w przyszłości dodamy wywołanie API AI
+      // Na razie tylko placeholder
+      setTimeout(() => {
+        container.innerHTML = `
+          <div class="question">
+            <p><strong>Pytanie 1:</strong> Ile to 25% z 80?</p>
+            <div class="option-line"><input type="radio" name="q1" /> A) 10</div>
+            <div class="option-line"><input type="radio" name="q1" /> B) 20</div>
+            <div class="option-line"><input type="radio" name="q1" /> C) 25</div>
+            <div class="option-line"><input type="radio" name="q1" /> D) 30</div>
+          </div>
+          <p><em>To tylko przykładowe pytanie. Wkrótce dodamy prawdziwe generowanie przez AI!</em></p>
+        `;
+
+        if (window.MathJax) {
+          MathJax.typesetPromise();
+        }
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
