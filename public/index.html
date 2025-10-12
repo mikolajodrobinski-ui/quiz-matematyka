@@ -34,6 +34,14 @@
         alert("❌ Nieprawidłowe hasło.");
       }
     }
+    function sprawdzHasloAI() {
+      const haslo = prompt("🔐 Podaj hasło do quizu AI:");
+      if (haslo === "notsecret") {
+        window.location.href = "quiz-ai.html";
+      } else {
+        alert("❌ Nieprawidłowe hasło.");
+      }
+   }
   </script>
 </body>
 
