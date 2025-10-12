@@ -4,97 +4,97 @@
     "question": "Co oznacza mianownik w ułamku zwykłym?",
     "options": {
       "A": "Liczbę części, które mamy",
-      "B": "Liczbę części, na które dzielimy całość",
-      "C": "Sposób dodawania ułamków",
-      "D": "Wartość dziesiętną"
+      "B": "Sposób dodawania ułamków",
+      "C": "Wartość dziesiętną",
+      "D": "Liczbę części, na które dzielimy całość"
     },
-    "correct": "B"
+    "correct": "D"
   },
   {
     "id": "q2",
     "question": "Który z poniższych jest ułamkiem właściwym?",
     "options": {
-      "A": "\\( \\frac{5}{3} \\)",
-      "B": "\\( \\frac{3}{3} \\)",
-      "C": "\\( \\frac{2}{5} \\)",
+      "A": "\\( \\frac{3}{3} \\)",
+      "B": "\\( \\frac{2}{5} \\)",
+      "C": "\\( \\frac{5}{3} \\)",
       "D": "\\( \\frac{7}{4} \\)"
     },
-    "correct": "C"
+    "correct": "B"
   },
   {
     "id": "q3",
     "question": "Oblicz: \\( \\frac{1}{4} + \\frac{2}{4} \\)",
     "options": {
-      "A": "\\( \\frac{3}{4} \\)",
-      "B": "\\( \\frac{1}{2} \\)",
+      "A": "\\( \\frac{1}{8} \\)",
+      "B": "\\( \\frac{3}{4} \\)",
       "C": "\\( \\frac{2}{8} \\)",
-      "D": "\\( \\frac{1}{8} \\)"
+      "D": "\\( \\frac{1}{2} \\)"
     },
-    "correct": "A"
+    "correct": "B"
   },
   {
     "id": "q4",
     "question": "Oblicz: \\( \\frac{3}{5} + \\frac{1}{5} \\)",
     "options": {
-      "A": "\\( \\frac{4}{10} \\)",
-      "B": "\\( \\frac{4}{5} \\)",
-      "C": "\\( \\frac{3}{6} \\)",
-      "D": "\\( \\frac{2}{5} \\)"
+      "A": "\\( \\frac{3}{6} \\)",
+      "B": "\\( \\frac{4}{10} \\)",
+      "C": "\\( \\frac{2}{5} \\)",
+      "D": "\\( \\frac{4}{5} \\)"
     },
-    "correct": "B"
+    "correct": "D"
   },
   {
     "id": "q5",
     "question": "Oblicz: \\( \\frac{5}{6} - \\frac{1}{6} \\)",
     "options": {
-      "A": "\\( \\frac{4}{6} \\)",
-      "B": "\\( \\frac{2}{3} \\)",
-      "C": "\\( \\frac{1}{2} \\)",
-      "D": "\\( \\frac{5}{5} \\)"
+      "A": "\\( \\frac{5}{5} \\)",
+      "B": "\\( \\frac{1}{2} \\)",
+      "C": "\\( \\frac{2}{3} \\)",
+      "D": "\\( \\frac{4}{6} \\)"
     },
-    "correct": "A"
+    "correct": "D"
   },
   {
     "id": "q6",
     "question": "Oblicz: \\( \\frac{7}{8} - \\frac{3}{8} \\)",
     "options": {
-      "A": "\\( \\frac{4}{8} \\)",
-      "B": "\\( \\frac{1}{2} \\)",
-      "C": "\\( \\frac{3}{5} \\)",
-      "D": "\\( \\frac{5}{8} \\)"
+      "A": "\\( \\frac{5}{8} \\)",
+      "B": "\\( \\frac{3}{5} \\)",
+      "C": "\\( \\frac{1}{2} \\)",
+      "D": "\\( \\frac{4}{8} \\)"
     },
-    "correct": "A"
+    "correct": "D"
   },
   {
     "id": "q7",
     "question": "Oblicz: \\( \\frac{2}{3} \\times \\frac{3}{4} \\)",
     "options": {
-      "A": "\\( \\frac{6}{12} \\)",
-      "B": "\\( \\frac{1}{2} \\)",
-      "C": "\\( \\frac{6}{9} \\)",
-      "D": "\\( \\frac{1}{4} \\)"
+      "A": "\\( \\frac{6}{9} \\)",
+      "B": "\\( \\frac{6}{12} \\)",
+      "C": "\\( \\frac{1}{4} \\)",
+      "D": "\\( \\frac{1}{2} \\)"
     },
-    "correct": "A"
+    "correct": "B"
   },
   {
     "id": "q8",
     "question": "Oblicz: \\( \\frac{5}{6} \\times \\frac{2}{3} \\)",
     "options": {
-      "A": "\\( \\frac{10}{18} \\)",
-      "B": "\\( \\frac{5}{9} \\)",
-      "C": "\\( \\frac{1}{2} \\)",
-      "D": "\\( \\frac{7}{9} \\)"
+      "A": "\\( \\frac{5}{9} \\)",
+      "B": "\\( \\frac{7}{9} \\)",
+      "C": "\\( \\frac{10}{18} \\)",
+      "D": "\\( \\frac{1}{2} \\)"
     },
-    "correct": "A"
+    "correct": "C"
   },
   {
     "id": "q9",
     "question": "Oblicz: \\( \\frac{3}{4} \\div \\frac{1}{2} \\)",
     "options": {
-      "A": "\\( \\frac{3}{8} \\)",
+      "A": "\\( \\frac{5}{6} \\)",
       "B": "\\( \\frac{3}{2} \\)",
-      "C": "\\( \\frac{1}{2} \\)",
-      "D": "\\( \\frac{5}{6} \\)"
+      "C": "\\( \\frac{3}{8} \\)",
+      "D": "\\( \\frac{1}{2} \\)"
     },
     "correct": "B"
   },
@@ -102,186 +102,187 @@
     "id": "q10",
     "question": "Oblicz: \\( \\frac{2}{5} \\div \\frac{1}{5} \\)",
     "options": {
-      "A": "1",
-      "B": "2",
+      "A": "2",
+      "B": "10",
       "C": "5",
-      "D": "10"
+      "D": "1"
     },
-    "correct": "B"
-  },
+    "correct": "A"
+  }
+  ,
   {
     "id": "q11",
     "question": "Co oznacza przecinek w ułamku dziesiętnym?",
     "options": {
-      "A": "Oddziela liczby całkowite od dziesiętnych",
+      "A": "Zastępuje mianownik",
       "B": "Zastępuje znak dzielenia",
-      "C": "Pokazuje miejsce dziesiętne",
-      "D": "Zastępuje mianownik"
+      "C": "Oddziela liczby całkowite od dziesiętnych",
+      "D": "Pokazuje miejsce dziesiętne"
     },
-    "correct": "A"
+    "correct": "C"
   },
   {
     "id": "q12",
     "question": "Który z poniższych to ułamek dziesiętny?",
     "options": {
       "A": "\\( \\frac{1}{2} \\)",
-      "B": "0,5",
-      "C": "\\( \\frac{3}{4} \\)",
-      "D": "1/4"
+      "B": "1/4",
+      "C": "0,5",
+      "D": "\\( \\frac{3}{4} \\)"
     },
-    "correct": "B"
+    "correct": "C"
   },
   {
     "id": "q13",
     "question": "Oblicz: 0,3 + 0,6",
     "options": {
-      "A": "0,9",
-      "B": "0,8",
+      "A": "0,7",
+      "B": "0,9",
       "C": "1,0",
-      "D": "0,7"
+      "D": "0,8"
     },
-    "correct": "A"
+    "correct": "B"
   },
   {
     "id": "q14",
     "question": "Oblicz: 1,25 + 0,75",
     "options": {
-      "A": "2,0",
-      "B": "1,5",
-      "C": "1,95",
-      "D": "2,1"
+      "A": "1,5",
+      "B": "2,0",
+      "C": "2,1",
+      "D": "1,95"
     },
-    "correct": "A"
+    "correct": "B"
   },
   {
     "id": "q15",
     "question": "Oblicz: 0,9 - 0,4",
     "options": {
-      "A": "0,5",
-      "B": "0,6",
-      "C": "0,4",
-      "D": "0,3"
+      "A": "0,4",
+      "B": "0,5",
+      "C": "0,3",
+      "D": "0,6"
     },
-    "correct": "A"
+    "correct": "B"
   },
   {
     "id": "q16",
     "question": "Oblicz: 2,5 - 1,2",
     "options": {
-      "A": "1,3",
-      "B": "1,2",
+      "A": "1,2",
+      "B": "1,3",
       "C": "1,4",
       "D": "1,5"
     },
-    "correct": "A"
+    "correct": "B"
   },
   {
     "id": "q17",
     "question": "Oblicz: 0,2 × 0,5",
     "options": {
-      "A": "0,1",
-      "B": "0,2",
-      "C": "0,3",
-      "D": "0,4"
+      "A": "0,3",
+      "B": "0,1",
+      "C": "0,4",
+      "D": "0,2"
     },
-    "correct": "A"
+    "correct": "B"
   },
   {
     "id": "q18",
     "question": "Oblicz: 1,2 × 0,5",
     "options": {
-      "A": "0,6",
-      "B": "0,5",
+      "A": "0,5",
+      "B": "0,6",
       "C": "0,7",
       "D": "0,8"
     },
-    "correct": "A"
+    "correct": "B"
   },
   {
     "id": "q19",
     "question": "Oblicz: 0,6 ÷ 0,2",
     "options": {
-      "A": "3",
-      "B": "2",
-      "C": "1",
-      "D": "0,3"
+      "A": "2",
+      "B": "0,3",
+      "C": "3",
+      "D": "1"
     },
-    "correct": "A"
+    "correct": "C"
   },
   {
     "id": "q20",
     "question": "Oblicz: 1,5 ÷ 0,5",
     "options": {
-      "A": "2",
-      "B": "3",
-      "C": "1",
-      "D": "0,5"
+      "A": "3",
+      "B": "2",
+      "C": "0,5",
+      "D": "1"
     },
-    "correct": "B"
+    "correct": "A"
   },
   {
     "id": "q21",
     "question": "Które z poniższych to figura płaska?",
     "options": {
-      "A": "Sześcian",
-      "B": "Stożek",
-      "C": "Kwadrat",
-      "D": "Kula"
+      "A": "Kwadrat",
+      "B": "Sześcian",
+      "C": "Kula",
+      "D": "Stożek"
     },
-    "correct": "C"
+    "correct": "A"
   },
   {
     "id": "q22",
     "question": "Ile boków ma sześciokąt foremny?",
     "options": {
-      "A": "5",
-      "B": "6",
+      "A": "6",
+      "B": "8",
       "C": "7",
-      "D": "8"
+      "D": "5"
     },
-    "correct": "B"
+    "correct": "A"
   },
   {
     "id": "q23",
     "question": "Oblicz pole kwadratu o boku \\( a = 5 \\) cm.",
     "options": {
-      "A": "\\( 10 \\text{ cm}^2 \\)",
-      "B": "\\( 20 \\text{ cm}^2 \\)",
-      "C": "\\( 25 \\text{ cm}^2 \\)",
-      "D": "\\( 30 \\text{ cm}^2 \\)"
+      "A": "\\( 30 \\text{ cm}^2 \\)",
+      "B": "\\( 25 \\text{ cm}^2 \\)",
+      "C": "\\( 20 \\text{ cm}^2 \\)",
+      "D": "\\( 10 \\text{ cm}^2 \\)"
     },
-    "correct": "C"
+    "correct": "B"
   },
   {
     "id": "q24",
     "question": "Oblicz pole prostokąta o bokach \\( a = 4 \\) cm i \\( b = 6 \\) cm.",
     "options": {
-      "A": "\\( 24 \\text{ cm}^2 \\)",
-      "B": "\\( 20 \\text{ cm}^2 \\)",
-      "C": "\\( 18 \\text{ cm}^2 \\)",
-      "D": "\\( 30 \\text{ cm}^2 \\)"
+      "A": "\\( 30 \\text{ cm}^2 \\)",
+      "B": "\\( 18 \\text{ cm}^2 \\)",
+      "C": "\\( 24 \\text{ cm}^2 \\)",
+      "D": "\\( 20 \\text{ cm}^2 \\)"
     },
-    "correct": "A"
+    "correct": "C"
   },
   {
     "id": "q25",
     "question": "Oblicz pole trójkąta o podstawie \\( a = 8 \\) cm i wysokości \\( h = 5 \\) cm.",
     "options": {
-      "A": "\\( 40 \\text{ cm}^2 \\)",
-      "B": "\\( 20 \\text{ cm}^2 \\)",
+      "A": "\\( 25 \\text{ cm}^2 \\)",
+      "B": "\\( 40 \\text{ cm}^2 \\)",
       "C": "\\( 30 \\text{ cm}^2 \\)",
-      "D": "\\( 25 \\text{ cm}^2 \\)"
+      "D": "\\( 20 \\text{ cm}^2 \\)"
     },
-    "correct": "A"
+    "correct": "B"
   },
   {
     "id": "q26",
     "question": "Oblicz obwód kwadratu o boku \\( a = 7 \\) cm.",
     "options": {
-      "A": "14 cm",
-      "B": "21 cm",
+      "A": "35 cm",
+      "B": "14 cm",
       "C": "28 cm",
-      "D": "35 cm"
+      "D": "21 cm"
     },
     "correct": "C"
   },
@@ -289,23 +290,23 @@
     "id": "q27",
     "question": "Oblicz obwód prostokąta o bokach \\( a = 3 \\) cm i \\( b = 5 \\) cm.",
     "options": {
-      "A": "16 cm",
+      "A": "14 cm",
       "B": "15 cm",
-      "C": "14 cm",
-      "D": "12 cm"
+      "C": "12 cm",
+      "D": "16 cm"
     },
-    "correct": "A"
+    "correct": "D"
   },
   {
     "id": "q28",
     "question": "Oblicz obwód trójkąta o bokach \\( a = 4 \\) cm, \\( b = 5 \\) cm, \\( c = 6 \\) cm.",
     "options": {
-      "A": "15 cm",
-      "B": "14 cm",
+      "A": "14 cm",
+      "B": "15 cm",
       "C": "13 cm",
       "D": "16 cm"
     },
-    "correct": "A"
+    "correct": "B"
   },
   {
     "id": "q29",
@@ -313,8 +314,8 @@
     "options": {
       "A": "3600",
       "B": "600",
-      "C": "60",
-      "D": "1200"
+      "C": "1200",
+      "D": "60"
     },
     "correct": "A"
   },
@@ -323,10 +324,13 @@
     "question": "Ile gramów ma 1 kilogram?",
     "options": {
       "A": "100",
-      "B": "1000",
-      "C": "10",
-      "D": "500"
+      "B": "500",
+      "C": "1000",
+      "D": "10"
     },
-    "correct": "B"
+    "correct": "C"
   }
 ]
+
+
+
