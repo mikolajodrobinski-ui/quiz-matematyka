@@ -2,9 +2,14 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const { Pool } = require('pg');
+const { OpenAI } = require('openai'); // 🔹 Dodano OpenAI SDK
+require('dotenv').config(); // 🔹 Umożliwia korzystanie z .env lokalnie
 
 const app = express();
 const port = process.env.PORT || 3000;
+
+// 🔹 Inicjalizacja OpenAI
+const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 // Połączenie z bazą PostgreSQL
 const pool = new Pool({
@@ -68,6 +73,41 @@ app.delete('/usun-wynik/:id', async (req, res) => {
   } catch (err) {
     console.error("❌ Błąd usuwania wpisu:", err);
     res.status(500).send("❌ Błąd usuwania wpisu");
+  }
+});
+
+// 🔹 Endpoint do generowania quizu przez OpenAI
+app.post('/generuj-quiz-ai', async (req, res) => {
+  const { kategoria } = req.body;
+
+  const prompt = `
+Wygeneruj 5 pytań quizowych z kategorii "${kategoria}" w formacie JSON.
+Każde pytanie powinno mieć:
+- unikalne "id"
+- pole "question" (może zawierać LaTeX w \\( ... \\))
+- obiekt "options" z kluczami A, B, C, D
+- pole "correct" z literą poprawnej odpowiedzi
+- pole "explanation" z krótkim uzasadnieniem poprawnej odpowiedzi
+
+Zwróć tylko tablicę JSON z 5 pytaniami.
+`;
+
+  try {
+    const response = await openai.chat.completions.create({
+      model: "gpt-4o",
+      messages: [
+        { role: "system", content: "Jesteś generatorem quizów matematycznych." },
+        { role: "user", content: prompt }
+      ],
+      temperature: 0.7
+    });
+
+    const raw = response.choices[0].message.content;
+    const questions = JSON.parse(raw);
+    res.json(questions);
+  } catch (err) {
+    console.error("❌ Błąd generowania quizu:", err);
+    res.status(500).json({ error: "❌ Nie udało się wygenerować quizu." });
   }
 });
 

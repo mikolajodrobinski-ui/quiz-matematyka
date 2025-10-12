@@ -33,15 +33,15 @@
     "correct": "B"
   },
   {
-    "id": "q4",
-    "question": "Oblicz: \\( \\frac{3}{5} + \\frac{1}{5} \\)",
-    "options": {
-      "A": "\\( \\frac{3}{6} \\)",
-      "B": "\\( \\frac{4}{10} \\)",
-      "C": "\\( \\frac{2}{5} \\)",
-      "D": "\\( \\frac{4}{5} \\)"
-    },
-    "correct": "D"
+  "id": "q4",
+  "question": "Oblicz: \\( \\frac{2}{3} + \\frac{3}{4} \\)",
+  "options": {
+    "A": "\\( \\frac{6}{12} \\)",
+    "B": "\\( \\frac{5}{7} \\)",
+    "C": "\\( \\frac{17}{12} \\)",
+    "D": "\\( \\frac{1}{2} \\)"
+  },
+  "correct": "C"
   },
   {
     "id": "q5",
@@ -55,16 +55,16 @@
     "correct": "D"
   },
   {
-    "id": "q6",
-    "question": "Oblicz: \\( \\frac{7}{8} - \\frac{3}{8} \\)",
-    "options": {
-      "A": "\\( \\frac{5}{8} \\)",
-      "B": "\\( \\frac{3}{5} \\)",
-      "C": "\\( \\frac{1}{2} \\)",
-      "D": "\\( \\frac{4}{8} \\)"
-    },
-    "correct": "D"
+  "id": "q6",
+  "question": "Oblicz: \\( \\frac{5}{6} - \\frac{1}{4} \\)",
+  "options": {
+    "A": "\\( \\frac{4}{10} \\)",
+    "B": "\\( \\frac{1}{2} \\)",
+    "C": "\\( \\frac{5}{12} \\)",
+    "D": "\\( \\frac{7}{12} \\)"
   },
+  "correct": "D"
+ },
   {
     "id": "q7",
     "question": "Oblicz: \\( \\frac{2}{3} \\times \\frac{3}{4} \\)",
