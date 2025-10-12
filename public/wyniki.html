@@ -29,8 +29,6 @@
       </thead>
       <tbody></tbody>
     </table>
-
-    <button onclick="wyloguj()" style="margin-top: 20px;">🚪 Wyloguj</button>
   </main>
 
   <script>
@@ -73,11 +71,6 @@
             alert("❌ Nie udało się usunąć wpisu.");
           });
       }
-    }
-
-    function wyloguj() {
-      localStorage.removeItem("dostepNauczyciel");
-      location.href = "index.html";
     }
   </script>
 </body>
