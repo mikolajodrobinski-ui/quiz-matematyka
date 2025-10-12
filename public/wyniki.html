@@ -30,9 +30,13 @@
       <tbody></tbody>
     </table>
 
+    <button onclick="wyloguj()" style="margin-top: 20px;">🚪 Wyloguj</button>
+  </main>
+
   <script>
-    const haslo = prompt("🔐 Podaj hasło nauczyciela:");
-    if (haslo === "notsecret") {
+    // Sprawdzenie dostępu na podstawie localStorage
+    const dostep = localStorage.getItem("dostepNauczyciel");
+    if (dostep === "true") {
       document.getElementById("results-table").style.display = "table";
       fetch('/wyniki')
         .then(res => res.json())
@@ -41,15 +45,14 @@
           data.forEach(entry => {
             const row = document.createElement('tr');
             row.innerHTML = `
-            <td>${entry.id}</td>
-            <td>${entry.imie}</td>
-            <td>${entry.wynik}</td>
-            <td><pre>${entry.bledy}</pre></td>
-            <td>${entry.czas || '-'}</td>
-            <td>${new Date(entry.data).toLocaleString()}</td>
-            <td><button class="usun-button" onclick="usunWpis(${entry.id})">Usuń</button></td>
-  `;
-
+              <td>${entry.id}</td>
+              <td>${entry.imie}</td>
+              <td>${entry.wynik}</td>
+              <td><pre>${entry.bledy}</pre></td>
+              <td>${entry.czas || '-'}</td>
+              <td>${new Date(entry.data).toLocaleString()}</td>
+              <td><button class="usun-button" onclick="usunWpis(${entry.id})">Usuń</button></td>
+            `;
             tbody.appendChild(row);
           });
         });
@@ -70,6 +73,11 @@
             alert("❌ Nie udało się usunąć wpisu.");
           });
       }
+    }
+
+    function wyloguj() {
+      localStorage.removeItem("dostepNauczyciel");
+      location.href = "index.html";
     }
   </script>
 </body>
