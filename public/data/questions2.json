@@ -1,14 +1,14 @@
 [
   {
     "id": "q1",
-    "question": "Co oznacza mianownik w ułamku zwykłym?",
+    "question": "Co oznacza licznik w ułamku zwykłym?",
     "options": {
       "A": "Liczbę części, które mamy",
       "B": "Sposób dodawania ułamków",
       "C": "Wartość dziesiętną",
       "D": "Liczbę części, na które dzielimy całość"
     },
-    "correct": "D"
+    "correct": "A"
   },
   {
     "id": "q2",
@@ -273,7 +273,7 @@
       "C": "\\( 30 \\text{ cm}^2 \\)",
       "D": "\\( 20 \\text{ cm}^2 \\)"
     },
-    "correct": "B"
+    "correct": "D"
   },
   {
     "id": "q26",
