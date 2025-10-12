@@ -27,6 +27,7 @@
     function sprawdzHaslo() {
       const haslo = prompt("🔐 Podaj hasło nauczyciela:");
       if (haslo === "notsecret") {
+        localStorage.setItem("dostepNauczyciel", "true"); // ⬅️ zapamiętaj dostęp
         window.location.href = "wyniki.html";
       } else {
         alert("❌ Nieprawidłowe hasło.");
