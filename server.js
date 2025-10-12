@@ -81,7 +81,7 @@ app.post('/generuj-quiz-ai', async (req, res) => {
   const { kategoria } = req.body;
 
   const prompt = `
-Wygeneruj 5 pytań quizowych z kategorii "${kategoria}" w formacie JSON.
+Wygeneruj 10 pytań quizowych z kategorii "${kategoria}" w formacie JSON.
 Każde pytanie powinno mieć:
 - unikalne "id"
 - pole "question" (może zawierać LaTeX w \\( ... \\))
@@ -89,8 +89,9 @@ Każde pytanie powinno mieć:
 - pole "correct" z literą poprawnej odpowiedzi
 - pole "explanation" z krótkim uzasadnieniem poprawnej odpowiedzi
 
-Zwróć tylko tablicę JSON z 5 pytaniami.
+Zwróć tylko tablicę JSON z 10 pytaniami.
 `;
+
 
   try {
     const response = await openai.chat.completions.create({
