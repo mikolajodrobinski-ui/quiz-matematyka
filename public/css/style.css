@@ -300,4 +300,11 @@ button:disabled {
   .error-message {
     color: #ff7f7f;
   }
+
+  .logo {
+  display: block;
+  margin: 0 auto 20px auto;
+  max-width: 300px;
+  height: auto;
+  }
 }
