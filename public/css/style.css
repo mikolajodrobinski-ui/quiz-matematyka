@@ -301,10 +301,64 @@ button:disabled {
     color: #ff7f7f;
   }
 
-  .logo {
+}
+/* Logo */
+.logo {
   display: block;
-  margin: 0 auto 20px auto;
-  max-width: 300px;
+  margin: 0 auto 30px auto;
+  max-width: 280px;
   height: auto;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Animacja logo */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Tło strony */
+body {
+  background: linear-gradient(to bottom right, #eef6ff, #dbe9ff);
+  font-family: 'Nunito', sans-serif;
+}
+
+/* Intro */
+.intro {
+  font-size: 1.2em;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Menu przycisków */
+.menu-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  justify-content: center;
+}
+
+.menu-buttons button {
+  padding: 14px;
+  font-size: 1em;
+  background-color: #0078D4;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.menu-buttons button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Responsywność */
+@media (max-width: 600px) {
+  .menu-buttons {
+    grid-template-columns: 1fr;
   }
 }
