@@ -1,8 +1,10 @@
 /* Ogólne ustawienia */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Nunito', sans-serif;
   margin: 10px;
   padding: 10px;
+  background-color: #121212;
+  color: #f0f0f0;
   transition: background-color 0.3s, color 0.3s;
 }
 
@@ -25,36 +27,76 @@ h1 {
 
 /* Wprowadzenie na stronie głównej */
 .intro {
-  font-size: 1.1em;
-  margin-bottom: 30px;
+  font-size: 1.2em;
+  font-weight: 600;
   text-align: center;
+  margin-bottom: 30px;
+  color: #f0f0f0;
 }
 
-/* Przyciskowe menu na stronie głównej */
+/* Logo */
+.logo {
+  display: block;
+  margin: 0 auto 30px auto;
+  max-width: 280px;
+  height: auto;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Animacja logo */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Menu przycisków */
 .menu-buttons {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
+  justify-content: center;
+}
+
+.menu-buttons button {
+  padding: 14px;
+  font-size: 1em;
+  background-color: #005fa3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.menu-buttons button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+button:disabled {
+  background-color: #444;
+  color: #aaa;
+  cursor: not-allowed;
 }
 
 /* Pojedyncze pytanie w quizie */
 .question {
   margin-bottom: 25px;
   padding: 15px;
-  border: 2px solid #0078D4;
+  border: 2px solid #3399ff;
   border-radius: 8px;
-  background-color: #eef6ff;
-  color: #000;
+  background-color: #1a2a3a;
+  color: #f0f0f0;
 }
 
 /* Definicje matematyczne */
 .definition {
   margin-bottom: 20px;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #444;
   border-radius: 6px;
-  background-color: #f9f9f9;
-  color: #000;
+  background-color: #1e1e1e;
+  color: #f0f0f0;
 }
 
 /* Linie opcji odpowiedzi */
@@ -66,7 +108,7 @@ h1 {
 input[type="radio"] {
   margin-right: 8px;
   transform: scale(1.2);
-  accent-color: #0078D4;
+  accent-color: #3399ff;
   vertical-align: middle;
 }
 
@@ -75,6 +117,7 @@ label {
   font-size: 1em;
   line-height: 1.4;
   vertical-align: middle;
+  color: #f0f0f0;
 }
 
 /* Pola wyboru i tekstowe */
@@ -84,35 +127,12 @@ input[type="number"] {
   padding: 8px;
   margin: 10px 0;
   font-size: 16px;
-  background-color: #fff;
-  color: #000;
-  border: 1px solid #ccc;
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+  border: 1px solid #444;
   border-radius: 6px;
   width: 100%;
   box-sizing: border-box;
-}
-
-/* Przycisk */
-button {
-  display: block;
-  width: 100%;
-  padding: 12px;
-  font-size: 1em;
-  margin-top: 10px;
-  background-color: #0078D4;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #005fa3;
-}
-
-button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
 }
 
 /* Wiersz przycisków */
@@ -125,13 +145,13 @@ button:disabled {
 
 /* Informacja zwrotna */
 .correct {
-  color: green;
+  color: #90ee90;
   font-weight: bold;
   margin-top: 8px;
 }
 
 .incorrect {
-  color: red;
+  color: #ff7f7f;
   font-weight: bold;
   margin-top: 8px;
 }
@@ -153,7 +173,7 @@ button:disabled {
 /* === Tabela wyników === */
 .table-container {
   width: 100%;
-  overflow-x: auto;   /* przewijanie w poziomie tylko dla tabeli */
+  overflow-x: auto;
 }
 
 .results-table {
@@ -161,19 +181,22 @@ button:disabled {
   border-collapse: collapse;
   margin-top: 20px;
   table-layout: auto;
+  background-color: transparent;
+  color: #f0f0f0;
 }
 
 .results-table th,
 .results-table td {
-  border: 1px solid #ccc;
+  border: 1px solid #444;
   padding: 8px;
   text-align: left;
   vertical-align: top;
-  word-wrap: break-word; /* łamanie długich tekstów */
+  word-wrap: break-word;
+  background-color: #1e1e1e;
 }
 
 .results-table th {
-  background-color: #f0f0f0;
+  background-color: #2a2a2a;
 }
 
 /* Responsywność na telefonach */
@@ -185,11 +208,15 @@ button:disabled {
   .results-table td {
     padding: 6px;
   }
+
+  .menu-buttons {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Przycisk usuń */
 .usun-button {
-  background-color: #e74c3c;
+  background-color: #c0392b;
   color: white;
   border: none;
   padding: 6px 12px;
@@ -200,165 +227,12 @@ button:disabled {
 }
 
 .usun-button:hover {
-  background-color: #c0392b;
+  background-color: #e74c3c;
 }
 
 /* Komunikat błędu */
 .error-message {
-  color: red;
+  color: #ff7f7f;
   text-align: center;
   margin-top: 20px;
-}
-
-/* Tryb ciemny */
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #121212;
-    color: #f0f0f0;
-  }
-
-  .quiz-container,
-  .main-menu {
-    background-color: transparent;
-  }
-
-  .question {
-    background-color: #1a2a3a;
-    border-color: #3399ff;
-    color: #f0f0f0;
-  }
-
-  .definition {
-    background-color: #1e1e1e;
-    border-color: #444;
-    color: #f0f0f0;
-  }
-
-  select,
-  input[type="text"],
-  input[type="number"] {
-    background-color: #1e1e1e;
-    color: #f0f0f0;
-    border: 1px solid #444;
-  }
-
-  input[type="radio"] {
-    accent-color: #3399ff;
-  }
-
-  label {
-    color: #f0f0f0;
-  }
-
-  button {
-    background-color: #005fa3;
-    color: white;
-  }
-
-  button:hover {
-    background-color: #0078D4;
-  }
-
-  button:disabled {
-    background-color: #444;
-    color: #aaa;
-  }
-
-  .correct {
-    color: #90ee90;
-  }
-
-  .incorrect {
-    color: #ff7f7f;
-  }
-
-  .results-table {
-    background-color: transparent;
-    color: #f0f0f0;
-  }
-
-  .results-table th,
-  .results-table td {
-    border: 1px solid #444;
-    background-color: #1e1e1e;
-    color: #f0f0f0;
-  }
-
-  .results-table th {
-    background-color: #2a2a2a;
-  }
-
-  .usun-button {
-    background-color: #c0392b;
-    color: white;
-  }
-
-  .usun-button:hover {
-    background-color: #e74c3c;
-  }
-
-  .error-message {
-    color: #ff7f7f;
-  }
-
-}
-/* Logo */
-.logo {
-  display: block;
-  margin: 0 auto 30px auto;
-  max-width: 280px;
-  height: auto;
-  animation: fadeIn 1s ease-in-out;
-}
-
-/* Animacja logo */
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-/* Tło strony */
-body {
-  background: linear-gradient(to bottom right, #eef6ff, #dbe9ff);
-  font-family: 'Nunito', sans-serif;
-}
-
-/* Intro */
-.intro {
-  font-size: 1.2em;
-  font-weight: 600;
-  text-align: center;
-  margin-bottom: 30px;
-  color: #333;
-}
-
-/* Menu przycisków */
-.menu-buttons {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  justify-content: center;
-}
-
-.menu-buttons button {
-  padding: 14px;
-  font-size: 1em;
-  background-color: #0078D4;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.menu-buttons button:hover {
-  transform: scale(1.03);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-/* Responsywność */
-@media (max-width: 600px) {
-  .menu-buttons {
-    grid-template-columns: 1fr;
-  }
 }
