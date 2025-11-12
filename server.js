@@ -1,118 +1,135 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const { Pool } = require('pg');
-const { OpenAI } = require('openai'); // 🔹 Dodano OpenAI SDK
-require('dotenv').config(); // 🔹 Umożliwia korzystanie z .env lokalnie
+const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const fs = require("fs");
+const path = require("path");
+require("dotenv").config();
 
 const app = express();
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
-// 🔹 Inicjalizacja OpenAI
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
-
-// Połączenie z bazą PostgreSQL
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: { rejectUnauthorized: false }
-});
-
-// Tworzenie tabeli przy starcie serwera
-pool.query(`
-  CREATE TABLE IF NOT EXISTS wyniki (
-    id SERIAL PRIMARY KEY,
-    imie TEXT,
-    wynik TEXT,
-    bledy TEXT,
-    czas TEXT,
-    data TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-  )
-`).then(() => {
-  console.log("✅ Tabela 'wyniki' gotowa");
-}).catch(err => {
-  console.error("❌ Błąd tworzenia tabeli:", err);
-});
-
-app.use(cors());
 app.use(bodyParser.json());
-app.use(express.static('public'));
+app.use(cors());
+app.use(express.static(path.join(__dirname)));
 
-// Endpoint do zapisu wyniku
-app.post('/zapisz-wynik', async (req, res) => {
-  const { imie, wynik, bledy, czas } = req.body;
-  console.log("📥 Odebrano dane:", req.body);
+// Plik CSV z wynikami
+const logFile = path.join(__dirname, "wyniki.csv");
+
+// Pomocnicza funkcja do tworzenia linii CSV
+function toCsvLine(values) {
+  return values
+    .map(v => {
+      const s = v === undefined || v === null ? "" : String(v);
+      return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+    })
+    .join(",") + "\n";
+}
+
+// Parser CSV
+function parseCsv(content) {
+  const lines = content.trim().split("\n");
+  if (lines.length <= 1) return [];
+  const rows = lines.slice(1);
+  const splitter = /,(?=(?:[^"]*"[^"]*")*[^"]*$)/;
+
+  return rows.map(line => {
+    const cols = line.split(splitter).map(cell => {
+      let c = cell.trim();
+      if (c.startsWith('"') && c.endsWith('"')) {
+        c = c.slice(1, -1).replace(/""/g, '"');
+      }
+      return c;
+    });
+    const [id, imie, wynik, bledy, czas, data] = cols;
+    return { id, imie, wynik, bledy, czas, data };
+  });
+}
+
+// Inicjalizacja pliku CSV
+function ensureCsvFile() {
+  if (!fs.existsSync(logFile)) {
+    fs.writeFileSync(logFile, "id,imie,wynik,bledy,czas,data\n");
+  }
+}
+
+// Zapis wyniku
+app.post("/zapisz-wynik", (req, res) => {
   try {
-    await pool.query(
-      'INSERT INTO wyniki (imie, wynik, bledy, czas) VALUES ($1, $2, $3, $4)',
-      [imie, wynik, bledy, czas]
-    );
-    res.send("✅ Wynik zapisany!");
+    const { id, imie, wynik, bledy, czas, data } = req.body;
+    ensureCsvFile();
+    const line = toCsvLine([id, imie, wynik, bledy || "", czas || "", data || new Date().toISOString()]);
+    fs.appendFileSync(logFile, line);
+    res.json({ success: true });
   } catch (err) {
-    console.error("❌ Błąd zapisu:", err);
-    res.status(500).send("❌ Błąd zapisu");
+    console.error("Błąd zapisu CSV:", err);
+    res.status(500).json({ success: false, error: "Błąd zapisu wyniku." });
   }
 });
 
-// Endpoint do pobierania wyników
-app.get('/wyniki', async (req, res) => {
+// Odczyt wyników
+app.get("/wyniki", (req, res) => {
   try {
-    const result = await pool.query('SELECT * FROM wyniki ORDER BY data DESC');
-    res.json(result.rows);
+    if (!fs.existsSync(logFile)) return res.json([]);
+    const content = fs.readFileSync(logFile, "utf8");
+    const results = parseCsv(content);
+    res.json(results);
   } catch (err) {
-    console.error("❌ Błąd pobierania wyników:", err);
-    res.status(500).send("❌ Błąd pobierania wyników");
+    console.error("Błąd odczytu CSV:", err);
+    res.status(500).json({ success: false, error: "Błąd odczytu wyników." });
   }
 });
 
-// Endpoint do usuwania wpisu po ID
-app.delete('/usun-wynik/:id', async (req, res) => {
-  const id = req.params.id;
+// Usuwanie wpisu
+app.delete("/usun-wynik/:id", (req, res) => {
   try {
-    await pool.query('DELETE FROM wyniki WHERE id = $1', [id]);
-    res.send(`✅ Wpis ID ${id} został usunięty`);
-  } catch (err) {
-    console.error("❌ Błąd usuwania wpisu:", err);
-    res.status(500).send("❌ Błąd usuwania wpisu");
-  }
-});
+    const idToDelete = String(req.params.id);
+    if (!fs.existsSync(logFile)) return res.status(404).send("Brak pliku wyników");
 
-// 🔹 Endpoint do generowania quizu przez OpenAI
-app.post('/generuj-quiz-ai', async (req, res) => {
-  const { kategoria } = req.body;
+    const content = fs.readFileSync(logFile, "utf8").trim();
+    if (!content) return res.send("Plik wyników jest pusty");
 
-  const prompt = `
-Wygeneruj 10 pytań quizowych z kategorii "${kategoria}" w formacie JSON.
-Każde pytanie powinno mieć:
-- unikalne "id"
-- pole "question" (może zawierać LaTeX w \\( ... \\))
-- obiekt "options" z kluczami A, B, C, D
-- pole "correct" z literą poprawnej odpowiedzi
-- pole "explanation" z krótkim uzasadnieniem poprawnej odpowiedzi
+    const lines = content.split("\n");
+    const headers = lines[0];
+    const rows = lines.slice(1);
 
-Zwróć tylko tablicę JSON z 10 pytaniami.
-`;
-
-
-  try {
-    const response = await openai.chat.completions.create({
-      model: "gpt-4o",
-      messages: [
-        { role: "system", content: "Jesteś generatorem quizów matematycznych." },
-        { role: "user", content: prompt }
-      ],
-      temperature: 0.7
+    const keep = rows.filter(line => {
+      const splitter = /,(?=(?:[^"]*"[^"]*")*[^"]*$)/;
+      const cols = line.split(splitter).map(cell => {
+        let c = cell.trim();
+        if (c.startsWith('"') && c.endsWith('"')) {
+          c = c.slice(1, -1).replace(/""/g, '"');
+        }
+        return c;
+      });
+      return cols[0] !== idToDelete;
     });
 
-    const raw = response.choices[0].message.content;
-    const questions = JSON.parse(raw);
-    res.json(questions);
+    const newContent = [headers, ...keep].join("\n") + (keep.length ? "\n" : "");
+    fs.writeFileSync(logFile, newContent);
+
+    res.send(`✅ Wpis ID ${idToDelete} usunięty`);
   } catch (err) {
-    console.error("❌ Błąd generowania quizu:", err);
-    res.status(500).json({ error: "❌ Nie udało się wygenerować quizu." });
+    console.error("Błąd usuwania z CSV:", err);
+    res.status(500).send("❌ Nie udało się usunąć wpisu.");
   }
 });
 
-// Uruchomienie serwera
-app.listen(port, () => {
-  console.log(`🚀 Serwer działa na porcie ${port}`);
+// Endpoint AI (pozostaje, jeśli korzystasz z OpenAI)
+app.post("/generuj-quiz-ai", async (req, res) => {
+  const { kategoria } = req.body;
+  // Tutaj możesz podpiąć OpenAI lub zwrócić przykładowe pytania
+  const quiz = [
+    {
+      id: "ai1",
+      question: `Przykładowe pytanie z kategorii ${kategoria}`,
+      options: { A: "Odp A", B: "Odp B", C: "Odp C", D: "Odp D" },
+      correct: "A",
+      explanation: "To jest przykładowe wyjaśnienie."
+    }
+  ];
+  res.json(quiz);
+});
+
+app.listen(PORT, () => {
+  console.log(`🚀 Serwer działa na porcie ${PORT}`);
 });
