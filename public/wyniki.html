@@ -10,7 +10,25 @@
     .results-table td.id-col {
       display: none;
     }
+    /* Czytelna lista błędów w komórce */
+    .bledy-list {
+      margin: 0;
+      padding-left: 18px; /* odstęp dla listy */
+    }
+    .bledy-list li {
+      margin-bottom: 4px;
+      white-space: normal; /* pozwól łamać linie */
+      word-wrap: break-word;
+    }
   </style>
+  <!-- MathJax do renderowania LaTeX w błędach -->
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(', '\\)'], ['$', '$']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 <body>
   <main class="quiz-container">
@@ -45,25 +63,47 @@
 
   <script>
     const dostep = localStorage.getItem("dostepNauczyciel");
+
+    function formatErrors(text) {
+      if (!text) return '<em>Brak</em>';
+      // Rozbij po średniku, usuń puste elementy, przytnij spacje
+      const items = text
+        .split(';')
+        .map(s => s.trim())
+        .filter(s => s.length > 0);
+      if (items.length === 0) return '<em>Brak</em>';
+      // Zbuduj listę HTML
+      const html = '<ul class="bledy-list">' +
+        items.map(item => `<li>${item}</li>`).join('') +
+        '</ul>';
+      return html;
+    }
+
     if (dostep === "true") {
       document.getElementById("results-wrapper").style.display = "block";
       fetch('/wyniki')
         .then(res => res.json())
         .then(data => {
           const tbody = document.querySelector('#results-table tbody');
+          tbody.innerHTML = '';
           data.forEach(entry => {
             const row = document.createElement('tr');
+            const bledyHTML = formatErrors(entry.bledy);
             row.innerHTML = `
-              <td class="id-col">${entry.id}</td>
-              <td>${entry.imie}</td>
-              <td>${entry.wynik}</td>
-              <td><div style="white-space: pre-wrap;">${entry.bledy}</div></td>
+              <td class="id-col">${entry.id ?? ''}</td>
+              <td>${entry.imie ?? '-'}</td>
+              <td>${entry.wynik ?? '-'}</td>
+              <td>${bledyHTML}</td>
               <td>${entry.czas || '-'}</td>
-              <td>${new Date(entry.data).toLocaleString()}</td>
+              <td>${entry.data ? new Date(entry.data).toLocaleString() : '-'}</td>
               <!-- <td><button class="usun-button" onclick="usunWpis(${entry.id})">Usuń</button></td> -->
             `;
             tbody.appendChild(row);
           });
+          // Render LaTeX w błędach po wstawieniu do DOM
+          if (window.MathJax && window.MathJax.typesetPromise) {
+            MathJax.typesetPromise();
+          }
         })
         .catch(err => {
           console.error("❌ Błąd pobierania wyników:", err);
