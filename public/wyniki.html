@@ -4,6 +4,13 @@
   <meta charset="UTF-8">
   <title>Panel nauczyciela – wyniki quizu</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Ukryj kolumnę ID, ale zostaw ją w DOM dla backendu */
+    .results-table th.id-col,
+    .results-table td.id-col {
+      display: none;
+    }
+  </style>
 </head>
 <body>
   <main class="quiz-container">
@@ -22,6 +29,7 @@
       <table id="results-table" class="results-table">
         <thead>
           <tr>
+            <th class="id-col">ID</th>
             <th>Imię</th>
             <th>Wynik</th>
             <th>Błędy</th>
@@ -46,6 +54,7 @@
           data.forEach(entry => {
             const row = document.createElement('tr');
             row.innerHTML = `
+              <td class="id-col">${entry.id}</td>
               <td>${entry.imie}</td>
               <td>${entry.wynik}</td>
               <td><div style="white-space: pre-wrap;">${entry.bledy}</div></td>
