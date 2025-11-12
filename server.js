@@ -52,14 +52,19 @@ function ensureCsvFile() {
   }
 }
 
-// Zapis wyniku
+// Zapis wyniku (dla quiz i quiz-ai)
 app.post("/zapisz-wynik", (req, res) => {
   try {
-    const { id, imie, wynik, bledy, czas, data } = req.body;
+    let { id, imie, wynik, bledy, czas, data } = req.body;
     ensureCsvFile();
-    const line = toCsvLine([id, imie, wynik, bledy || "", czas || "", data || new Date().toISOString()]);
+
+    // Jeśli frontend nie poda ID, generujemy
+    if (!id) id = Date.now().toString();
+    if (!data) data = new Date().toISOString();
+
+    const line = toCsvLine([id, imie, wynik, bledy || "", czas || "", data]);
     fs.appendFileSync(logFile, line);
-    res.json({ success: true });
+    res.json({ success: true, id });
   } catch (err) {
     console.error("Błąd zapisu CSV:", err);
     res.status(500).json({ success: false, error: "Błąd zapisu wyniku." });
@@ -114,10 +119,9 @@ app.delete("/usun-wynik/:id", (req, res) => {
   }
 });
 
-// Endpoint AI (pozostaje, jeśli korzystasz z OpenAI)
+// Endpoint AI – przykładowe pytania
 app.post("/generuj-quiz-ai", async (req, res) => {
   const { kategoria } = req.body;
-  // Tutaj możesz podpiąć OpenAI lub zwrócić przykładowe pytania
   const quiz = [
     {
       id: "ai1",
@@ -125,6 +129,13 @@ app.post("/generuj-quiz-ai", async (req, res) => {
       options: { A: "Odp A", B: "Odp B", C: "Odp C", D: "Odp D" },
       correct: "A",
       explanation: "To jest przykładowe wyjaśnienie."
+    },
+    {
+      id: "ai2",
+      question: `Drugie pytanie z kategorii ${kategoria}`,
+      options: { A: "Opcja 1", B: "Opcja 2", C: "Opcja 3", D: "Opcja 4" },
+      correct: "B",
+      explanation: "Wyjaśnienie dla pytania 2."
     }
   ];
   res.json(quiz);

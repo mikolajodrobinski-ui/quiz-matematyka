@@ -14,12 +14,15 @@
 </head>
 <body>
   <main class="quiz-container">
+    <!-- Przycisk na górze -->
     <a href="index.html">
       <button style="margin-bottom: 20px;">⬅️ Wróć do menu</button>
     </a>
 
     <h1>🤖 Quiz generowany przez AI</h1>
-    <div id="access-denied" class="error-message" style="display:none;">❌ Dostęp zabroniony – nieprawidłowe hasło.</div>
+    <div id="access-denied" class="error-message" style="display:none;">
+      ❌ Dostęp zabroniony – nieprawidłowe hasło.
+    </div>
 
     <div id="quiz-interface" style="display:none;">
       <p>Wybierz kategorię, a quiz zostanie wygenerowany automatycznie:</p>
@@ -40,6 +43,11 @@
       <div id="quiz-content" style="margin-top: 20px;"></div>
       <p id="result"></p>
     </div>
+
+    <!-- Przycisk na dole -->
+    <a href="index.html">
+      <button style="margin-top: 20px;">⬅️ Wróć do menu</button>
+    </a>
   </main>
 
   <script src="js/quiz-ai.js"></script>
