@@ -33,7 +33,6 @@ async function loadQuiz() {
   quizStartTime = Date.now();
   startTimer(questions.length * 2 * 60); // 2 minuty na pytanie
 
-  document.getElementById('check-button').disabled = true;
   document.getElementById('send-button').disabled = false;
 }
 
@@ -70,12 +69,6 @@ function collectWrongAnswers(questions) {
 }
 
 function submitQuiz(force = false) {
-  const checkButton = document.getElementById('check-button');
-  if (checkButton.disabled && !force) {
-    alert("📩 Najpierw wyślij odpowiedzi do nauczyciela.");
-    return;
-  }
-
   const score = calculateScore(questions);
   const ocena = ocenaZaWynik(score, questions.length);
 
@@ -124,20 +117,23 @@ function sendResult(auto = false) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       imie: name,
-      wynik: score,          // liczba punktów
+      wynik: score,
       bledy: wrongAnswersText,
       czas: durationText,
       data: data
     })
   })
-  .then(res => res.json())
+  .then(res => {
+    if (!res.ok) throw new Error("HTTP status " + res.status);
+    // jeśli serwer nie zwróci JSON, zwróć pusty obiekt
+    return res.json().catch(() => ({}));
+  })
   .then(msg => {
     console.log("✅ Zapis CSV:", msg);
     if (!auto) {
       alert(`✅ Wynik zapisany!\n\nTwój wynik: ${score} / ${questions.length}\nOcena: ${ocena}`);
     }
     submitQuiz(true);
-    document.getElementById('check-button').disabled = false;
     document.getElementById('send-button').disabled = true;
   })
   .catch(err => {
@@ -161,7 +157,6 @@ function startTimer(seconds) {
       alert("⏰ Czas minął! Quiz został zakończony.");
       submitQuiz(true);
       sendResult(true);
-      document.getElementById('check-button').disabled = false;
       document.getElementById('send-button').disabled = true;
     }
   }, 1000);
