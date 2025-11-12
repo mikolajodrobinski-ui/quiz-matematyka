@@ -35,7 +35,7 @@
             <th>Błędy</th>
             <th>Czas</th>
             <th>Data</th>
-            <th>Akcja</th>
+            <!-- <th>Akcja</th> -->
           </tr>
         </thead>
         <tbody></tbody>
@@ -60,15 +60,21 @@
               <td><div style="white-space: pre-wrap;">${entry.bledy}</div></td>
               <td>${entry.czas || '-'}</td>
               <td>${new Date(entry.data).toLocaleString()}</td>
-              <td><button class="usun-button" onclick="usunWpis(${entry.id})">Usuń</button></td>
+              <!-- <td><button class="usun-button" onclick="usunWpis(${entry.id})">Usuń</button></td> -->
             `;
             tbody.appendChild(row);
           });
+        })
+        .catch(err => {
+          console.error("❌ Błąd pobierania wyników:", err);
+          alert("❌ Nie udało się pobrać wyników.");
         });
     } else {
       document.getElementById("access-denied").style.display = "block";
     }
 
+    // Funkcja usuwania zostaje w kodzie, ale nie jest używana
+    /*
     function usunWpis(id) {
       if (confirm("Czy na pewno chcesz usunąć wpis ID " + id + "?")) {
         fetch('/usun-wynik/' + id, { method: 'DELETE' })
@@ -83,6 +89,7 @@
           });
       }
     }
+    */
   </script>
 </body>
 </html>
