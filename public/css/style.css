@@ -236,3 +236,37 @@ input[type="number"] {
   text-align: center;
   margin-top: 20px;
 }
+/* Przyciski menu jako stylowane linki */
+.menu-button {
+  display: block;
+  padding: 14px;
+  font-size: 1em;
+  background-color: #005fa3;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.menu-button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Przycisk „Wróć do menu” */
+.back-button {
+  display: inline-block;
+  padding: 10px 16px;
+  background-color: #005fa3;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 1em;
+  margin-top: 20px;
+  transition: background-color 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: #0078D4;
+}
