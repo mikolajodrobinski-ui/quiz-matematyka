@@ -150,11 +150,17 @@ button:disabled {
   text-align: center;
 }
 
-/* Tabela wyników */
+/* === Tabela wyników === */
+.table-container {
+  width: 100%;
+  overflow-x: auto;   /* przewijanie w poziomie tylko dla tabeli */
+}
+
 .results-table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+  table-layout: auto;
 }
 
 .results-table th,
@@ -163,10 +169,22 @@ button:disabled {
   padding: 8px;
   text-align: left;
   vertical-align: top;
+  word-wrap: break-word; /* łamanie długich tekstów */
 }
 
 .results-table th {
   background-color: #f0f0f0;
+}
+
+/* Responsywność na telefonach */
+@media (max-width: 600px) {
+  .results-table {
+    font-size: 14px;
+  }
+  .results-table th,
+  .results-table td {
+    padding: 6px;
+  }
 }
 
 /* Przycisk usuń */

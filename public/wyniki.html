@@ -13,28 +13,32 @@
 
     <h1>📊 Panel nauczyciela – wyniki quizu</h1>
 
-    <div id="access-denied" class="error-message" style="display:none;">❌ Dostęp zabroniony – nieprawidłowe hasło.</div>
+    <div id="access-denied" class="error-message" style="display:none;">
+      ❌ Dostęp zabroniony – nieprawidłowe hasło.
+    </div>
 
-    <table id="results-table" class="results-table" style="display:none;">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Imię</th>
-          <th>Wynik</th>
-          <th>Błędy</th>
-          <th>Czas</th>
-          <th>Data</th>
-          <th>Akcja</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
+    <!-- Kontener dla responsywnej tabeli -->
+    <div class="table-container" style="display:none;" id="results-wrapper">
+      <table id="results-table" class="results-table">
+        <thead>
+          <tr>
+            <th>Imię</th>
+            <th>Wynik</th>
+            <th>Błędy</th>
+            <th>Czas</th>
+            <th>Data</th>
+            <th>Akcja</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
   </main>
 
   <script>
     const dostep = localStorage.getItem("dostepNauczyciel");
     if (dostep === "true") {
-      document.getElementById("results-table").style.display = "table";
+      document.getElementById("results-wrapper").style.display = "block";
       fetch('/wyniki')
         .then(res => res.json())
         .then(data => {
@@ -42,10 +46,9 @@
           data.forEach(entry => {
             const row = document.createElement('tr');
             row.innerHTML = `
-              <td>${entry.id}</td>
               <td>${entry.imie}</td>
               <td>${entry.wynik}</td>
-              <td><pre>${entry.bledy}</pre></td>
+              <td><div style="white-space: pre-wrap;">${entry.bledy}</div></td>
               <td>${entry.czas || '-'}</td>
               <td>${new Date(entry.data).toLocaleString()}</td>
               <td><button class="usun-button" onclick="usunWpis(${entry.id})">Usuń</button></td>
