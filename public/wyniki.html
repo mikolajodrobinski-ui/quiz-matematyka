@@ -4,59 +4,116 @@
   <meta charset="UTF-8">
   <title>Panel nauczyciela – wyniki quizu</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Ukryj kolumnę ID, ale zostaw ją w DOM dla backendu */
+    .results-table th.id-col,
+    .results-table td.id-col {
+      display: none;
+    }
+    /* Czytelna lista błędów w komórce */
+    .bledy-list {
+      margin: 0;
+      padding-left: 18px; /* odstęp dla listy */
+    }
+    .bledy-list li {
+      margin-bottom: 4px;
+      white-space: normal; /* pozwól łamać linie */
+      word-wrap: break-word;
+    }
+  </style>
+  <!-- MathJax do renderowania LaTeX w błędach -->
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(', '\\)'], ['$', '$']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 <body>
   <main class="quiz-container">
-    <a href="index.html">
-      <button style="margin-bottom: 20px;">⬅️ Wróć do menu</button>
-    </a>
+    <!-- Przycisk na górze -->
+    <button onclick="location.href='index.html'" style="margin-top: 20px;">⬅️ Wróć do menu</button>
 
     <h1>📊 Panel nauczyciela – wyniki quizu</h1>
 
-    <div id="access-denied" class="error-message" style="display:none;">❌ Dostęp zabroniony – nieprawidłowe hasło.</div>
+    <div id="access-denied" class="error-message" style="display:none;">
+      ❌ Dostęp zabroniony – nieprawidłowe hasło.
+    </div>
 
-    <table id="results-table" class="results-table" style="display:none;">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Imię</th>
-          <th>Wynik</th>
-          <th>Błędy</th>
-          <th>Czas</th>
-          <th>Data</th>
-          <th>Akcja</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
+    <!-- Kontener dla responsywnej tabeli -->
+    <div class="table-container" style="display:none;" id="results-wrapper">
+      <table id="results-table" class="results-table">
+        <thead>
+          <tr>
+            <th class="id-col">ID</th>
+            <th>Imię</th>
+            <th>Wynik</th>
+            <th>Błędy</th>
+            <th>Czas</th>
+            <th>Data</th>
+            <!-- <th>Akcja</th> -->
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
   </main>
 
   <script>
     const dostep = localStorage.getItem("dostepNauczyciel");
+
+    function formatErrors(text) {
+      if (!text) return '<em>Brak</em>';
+      // Rozbij po średniku, usuń puste elementy, przytnij spacje
+      const items = text
+        .split(';')
+        .map(s => s.trim())
+        .filter(s => s.length > 0);
+      if (items.length === 0) return '<em>Brak</em>';
+      // Zbuduj listę HTML
+      const html = '<ul class="bledy-list">' +
+        items.map(item => `<li>${item}</li>`).join('') +
+        '</ul>';
+      return html;
+    }
+
     if (dostep === "true") {
-      document.getElementById("results-table").style.display = "table";
+      document.getElementById("results-wrapper").style.display = "block";
       fetch('/wyniki')
         .then(res => res.json())
         .then(data => {
           const tbody = document.querySelector('#results-table tbody');
+          tbody.innerHTML = '';
           data.forEach(entry => {
             const row = document.createElement('tr');
+            const bledyHTML = formatErrors(entry.bledy);
             row.innerHTML = `
-              <td>${entry.id}</td>
-              <td>${entry.imie}</td>
-              <td>${entry.wynik}</td>
-              <td><pre>${entry.bledy}</pre></td>
+              <td class="id-col">${entry.id ?? ''}</td>
+              <td>${entry.imie ?? '-'}</td>
+              <td>${entry.wynik ?? '-'}</td>
+              <td>${bledyHTML}</td>
               <td>${entry.czas || '-'}</td>
-              <td>${new Date(entry.data).toLocaleString()}</td>
-              <td><button class="usun-button" onclick="usunWpis(${entry.id})">Usuń</button></td>
+              <td>${entry.data ? new Date(entry.data).toLocaleString() : '-'}</td>
+              <!-- <td><button class="usun-button" onclick="usunWpis(${entry.id})">Usuń</button></td> -->
             `;
             tbody.appendChild(row);
           });
+          // Render LaTeX w błędach po wstawieniu do DOM
+          if (window.MathJax && window.MathJax.typesetPromise) {
+            MathJax.typesetPromise();
+          }
+        })
+        .catch(err => {
+          console.error("❌ Błąd pobierania wyników:", err);
+          alert("❌ Nie udało się pobrać wyników.");
         });
     } else {
       document.getElementById("access-denied").style.display = "block";
     }
 
+    // Funkcja usuwania zostaje w kodzie, ale nie jest używana
+    /*
     function usunWpis(id) {
       if (confirm("Czy na pewno chcesz usunąć wpis ID " + id + "?")) {
         fetch('/usun-wynik/' + id, { method: 'DELETE' })
@@ -71,6 +128,7 @@
           });
       }
     }
+    */
   </script>
 </body>
 </html>

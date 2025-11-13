@@ -33,7 +33,6 @@ async function loadQuiz() {
   quizStartTime = Date.now();
   startTimer(questions.length * 2 * 60); // 2 minuty na pytanie
 
-  document.getElementById('check-button').disabled = true;
   document.getElementById('send-button').disabled = false;
 }
 
@@ -66,16 +65,10 @@ function collectWrongAnswers(questions) {
       return !selected || selected.value !== q.correct;
     })
     .map(q => `❌ ${q.id}: ${q.question}`)
-    .join('\n');
+    .join('; ');
 }
 
 function submitQuiz(force = false) {
-  const checkButton = document.getElementById('check-button');
-  if (checkButton.disabled && !force) {
-    alert("📩 Najpierw wyślij odpowiedzi do nauczyciela.");
-    return;
-  }
-
   const score = calculateScore(questions);
   const ocena = ocenaZaWynik(score, questions.length);
 
@@ -110,37 +103,41 @@ function sendResult(auto = false) {
 
   const score = calculateScore(questions);
   const ocena = ocenaZaWynik(score, questions.length);
-  const scoreText = `Wynik: ${score} / ${questions.length} (Ocena: ${ocena})`;
   const wrongAnswersText = collectWrongAnswers(questions);
 
   const durationMs = Date.now() - quizStartTime;
   const totalSec = Math.floor(durationMs / 1000);
   const min = Math.floor(totalSec / 60);
   const sec = totalSec % 60;
-  const durationText = `${min} min ${sec} sek`;
+  const durationText = `${min}:${sec.toString().padStart(2, '0')}`;
+  const data = new Date().toISOString();
 
-  fetch('https://quiz-matematyka.onrender.com/zapisz-wynik', {
+  fetch('/zapisz-wynik', {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       imie: name,
-      wynik: scoreText,
+      wynik: score,
       bledy: wrongAnswersText,
-      czas: durationText
+      czas: durationText,
+      data: data
     })
   })
-  .then(res => res.text())
+  .then(res => {
+    if (!res.ok) throw new Error("HTTP status " + res.status);
+    // jeśli serwer nie zwróci JSON, zwróć pusty obiekt
+    return res.json().catch(() => ({}));
+  })
   .then(msg => {
-    console.log("✅ Baza danych:", msg);
+    console.log("✅ Zapis CSV:", msg);
     if (!auto) {
-      alert(`${msg}\n\nTwój wynik: ${score} / ${questions.length}\nOcena: ${ocena}`);
+      alert(`✅ Wynik zapisany!\n\nTwój wynik: ${score} / ${questions.length}\nOcena: ${ocena}`);
     }
     submitQuiz(true);
-    document.getElementById('check-button').disabled = false;
     document.getElementById('send-button').disabled = true;
   })
   .catch(err => {
-    console.error("❌ Błąd zapisu do bazy:", err);
+    console.error("❌ Błąd zapisu:", err);
     alert("❌ Nie udało się wysłać wyników.");
   });
 }
@@ -160,7 +157,6 @@ function startTimer(seconds) {
       alert("⏰ Czas minął! Quiz został zakończony.");
       submitQuiz(true);
       sendResult(true);
-      document.getElementById('check-button').disabled = false;
       document.getElementById('send-button').disabled = true;
     }
   }, 1000);

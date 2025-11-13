@@ -14,12 +14,13 @@
 </head>
 <body>
   <main class="quiz-container">
-    <a href="index.html">
-      <button style="margin-bottom: 20px;">⬅️ Wróć do menu</button>
-    </a>
+    <!-- Przycisk na górze -->
+    <button onclick="location.href='index.html'" style="margin-top: 20px;">⬅️ Wróć do menu</button>
 
     <h1>🤖 Quiz generowany przez AI</h1>
-    <div id="access-denied" class="error-message" style="display:none;">❌ Dostęp zabroniony – nieprawidłowe hasło.</div>
+    <div id="access-denied" class="error-message" style="display:none;">
+      ❌ Dostęp zabroniony – nieprawidłowe hasło.
+    </div>
 
     <div id="quiz-interface" style="display:none;">
       <p>Wybierz kategorię, a quiz zostanie wygenerowany automatycznie:</p>
@@ -40,40 +41,18 @@
       <div id="quiz-content" style="margin-top: 20px;"></div>
       <p id="result"></p>
     </div>
+
+    <!-- Przycisk na dole -->
+    <button onclick="location.href='index.html'" style="margin-top: 20px;">⬅️ Wróć do menu</button>
   </main>
 
+  <script src="js/quiz-ai.js"></script>
   <script>
-    // Sprawdzenie dostępu
     const dostep = localStorage.getItem("dostepNauczyciel");
     if (dostep === "true") {
       document.getElementById("quiz-interface").style.display = "block";
     } else {
       document.getElementById("access-denied").style.display = "block";
-    }
-
-    function generujQuiz() {
-      const category = document.getElementById("category-select").value;
-      const container = document.getElementById("quiz-content");
-      container.innerHTML = `<p>⏳ Generowanie quizu z kategorii: <strong>${category}</strong>...</p>`;
-
-      // Tu w przyszłości dodamy wywołanie API AI
-      // Na razie tylko placeholder
-      setTimeout(() => {
-        container.innerHTML = `
-          <div class="question">
-            <p><strong>Pytanie 1:</strong> Ile to 25% z 80?</p>
-            <div class="option-line"><input type="radio" name="q1" /> A) 10</div>
-            <div class="option-line"><input type="radio" name="q1" /> B) 20</div>
-            <div class="option-line"><input type="radio" name="q1" /> C) 25</div>
-            <div class="option-line"><input type="radio" name="q1" /> D) 30</div>
-          </div>
-          <p><em>To tylko przykładowe pytanie. Wkrótce dodamy prawdziwe generowanie przez AI!</em></p>
-        `;
-
-        if (window.MathJax) {
-          MathJax.typesetPromise();
-        }
-      }, 1000);
     }
   </script>
 </body>
